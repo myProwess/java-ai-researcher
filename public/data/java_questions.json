@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "question": "What is the JVM and why is it important?",
+    "answer": "The JVM (Java Virtual Machine) is an abstract machine that provides a runtime environment in which Java bytecode can be executed. It is important because it enables Java to be platform-independent ('Write Once, Run Anywhere').",
+    "topic": "JVM",
+    "difficulty": "Basic",
+    "tags": ["runtime", "architecture"]
+  },
+  {
+    "id": 2,
+    "question": "What are the main principles of OOP?",
+    "answer": "The four main principles of Object-Oriented Programming are: \n1. Encapsulation: Bundling data and methods that work on that data.\n2. Inheritance: Mechanism where one class acquires the properties of another.\n3. Polymorphism: Ability of an object to take on many forms.\n4. Abstraction: Hiding implementation details and showing only functionality.",
+    "topic": "OOP Concepts",
+    "difficulty": "Basic",
+    "tags": ["oop", "fundamentals"]
+  },
+  {
+    "id": 3,
+    "question": "How does HashMap work internally in Java?",
+    "answer": "HashMap works on the principle of Hashing. It uses an array (bucket) and linked lists (or balanced trees since Java 8) to store key-value pairs. When put() is called, hashCode() calculates the index. If collision occurs, it uses equals() to find or add the entry in the bucket's list/tree.",
+    "topic": "Collections",
+    "difficulty": "Intermediate",
+    "tags": ["collections", "hashing", "internal"]
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between '==' and '.equals()'?",
+    "answer": "'==' is a reference comparison operator that checks if both objects point to the same memory location. '.equals()' is a method used for content comparison, checking if the values of the objects are the same.",
+    "topic": "Java Basics",
+    "difficulty": "Basic",
+    "tags": ["comparison", "basics"]
+  },
+  {
+    "id": 5,
+    "question": "Explain the significance of the 'volatile' keyword.",
+    "answer": "The 'volatile' keyword is used to mark a Java variable as 'being stored in main memory'. It ensures that every read of a volatile variable will be from the computer's main memory, and not from the CPU cache, and that every write to a volatile variable will be written to main memory.",
+    "topic": "Concurrency",
+    "difficulty": "Advanced",
+    "tags": ["concurrency", "memory-model"]
+  },
+  {
+    "id": 6,
+    "question": "What is the Diamond Problem in Inheritance?",
+    "answer": "The Diamond Problem occurs when a class inherits from two classes that both inherit from a single base class, leading to ambiguity if the base class's methods are overridden. Java avoids this by not supporting multiple inheritance for classes, though it allows multiple interface implementation.",
+    "topic": "OOP Concepts",
+    "difficulty": "Intermediate",
+    "tags": ["inheritance", "ambiguity"]
+  },
+  {
+    "id": 7,
+    "question": "What are Functional Interfaces?",
+    "answer": "A functional interface is an interface that contains exactly one abstract method. They can have multiple default or static methods. Examples include Runnable, Callable, and Comparator. They are used extensively with Lambda expressions.",
+    "topic": "Streams & Lambda",
+    "difficulty": "Intermediate",
+    "tags": ["java8", "lambda"]
+  },
+  {
+    "id": 8,
+    "question": "How do you handle Checked vs Unchecked exceptions?",
+    "answer": "Checked exceptions (e.g., IOException) must be either caught in a try-catch block or declared in a throws clause. Unchecked exceptions (e.g., NullPointerException) do not need to be explicitly handled or declared, as they usually represent programming errors.",
+    "topic": "Exception Handling",
+    "difficulty": "Basic",
+    "tags": ["exceptions", "error-handling"]
+  },
+  {
+    "id": 9,
+    "question": "What is Garbage Collection and how does it work?",
+    "answer": "Garbage Collection is the process of automatically reclaiming runtime unused memory. The JVM identifies objects that are no longer reachable from the 'GC roots' and deletes them. Common algorithms include Mark-and-Sweep, G1, and ZGC.",
+    "topic": "Garbage Collection",
+    "difficulty": "Intermediate",
+    "tags": ["memory-management", "jvm"]
+  },
+  {
+    "id": 10,
+    "question": "Explain the difference between StringBuilder and StringBuffer.",
+    "answer": "Both are used for mutable strings. StringBuffer is thread-safe (synchronized), making it slower. StringBuilder is not thread-safe but is faster and preferred for single-threaded environments.",
+    "topic": "Strings",
+    "difficulty": "Basic",
+    "tags": ["strings", "performance"]
+  },
+  {
+    "id": 11,
+    "question": "What is Dependency Injection in Spring?",
+    "answer": "Dependency Injection (DI) is a design pattern where the Spring IoC container provides the dependencies of an object at runtime. This promotes loose coupling and makes the code more testable and maintainable.",
+    "topic": "Spring & Frameworks",
+    "difficulty": "Intermediate",
+    "tags": ["spring", "di"]
+  },
+  {
+    "id": 12,
+    "question": "Describe the Singleton Design Pattern.",
+    "answer": "The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. It typically involves a private constructor, a private static instance, and a public static getInstance() method.",
+    "topic": "Design Patterns",
+    "difficulty": "Intermediate",
+    "tags": ["patterns", "singleton"]
+  },
+  {
+    "id": 13,
+    "question": "What are Java Streams?",
+    "answer": "Java Streams (introduced in Java 8) are sequences of elements supporting sequential and parallel aggregate operations. They allow for functional-style operations on collections, like filter, map, and reduce, without modifying the source.",
+    "topic": "Streams & Lambda",
+    "difficulty": "Intermediate",
+    "tags": ["java8", "functional"]
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between fail-fast and fail-safe iterators?",
+    "answer": "Fail-fast iterators (e.g., ArrayList) throw ConcurrentModificationException if the collection is modified while iterating. Fail-safe iterators (e.g., CopyOnWriteArrayList) work on a clone of the collection and do not throw exceptions if the original is modified.",
+    "topic": "Collections",
+    "difficulty": "Advanced",
+    "tags": ["collections", "concurrency"]
+  },
+  {
+    "id": 15,
+    "question": "What is the 'final' keyword used for?",
+    "answer": "'final' can be applied to variables (making them constants), methods (preventing overriding), and classes (preventing inheritance).",
+    "topic": "Java Basics",
+    "difficulty": "Basic",
+    "tags": ["keywords", "basics"]
+  },
+  {
+    "id": 16,
+    "question": "How does the 'try-with-resources' statement work?",
+    "answer": "Introduced in Java 7, try-with-resources automatically closes resources (like files or database connections) that implement the AutoCloseable interface at the end of the statement, ensuring better resource management and less boilerplate.",
+    "topic": "File Handling",
+    "difficulty": "Intermediate",
+    "tags": ["java7", "resources"]
+  },
+  {
+    "id": 17,
+    "question": "What is the purpose of the 'transient' keyword?",
+    "answer": "The 'transient' keyword is used in serialization to mark a variable that should not be serialized. When an object is reconstructed, transient variables are initialized with their default values.",
+    "topic": "Advanced Java",
+    "difficulty": "Intermediate",
+    "tags": ["serialization", "keywords"]
+  },
+  {
+    "id": 18,
+    "question": "What is a Deadlock and how can it be avoided?",
+    "answer": "Deadlock is a situation where two or more threads are blocked forever, waiting for each other to release locks. It can be avoided by acquiring locks in a consistent order, using timed locks, or avoiding nested locks.",
+    "topic": "Multithreading",
+    "difficulty": "Advanced",
+    "tags": ["concurrency", "threads"]
+  },
+  {
+    "id": 19,
+    "question": "What is Type Erasure in Generics?",
+    "answer": "Type Erasure is the process by which the Java compiler removes all generic type information at compile time and replaces it with raw types (usually Object), ensuring backward compatibility with older Java versions.",
+    "topic": "Advanced Java",
+    "difficulty": "Advanced",
+    "tags": ["generics", "compiler"]
+  },
+  {
+    "id": 20,
+    "question": "What is the difference between REST and SOAP?",
+    "answer": "REST is an architectural style that uses standard HTTP methods and is typically lighter (uses JSON/XML). SOAP is a protocol that uses XML for messaging and has built-in security and transaction compliance (ACID).",
+    "topic": "Spring & Frameworks",
+    "difficulty": "Intermediate",
+    "tags": ["web-services", "architecture"]
+  }
+]

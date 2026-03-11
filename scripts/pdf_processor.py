@@ -79,21 +79,24 @@ def process_pdf(pdf_path, output_json1, output_json2, start_page=0, end_page=111
         if not lines:
             continue
             
-        q_lines = []
-        a_lines = []
-        found_end_of_q = False
-        
-        # Heuristic for question end
-        for j, line in enumerate(lines):
-            if not found_end_of_q:
-                q_lines.append(line)
-                if line.endswith('?') or len(q_lines) >= 2:
-                    found_end_of_q = True
-            else:
-                a_lines.append(line)
-        
-        q_text = " ".join(q_lines)
-        a_text = " ".join(a_lines)
+        full_text = " \n ".join(lines)
+        if '?' in full_text:
+            idx = full_text.find('?')
+            q_text = full_text[:idx+1].strip()
+            a_text = full_text[idx+1:].strip()
+        else:
+            q_lines = []
+            a_lines = []
+            found_end_of_q = False
+            for j, line in enumerate(lines):
+                if not found_end_of_q:
+                    q_lines.append(line)
+                    if len(q_lines) >= 2:
+                        found_end_of_q = True
+                else:
+                    a_lines.append(line)
+            q_text = " ".join(q_lines)
+            a_text = " ".join(a_lines)
         
         q_text = re.sub(r'\s+', ' ', q_text)
         a_text = re.sub(r'\s+', ' ', a_text)

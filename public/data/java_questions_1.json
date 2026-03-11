@@ -81,8 +81,8 @@
   },
   {
     "id": 9,
-    "question": "Can we write main method as public void static instead of public",
-    "answer": "static void? No, you cannot write it like this. Any method has to first specify the modifiers and then the return value. The order of modifiers can change. We can write static public void main() instead of public static void main().",
+    "question": "Can we write main method as public void static instead of public static void?",
+    "answer": "No, you cannot write it like this. Any method has to first specify the modifiers and then the return value. The order of modifiers can change. We can write static public void main() instead of public static void main().",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -91,8 +91,8 @@
   },
   {
     "id": 10,
-    "question": "In Java, if we do not specify any value for local variables, then what",
-    "answer": "will be the default value of the local variables? Java does not initialize local variables with any default value. So these variables will be just null by default.",
+    "question": "In Java, if we do not specify any value for local variables, then what will be the default value of the local variables?",
+    "answer": "Java does not initialize local variables with any default value. So these variables will be just null by default.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -101,8 +101,8 @@
   },
   {
     "id": 11,
-    "question": "Let say, we run a java class without passing any arguments. What will be",
-    "answer": "the value of String array of arguments in Main method? By default, the value of String array of arguments is empty in Java. It is not null.",
+    "question": "Let say, we run a java class without passing any arguments. What will be the value of String array of arguments in Main method?",
+    "answer": "By default, the value of String array of arguments is empty in Java. It is not null.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -131,8 +131,8 @@
   },
   {
     "id": 14,
-    "question": "What is the difference between Object Oriented Programming",
-    "answer": "language and Object Based Programming language? Object Oriented Programming languages like Java and C++ follow concepts of OOPS like- Encapsulation, Abstraction, Polymorphism and Inheritance etc. Object Based Programming languages follow some features of OOPS but they do not provide support for Polymorphism and Inheritance. Egg. JavaScript, VBScript etc. Object Based Programming languages provide support for Objects and you can build objects from constructor. They languages also support Encapsulation. These are also known as Prototype-oriented languages.",
+    "question": "What is the difference between Object Oriented Programming language and Object Based Programming language?",
+    "answer": "Object Oriented Programming languages like Java and C++ follow concepts of OOPS like- Encapsulation, Abstraction, Polymorphism and Inheritance etc. Object Based Programming languages follow some features of OOPS but they do not provide support for Polymorphism and Inheritance. Egg. JavaScript, VBScript etc. Object Based Programming languages provide support for Objects and you can build objects from constructor. They languages also support Encapsulation. These are also known as Prototype-oriented languages.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -141,8 +141,8 @@
   },
   {
     "id": 15,
-    "question": "In Java what is the default value of an object reference defined as an",
-    "answer": "instance variable in an Object? All the instance variable object references in Java are null.",
+    "question": "In Java what is the default value of an object reference defined as an instance variable in an Object?",
+    "answer": "All the instance variable object references in Java are null.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -271,8 +271,8 @@
   },
   {
     "id": 28,
-    "question": "If there are no pointers in Java, then why do we get",
-    "answer": "NullPointerException? In Java, the pointer equivalent is Object reference. When we use a . it points to object reference. So JVM uses pointers but programmers only see object references. In case an object reference points to null object, and we try to access a method or member variable on it, then we get NullPointerException.",
+    "question": "If there are no pointers in Java, then why do we get NullPointerException?",
+    "answer": "In Java, the pointer equivalent is Object reference. When we use a . it points to object reference. So JVM uses pointers but programmers only see object references. In case an object reference points to null object, and we try to access a method or member variable on it, then we get NullPointerException.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -371,8 +371,8 @@
   },
   {
     "id": 38,
-    "question": "What happens when static modifier is not mentioned in the",
-    "answer": "signature of main method? As per Java specification, main method has to be marked as static. It needs only one argument that is an array of String. A program can compile with a non-static method. But on execution it will give NoSuchMethodError.",
+    "question": "What happens when static modifier is not mentioned in the signature of main method?",
+    "answer": "As per Java specification, main method has to be marked as static. It needs only one argument that is an array of String. A program can compile with a non-static method. But on execution it will give NoSuchMethodError.",
     "topic": "File Handling",
     "tags": [
       "file handling",
@@ -381,8 +381,8 @@
   },
   {
     "id": 39,
-    "question": "What is the difference between static method and instance method in",
-    "answer": "Java? Often, there is a need to define a behavior for a class that is not dependent on member variables of an object. Such behavior is captured in a static method. If there is a behavior dependent upon the member variables of an object, then we do not mark it static, it remains as instance method. To call as static method, we do not need to create an object. We just call it with class name. But to call an instance method, we need to create/get an object first. Instance member variables cannot be accessed by a static method. But an instance method can call both instance variables and static variables. Method Overloading and Overriding",
+    "question": "What is the difference between static method and instance method in Java?",
+    "answer": "Often, there is a need to define a behavior for a class that is not dependent on member variables of an object. Such behavior is captured in a static method. If there is a behavior dependent upon the member variables of an object, then we do not mark it static, it remains as instance method. To call as static method, we do not need to create an object. We just call it with class name. But to call an instance method, we need to create/get an object first. Instance member variables cannot be accessed by a static method. But an instance method can call both instance variables and static variables. Method Overloading and Overriding",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -411,8 +411,8 @@
   },
   {
     "id": 42,
-    "question": "What kinds of argument variations are allowed in Method",
-    "answer": "Overloading? Method Overloading allows two methods with same name to differ in: 1 . Number of parameters 2 . Data type of parameters 3 . Sequence of data type of parameters",
+    "question": "What kinds of argument variations are allowed in Method Overloading?",
+    "answer": "Method Overloading allows two methods with same name to differ in: 1 . Number of parameters 2 . Data type of parameters 3 . Sequence of data type of parameters",
     "topic": "File Handling",
     "tags": [
       "file handling",
@@ -421,8 +421,8 @@
   },
   {
     "id": 43,
-    "question": "Why it is not possible to do method overloading by changing",
-    "answer": "return type of method in java? If we change the return type of overloaded methods then it will lead to ambiguous behavior. How will clients know which method will return what type. Due to this different return type are not allowed in overloaded methods.",
+    "question": "Why it is not possible to do method overloading by changing return type of method in java?",
+    "answer": "If we change the return type of overloaded methods then it will lead to ambiguous behavior. How will clients know which method will return what type. Due to this different return type are not allowed in overloaded methods.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -481,8 +481,8 @@
   },
   {
     "id": 49,
-    "question": "What is the difference between method overloading and method",
-    "answer": "overriding in Java? Differences between method overloading and overriding are: 1 . Method overloading is static polymorphism. Method overriding is runtime polymorphism. 2 . Method overloading occurs within the same class. Method overriding happens in two classes with hierarchy relationship. 3 . Parameters must be different in method overloading. Parameters must be same in method overriding. 4 . Method overloading is a compile time concept. Method overriding is a runtime concept.",
+    "question": "What is the difference between method overloading and method overriding in Java?",
+    "answer": "Differences between method overloading and overriding are: 1 . Method overloading is static polymorphism. Method overriding is runtime polymorphism. 2 . Method overloading occurs within the same class. Method overriding happens in two classes with hierarchy relationship. 3 . Parameters must be different in method overloading. Parameters must be same in method overriding. 4 . Method overloading is a compile time concept. Method overriding is a runtime concept.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -521,8 +521,8 @@
   },
   {
     "id": 53,
-    "question": "Is it possible to achieve Runtime Polymorphism by data members in",
-    "answer": "Java? No. We need to create Runtime Polymorphism by implementing methods at two levels of inheritance in Java.",
+    "question": "Is it possible to achieve Runtime Polymorphism by data members in Java?",
+    "answer": "No. We need to create Runtime Polymorphism by implementing methods at two levels of inheritance in Java.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -571,8 +571,8 @@
   },
   {
     "id": 58,
-    "question": "Is it allowed to mark a method abstract method without marking the",
-    "answer": "class abstract? No. Java specification says that if there is at least one abstract method in a class, the class has to be marked abstract.",
+    "question": "Is it allowed to mark a method abstract method without marking the class abstract?",
+    "answer": "No. Java specification says that if there is at least one abstract method in a class, the class has to be marked abstract.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -671,8 +671,8 @@
   },
   {
     "id": 68,
-    "question": "Does Java allow us to use private and protected modifiers for variables",
-    "answer": "in interfaces? No. All the variables in an interface are implicitly public.",
+    "question": "Does Java allow us to use private and protected modifiers for variables in interfaces?",
+    "answer": "No. All the variables in an interface are implicitly public.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -831,8 +831,8 @@
   },
   {
     "id": 84,
-    "question": "What is the difference between import static com.test.Fooclass and",
-    "answer": "import com.test.Fooclass? First import is a static import and the second import is normal import of a class. First import allows us to import static members of class. Internationalization",
+    "question": "What is the difference between import static com.test.Fooclass and import com.test.Fooclass?",
+    "answer": "First import is a static import and the second import is normal import of a class. First import allows us to import static members of class. Internationalization",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -921,8 +921,8 @@
   },
   {
     "id": 93,
-    "question": "How does marking a field as transient makes it possible to serialize",
-    "answer": "an object? Let say we have a class ABC that implements Serializable interface, but it contains a member variable object of class XYZ that does not implement Serializable interface. Due to this it is not possible to Serialize the class ABC. To solve this issue, we can mark the member variable XYZ as Transient in class ABC. This will allow us to serialize the class ABC.",
+    "question": "How does marking a field as transient makes it possible to serialize an object?",
+    "answer": "Let say we have a class ABC that implements Serializable interface, but it contains a member variable object of class XYZ that does not implement Serializable interface. Due to this it is not possible to Serialize the class ABC. To solve this issue, we can mark the member variable XYZ as Transient in class ABC. This will allow us to serialize the class ABC.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -941,8 +941,8 @@
   },
   {
     "id": 95,
-    "question": "What is the difference between Serializable and Externalizable",
-    "answer": "interface? Serializable is a marker interface but Externalizable is not a marker interface. When we implement Serializable interface, the class is serialized automatically by default. We can override writeObject() and readObject()methods to control more complex object Serialization process. In case of Externalizable, we use readExternal() and writeExternal() methods to give control to class for class's serialization process. Serializable interface is based on recursive algorithm. Serializable gives you two options. One option is to provide custom way of serialization, the other default way. In Externalizable, you have to always implement readExternal() and writeExternal() methods. A public no-arg constructor is needed while using Externalizable interface. In Serialization, we need to define serialVersionUID. If it is not explicitly defined it will be generated automatically based on all the fields, methods of the class. Reflection",
+    "question": "What is the difference between Serializable and Externalizable interface?",
+    "answer": "Serializable is a marker interface but Externalizable is not a marker interface. When we implement Serializable interface, the class is serialized automatically by default. We can override writeObject() and readObject()methods to control more complex object Serialization process. In case of Externalizable, we use readExternal() and writeExternal() methods to give control to class for class's serialization process. Serializable interface is based on recursive algorithm. Serializable gives you two options. One option is to provide custom way of serialization, the other default way. In Externalizable, you have to always implement readExternal() and writeExternal() methods. A public no-arg constructor is needed while using Externalizable interface. In Serialization, we need to define serialVersionUID. If it is not explicitly defined it will be generated automatically based on all the fields, methods of the class. Reflection",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -971,8 +971,8 @@
   },
   {
     "id": 98,
-    "question": "How can we access private method of a class from outside the",
-    "answer": "class? We can use Reflection to access private method of a class from outside the class. IN Java, we use getDeclaredMethod() to get instance of a private method. Then we mark this method accessible and finally invoke it. In following sample code, we are accessing private method message() of class Foo by Reflection. FileName: Foo.java public class Foo { private void message(){System.out.println(\"hello java\"); } } FileName: FooMethodCall.java import java.lang.reflect.Method; public class FooMethodCall{ public static void main(String[] args)throws Exception{ Class c = Class.forName(\"Foo\"); Object o= c.newInstance(); Method m =c.getDeclaredMethod(\"message\", null); m.setAccessible(true); m.invoke(o, null); } }",
+    "question": "How can we access private method of a class from outside the class?",
+    "answer": "We can use Reflection to access private method of a class from outside the class. IN Java, we use getDeclaredMethod() to get instance of a private method. Then we mark this method accessible and finally invoke it. In following sample code, we are accessing private method message() of class Foo by Reflection. FileName: Foo.java public class Foo { private void message(){System.out.println(\"hello java\"); } } FileName: FooMethodCall.java import java.lang.reflect.Method; public class FooMethodCall{ public static void main(String[] args)throws Exception{ Class c = Class.forName(\"Foo\"); Object o= c.newInstance(); Method m =c.getDeclaredMethod(\"message\", null); m.setAccessible(true); m.invoke(o, null); } }",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1031,8 +1031,8 @@
   },
   {
     "id": 104,
-    "question": "When does an object become eligible for Garbage Collection in",
-    "answer": "Java? An object can be Garbage Collected by JVM, if it is not reachable. There are two cases for deciding eligibility of objects for Garbage Collection: 1 . An Object/instance that cannot be reached by a live thread. 2 . A set of circularly referenced instances that cannot be reached by any other instance outside that set.",
+    "question": "When does an object become eligible for Garbage Collection in Java?",
+    "answer": "An object can be Garbage Collected by JVM, if it is not reachable. There are two cases for deciding eligibility of objects for Garbage Collection: 1 . An Object/instance that cannot be reached by a live thread. 2 . A set of circularly referenced instances that cannot be reached by any other instance outside that set.",
     "topic": "JVM",
     "tags": [
       "jvm",
@@ -1141,8 +1141,8 @@
   },
   {
     "id": 115,
-    "question": "What is the difference between a Nested class and an Inner class in",
-    "answer": "Java? An Inner class in Java is non-static class. It is a type of Nested class that is defined in another class but not qualified with a Static modifier. A Nested class is also a class can be Static Nested class or a non-Static Inner class. An Inner class has access to other members of the enclosing class, even if they are declared private. A Static Nested class can not access the other members of the enclosing class.",
+    "question": "What is the difference between a Nested class and an Inner class in Java?",
+    "answer": "An Inner class in Java is non-static class. It is a type of Nested class that is defined in another class but not qualified with a Static modifier. A Nested class is also a class can be Static Nested class or a non-Static Inner class. An Inner class has access to other members of the enclosing class, even if they are declared private. A Static Nested class can not access the other members of the enclosing class.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1161,8 +1161,8 @@
   },
   {
     "id": 117,
-    "question": "How can we access the non-final local variable, inside a Local Inner",
-    "answer": "class? Java allows a Local Inner class to access only Constant local members. So we have to make the non-final local variable as final constant to access it inside a Local Inner class.",
+    "question": "How can we access the non-final local variable, inside a Local Inner class?",
+    "answer": "Java allows a Local Inner class to access only Constant local members. So we have to make the non-final local variable as final constant to access it inside a Local Inner class.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -1201,8 +1201,8 @@
   },
   {
     "id": 121,
-    "question": "What is the meaning of Immutable in the context of String",
-    "answer": "class in Java? An Immutable object cannot be modified or changed in Java. String is an Immutable class in Java. Once a String object is created, it cannot be changed. When we assign the String to a new value, a new object is created.",
+    "question": "What is the meaning of Immutable in the context of String class in Java?",
+    "answer": "An Immutable object cannot be modified or changed in Java. String is an Immutable class in Java. Once a String object is created, it cannot be changed. When we assign the String to a new value, a new object is created.",
     "topic": "Strings",
     "tags": [
       "strings",
@@ -1241,8 +1241,8 @@
   },
   {
     "id": 125,
-    "question": "How many objects does followin",
-    "answer": "g code create? Code: String s = new String(\"HelloWorld\"); The above code creates two objects. One object is created in String constant pool and the other is created on the heap in non-pool area.",
+    "question": "How many objects does followin g code create?",
+    "answer": "Code: String s = new String(\"HelloWorld\"); The above code creates two objects. One object is created in String constant pool and the other is created on the heap in non-pool area.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1271,8 +1271,8 @@
   },
   {
     "id": 128,
-    "question": "What is the basic difference between a String and StringBuffer",
-    "answer": "object? String is an immutable object. Its value cannot change after creation. StringBuffer is a mutable object. We can keep appending or modifying the contents of a StringBuffer in Java.",
+    "question": "What is the basic difference between a String and StringBuffer object?",
+    "answer": "String is an immutable object. Its value cannot change after creation. StringBuffer is a mutable object. We can keep appending or modifying the contents of a StringBuffer in Java.",
     "topic": "Strings",
     "tags": [
       "strings",
@@ -1301,8 +1301,8 @@
   },
   {
     "id": 131,
-    "question": "Arrange the three classes String, StringBuffer and StringBuilder in the",
-    "answer": "order of efficiency for String processing operations? StringBuilder is the most efficient class. It does not have the overhead of Synchronization. StringBuffer is a Synchronized class. It has better performance than String but it is slower than StringBuilder. String is the slowest for any String processing operations, since it is leads to creation of new String literal with each modification. So the decreasing order of efficiency is: StringBuilder, StringBuffer, String Exception Handling",
+    "question": "Arrange the three classes String, StringBuffer and StringBuilder in the order of efficiency for String processing operations?",
+    "answer": "StringBuilder is the most efficient class. It does not have the overhead of Synchronization. StringBuffer is a Synchronized class. It has better performance than String but it is slower than StringBuilder. String is the slowest for any String processing operations, since it is leads to creation of new String literal with each modification. So the decreasing order of efficiency is: StringBuilder, StringBuffer, String Exception Handling",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1421,8 +1421,8 @@
   },
   {
     "id": 143,
-    "question": "When we override a method in a Child class, can we throw an",
-    "answer": "additional Exception that is not thrown by the Parent class method? Yes, Java allows us to throw additional Exception in a child class, but the additional exception should be an unchecked exception (RuntimeException). Java Collection",
+    "question": "When we override a method in a Child class, can we throw an additional Exception that is not thrown by the Parent class method?",
+    "answer": "Yes, Java allows us to throw additional Exception in a child class, but the additional exception should be an unchecked exception (RuntimeException). Java Collection",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1431,8 +1431,8 @@
   },
   {
     "id": 144,
-    "question": "What is the difference between Collection and Collections",
-    "answer": "Framework in Java? In Java, a Collection is an object that contains multiple elements of same type in a single unit. These multiple elements can be accessed through one Collection object. In Java Collections Framework is a library that provides common architecture for creating, updating and accessing different types of collections. In Collections framework there are common methods that are frequently used by developers for working on a Collection object.",
+    "question": "What is the difference between Collection and Collections Framework in Java?",
+    "answer": "In Java, a Collection is an object that contains multiple elements of same type in a single unit. These multiple elements can be accessed through one Collection object. In Java Collections Framework is a library that provides common architecture for creating, updating and accessing different types of collections. In Collections framework there are common methods that are frequently used by developers for working on a Collection object.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1471,8 +1471,8 @@
   },
   {
     "id": 148,
-    "question": "What are the Thread-safe classes in Java Collections",
-    "answer": "framework? The Thread-safe classes in Java Collections framework are: Stack Properties Vector Hashtable BlockingQueue ConcurrentMap ConcurrentNavigableMap",
+    "question": "What are the Thread-safe classes in Java Collections framework?",
+    "answer": "The Thread-safe classes in Java Collections framework are: Stack Properties Vector Hashtable BlockingQueue ConcurrentMap ConcurrentNavigableMap",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -1481,8 +1481,8 @@
   },
   {
     "id": 149,
-    "question": "How will you efficiently remove elements while iterating a",
-    "answer": "Collection ? The right way to remove elements from a collection while iterating is by using ListIterator.remove() method. E.g. ListIterator<Integer> iter = myList.iterator(); while(iter.hasNext()) { itr.remove(); } Some developers use following code to remove an element which is incorrect: Iterator<Integer> iter = myList.iterator(); while(iter.hasNext()) { itr.remove(); } By doing so we get ConcurrentModificationException. An iterator is first created to traverse the list. But at the same time the list is changed by remove() method. In Java, it is not allowed for a thread to modify a collection while another thread is iterating it. ListIterator provides the capability of removing an object during traversal.",
+    "question": "How will you efficiently remove elements while iterating a Collection ?",
+    "answer": "The right way to remove elements from a collection while iterating is by using ListIterator.remove() method. E.g. ListIterator<Integer> iter = myList.iterator(); while(iter.hasNext()) { itr.remove(); } Some developers use following code to remove an element which is incorrect: Iterator<Integer> iter = myList.iterator(); while(iter.hasNext()) { itr.remove(); } By doing so we get ConcurrentModificationException. An iterator is first created to traverse the list. But at the same time the list is changed by remove() method. In Java, it is not allowed for a thread to modify a collection while another thread is iterating it. ListIterator provides the capability of removing an object during traversal.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -1501,8 +1501,8 @@
   },
   {
     "id": 151,
-    "question": "How will you convert an array of primitive integers int[] to a List",
-    "answer": "collection? We can use ArrayUtils in Apache Commons Lang library for this purpose. Sample code is: List intList = Arrays.asList(ArrayUtils.toObject(intArray)); The other option would be to use a for loop and explicitly adding integers to a List. Sample code is: int[]intArray = {10,20,30}; List<Integer> intList = new ArrayList<Integer>(); for (int i: intArray) { intList.add(i); }",
+    "question": "How will you convert an array of primitive integers int[] to a List collection?",
+    "answer": "We can use ArrayUtils in Apache Commons Lang library for this purpose. Sample code is: List intList = Arrays.asList(ArrayUtils.toObject(intArray)); The other option would be to use a for loop and explicitly adding integers to a List. Sample code is: int[]intArray = {10,20,30}; List<Integer> intList = new ArrayList<Integer>(); for (int i: intArray) { intList.add(i); }",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1541,8 +1541,8 @@
   },
   {
     "id": 155,
-    "question": "How can you maintain a Collection with elements in Sorted",
-    "answer": "order? In Java, there are many ways to maintain a Collection with elements in sorted order. Some collections like TreeSet store elements in the natural ordering. In case of natural ordering we have to implement Comparable interface for comparing the elements. We can also maintain custom ordering by providing a custom Comparator to a Collection. Another option is to use the utility method Collections.sort() to sort a List. This sorting gives nlog(n) order of performance. But if we have to use this method multiple times then it will be costly on performance. Another option is to use a PriorityQueue that provides an ordered queue. The main difference between PriorityQueue and Collections.sort() is that PriorityQueue maintains a queue in Order all the time, but we can only retrieve head element from queue. We cannot access the elements of PriorityQueue in Random order. We can use TreeSet to maintain sorted order of elements in collection if there are no duplicate elements in collection.",
+    "question": "How can you maintain a Collection with elements in Sorted order?",
+    "answer": "In Java, there are many ways to maintain a Collection with elements in sorted order. Some collections like TreeSet store elements in the natural ordering. In case of natural ordering we have to implement Comparable interface for comparing the elements. We can also maintain custom ordering by providing a custom Comparator to a Collection. Another option is to use the utility method Collections.sort() to sort a List. This sorting gives nlog(n) order of performance. But if we have to use this method multiple times then it will be costly on performance. Another option is to use a PriorityQueue that provides an ordered queue. The main difference between PriorityQueue and Collections.sort() is that PriorityQueue maintains a queue in Order all the time, but we can only retrieve head element from queue. We cannot access the elements of PriorityQueue in Random order. We can use TreeSet to maintain sorted order of elements in collection if there are no duplicate elements in collection.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -1551,8 +1551,8 @@
   },
   {
     "id": 156,
-    "question": "What are the differences between the two data structures: a Vector and",
-    "answer": "an ArrayList? An ArrayList is a newer class than a Vector. A Vector is considered a legacy class in Java. The differences are: 1 . Synchronization: Vector is synchronized, but the ArrayList is not synchronized. So an ArrayList has faster operations than a Vector. 2 . Data Growth: Internally both an ArrayList and Vector use an array to store data. When an ArrayList is almost full it increases its size by 50% of the array size. Whereas a Vector increases it by doubling the underlying array size.",
+    "question": "What are the differences between the two data structures: a Vector and an ArrayList?",
+    "answer": "An ArrayList is a newer class than a Vector. A Vector is considered a legacy class in Java. The differences are: 1 . Synchronization: Vector is synchronized, but the ArrayList is not synchronized. So an ArrayList has faster operations than a Vector. 2 . Data Growth: Internally both an ArrayList and Vector use an array to store data. When an ArrayList is almost full it increases its size by 50% of the array size. Whereas a Vector increases it by doubling the underlying array size.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1591,8 +1591,8 @@
   },
   {
     "id": 160,
-    "question": "What are the differences between a HashSet and TreeSet collection in",
-    "answer": "Java? Main differences between a HashSet and TreeSet are: 1 . Ordering: In a HashSet elements are stored in a random order. In a TreeSet, elements are stored according to natural ordering. 2 . Null Value Element: We can store null value object in a HashSet. A TreeSet does not allow to add a null value object. 3 . Performance: HashSet performs basic operations like add(), remove(), contains(), size() etc in a constant size time. A TreeSet performs these operations at the order of log(n) time. 4 . Speed: A HashSet is better than a TreeSet in performance for most of operations like add(), remove(), contains(), size() etc . 5 . Internal Structure: a HashMap in Java internally backs a HashSet. A NavigableMap backs a TreeSet internally. 6 . Features: A TreeSet has more features compared to a HashSet. It has methods like pollFirst(), pollLast(), first(), last(), ceiling(), lower() etc. 7 . Element Comparison: A HashSet uses equals() method for comparison. A TreeSet uses compareTo() method for comparison to maintain ordering of elements.",
+    "question": "What are the differences between a HashSet and TreeSet collection in Java?",
+    "answer": "Main differences between a HashSet and TreeSet are: 1 . Ordering: In a HashSet elements are stored in a random order. In a TreeSet, elements are stored according to natural ordering. 2 . Null Value Element: We can store null value object in a HashSet. A TreeSet does not allow to add a null value object. 3 . Performance: HashSet performs basic operations like add(), remove(), contains(), size() etc in a constant size time. A TreeSet performs these operations at the order of log(n) time. 4 . Speed: A HashSet is better than a TreeSet in performance for most of operations like add(), remove(), contains(), size() etc . 5 . Internal Structure: a HashMap in Java internally backs a HashSet. A NavigableMap backs a TreeSet internally. 6 . Features: A TreeSet has more features compared to a HashSet. It has methods like pollFirst(), pollLast(), first(), last(), ceiling(), lower() etc. 7 . Element Comparison: A HashSet uses equals() method for comparison. A TreeSet uses compareTo() method for comparison to maintain ordering of elements.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1631,8 +1631,8 @@
   },
   {
     "id": 164,
-    "question": "What are the differences between Comparable and",
-    "answer": "Comparator? Main differences between Comparable and Comparator are: 1 . Type: Comparable<T> is an interface in Java where T is the type of objects that this object may be compared to. 2 . Comparator<T> is also an interface where T is the type of objects that may be compared by this comparator. 3 . Sorting: In Comparable, we can only create one sort sequence. In Comparator we can create multiple sort sequences. 4 . Method Used: Comparator<T> interface in Java has method public int compare (Object o1, Object o2) that returns a negative integer, zero, or a positive integer when the object o1 is less than, equal to, or greater than the object o2. A Comparable<T> interface has method public int compareTo(Object o) that returns a negative integer, zero, or a positive integer when this object is less than, equal to, or greater than the object o. 5 . Objects for Comparison: The Comparator compares two objects given to it as input. Comparable interface compares \"this\" reference with the object given as input. 6 . Package location: Comparable interface in Java is defined in java.lang package. Comparator interface in Java is defined in java.util package.",
+    "question": "What are the differences between Comparable and Comparator?",
+    "answer": "Main differences between Comparable and Comparator are: 1 . Type: Comparable<T> is an interface in Java where T is the type of objects that this object may be compared to. 2 . Comparator<T> is also an interface where T is the type of objects that may be compared by this comparator. 3 . Sorting: In Comparable, we can only create one sort sequence. In Comparator we can create multiple sort sequences. 4 . Method Used: Comparator<T> interface in Java has method public int compare (Object o1, Object o2) that returns a negative integer, zero, or a positive integer when the object o1 is less than, equal to, or greater than the object o2. A Comparable<T> interface has method public int compareTo(Object o) that returns a negative integer, zero, or a positive integer when this object is less than, equal to, or greater than the object o. 5 . Objects for Comparison: The Comparator compares two objects given to it as input. Comparable interface compares \"this\" reference with the object given as input. 6 . Package location: Comparable interface in Java is defined in java.lang package. Comparator interface in Java is defined in java.util package.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -1681,8 +1681,8 @@
   },
   {
     "id": 169,
-    "question": "What is the difference between Collections.emptyList() and creating",
-    "answer": "new instance of Collection? In both the approaches, we get an empty list. But Collections.emptyList() returns an Immutable list. We cannot add new elements to an Immutable empty list. Collections.emptyList() works like Singleton pattern. It does not create a new instance of List. It reuses an existing empty list instance. Therefore, Collections.emptylist() gives better performance if we need to get an emptyList multiple times.",
+    "question": "What is the difference between Collections.emptyList() and creating new instance of Collection?",
+    "answer": "In both the approaches, we get an empty list. But Collections.emptyList() returns an Immutable list. We cannot add new elements to an Immutable empty list. Collections.emptyList() works like Singleton pattern. It does not create a new instance of List. It reuses an existing empty list instance. Therefore, Collections.emptylist() gives better performance if we need to get an emptyList multiple times.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1741,8 +1741,8 @@
   },
   {
     "id": 175,
-    "question": "What is the difference between an ArrayList and a LinkedList data",
-    "answer": "structure? Main differences between ArrayList and LinkedList data structures are: 1 . Data Structure : An ArrayList is an indexed based dynamic array. A LinkedList is a Doubly Linked List data structure. 2 . Insertion : It is easier to insert new elements in a LinkedList, since there is no need to resize an array. Insertion in ArrayList is O(n), since it may require resizing of array and copying its contents to new array. 3 . Remove elements : LinkedList has better performance in removal of elements than ArrayList. 4 . Memory Usage : LinkedList uses more memory than ArrayList, since it has to maintain links for next and previous nodes as well. 5 . Access : LinkedList is slower in accessing an element, since we have to traverse the list one by one to access the right location.",
+    "question": "What is the difference between an ArrayList and a LinkedList data structure?",
+    "answer": "Main differences between ArrayList and LinkedList data structures are: 1 . Data Structure : An ArrayList is an indexed based dynamic array. A LinkedList is a Doubly Linked List data structure. 2 . Insertion : It is easier to insert new elements in a LinkedList, since there is no need to resize an array. Insertion in ArrayList is O(n), since it may require resizing of array and copying its contents to new array. 3 . Remove elements : LinkedList has better performance in removal of elements than ArrayList. 4 . Memory Usage : LinkedList uses more memory than ArrayList, since it has to maintain links for next and previous nodes as well. 5 . Access : LinkedList is slower in accessing an element, since we have to traverse the list one by one to access the right location.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1771,8 +1771,8 @@
   },
   {
     "id": 178,
-    "question": "What is the default size of load factor in a HashMap collection in",
-    "answer": "Java? Default value of load factor in a HashMap is 0.75.",
+    "question": "What is the default size of load factor in a HashMap collection in Java?",
+    "answer": "Default value of load factor in a HashMap is 0.75.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1831,8 +1831,8 @@
   },
   {
     "id": 184,
-    "question": "What is Hash Collision? How Java handles hash-collision in",
-    "answer": "HashMap? In a Hashing scenario, at times two different objects may have same HashCode but they may not be equal. Therefore, Java will face issue while storing the two different objects with same HashCode in a HashMap. This kind of situation is Hash Collision. There are different techniques of resolving or avoiding Hash Collision. But in HashMap, Java simply replaces the Object at old Key with new Object in case of Hash Collision.",
+    "question": "What is Hash Collision? How Java handles hash-collision in HashMap?",
+    "answer": "In a Hashing scenario, at times two different objects may have same HashCode but they may not be equal. Therefore, Java will face issue while storing the two different objects with same HashCode in a HashMap. This kind of situation is Hash Collision. There are different techniques of resolving or avoiding Hash Collision. But in HashMap, Java simply replaces the Object at old Key with new Object in case of Hash Collision.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -1881,8 +1881,8 @@
   },
   {
     "id": 189,
-    "question": "What is the design pattern used in the implementation of",
-    "answer": "Enumeration in Java? Enumeration is based on Iterator design pattern. Iterator design pattern provides a common interface with methods to traverse the collection of objects. It hides the underlying implementation details of the collection.",
+    "question": "What is the design pattern used in the implementation of Enumeration in Java?",
+    "answer": "Enumeration is based on Iterator design pattern. Iterator design pattern provides a common interface with methods to traverse the collection of objects. It hides the underlying implementation details of the collection.",
     "topic": "Design Patterns",
     "tags": [
       "design patterns",
@@ -1891,8 +1891,8 @@
   },
   {
     "id": 190,
-    "question": "Which methods do we need to override to use an object as key in a",
-    "answer": "HashMap? If we want to use an object as a key in a HashMap in Java, then we have to make sure that it has the implementation of equals() and hashCode() methods.",
+    "question": "Which methods do we need to override to use an object as key in a HashMap?",
+    "answer": "If we want to use an object as a key in a HashMap in Java, then we have to make sure that it has the implementation of equals() and hashCode() methods.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -1921,8 +1921,8 @@
   },
   {
     "id": 193,
-    "question": "What is the difference between peek(), poll() and remove() methods of",
-    "answer": "Queue interface in java? In a Java Queue, poll() and remove() methods can be used for removing the head object of Queue. The main difference arises in the case when Queue is empty(). If Queue is empty then poll() method returns null value. If Queue is empty then remove() method throws NoSuchElementException. In a Java Queue, peek() method retrieves the head of Queue but it does not remove it. If queue is empty then peek() method returns null value.",
+    "question": "What is the difference between peek(), poll() and remove() methods of Queue interface in java?",
+    "answer": "In a Java Queue, poll() and remove() methods can be used for removing the head object of Queue. The main difference arises in the case when Queue is empty(). If Queue is empty then poll() method returns null value. If Queue is empty then remove() method throws NoSuchElementException. In a Java Queue, peek() method retrieves the head of Queue but it does not remove it. If queue is empty then peek() method returns null value.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -1941,8 +1941,8 @@
   },
   {
     "id": 195,
-    "question": "How will you insert, delete and retrieve elements from a HashMap",
-    "answer": "collection in Java? We use following methods to insert, delete and retrieve elements in a HashMap. 1 . Retrieve : We use get() method to retrieve elements from a HashMap. Value get(Object key) 2 . Insert : We use put() method to insert a key value pair in a HashMap. Value put(Key k, Value v) 3 . Delete : We use remove() method to delete key-value pair from the HashMap. Value remove(Object key)",
+    "question": "How will you insert, delete and retrieve elements from a HashMap collection in Java?",
+    "answer": "We use following methods to insert, delete and retrieve elements in a HashMap. 1 . Retrieve : We use get() method to retrieve elements from a HashMap. Value get(Object key) 2 . Insert : We use put() method to insert a key value pair in a HashMap. Value put(Key k, Value v) 3 . Delete : We use remove() method to delete key-value pair from the HashMap. Value remove(Object key)",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1951,8 +1951,8 @@
   },
   {
     "id": 196,
-    "question": "What are the main differences between HashMap and",
-    "answer": "ConcurrentHashMap in Java? Main differences between HashMap and ConcurrentHashMap are: 1 . Synchronization : A HashMap is not synchronized. But a ConcurrentHashMap is a synchronized object. 2 . Null Key : A HashMap can have one null key and any number of null values. A ConcurrentHashMap cannot have null keys or null values. 3 . Multi-threading : A ConcurrentHashMap works well in a multi-threading environment.",
+    "question": "What are the main differences between HashMap and ConcurrentHashMap in Java?",
+    "answer": "Main differences between HashMap and ConcurrentHashMap are: 1 . Synchronization : A HashMap is not synchronized. But a ConcurrentHashMap is a synchronized object. 2 . Null Key : A HashMap can have one null key and any number of null values. A ConcurrentHashMap cannot have null keys or null values. 3 . Multi-threading : A ConcurrentHashMap works well in a multi-threading environment.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -1961,8 +1961,8 @@
   },
   {
     "id": 197,
-    "question": "What is the increasing order of performance for following collection",
-    "answer": "classes in Java? The increasing order of performance is: Hashtable Collections.SynchronizedMap ConcurrentHashMap HashMap Hashtable has the worst performance and HashMap has the best performance.",
+    "question": "What is the increasing order of performance for following collection classes in Java?",
+    "answer": "The increasing order of performance is: Hashtable Collections.SynchronizedMap ConcurrentHashMap HashMap Hashtable has the worst performance and HashMap has the best performance.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -1991,8 +1991,8 @@
   },
   {
     "id": 200,
-    "question": "What is CopyOnWriteArrayList? How it is",
-    "answer": "different from ArrayList in Java? CopyOnWriteArrayList was introduced in Java 5 version. It is a thread-safe collection. It is similar to an ArrayList. In CopyOnWriteArrayList, all mutative operations (add, set etc.) are implemented by making a fresh copy of the underlying array. Iterator of CopyOnWriteArrayList is guaranteed to not throw ConcurrentModificationException. But Iterator also does not reflect any additions, removals that happened to list after the Iterator was created. All elements including null are permitted in CopyOnWriteArrayList.",
+    "question": "What is CopyOnWriteArrayList? How it is different from ArrayList in Java?",
+    "answer": "CopyOnWriteArrayList was introduced in Java 5 version. It is a thread-safe collection. It is similar to an ArrayList. In CopyOnWriteArrayList, all mutative operations (add, set etc.) are implemented by making a fresh copy of the underlying array. Iterator of CopyOnWriteArrayList is guaranteed to not throw ConcurrentModificationException. But Iterator also does not reflect any additions, removals that happened to list after the Iterator was created. All elements including null are permitted in CopyOnWriteArrayList.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2031,8 +2031,8 @@
   },
   {
     "id": 204,
-    "question": "What is the difference between Fail-fast and Fail-safe iterator in",
-    "answer": "Java? Differences between Fail-fast and Fail-safe iterators are as follows: Fail-fast iterator throws ConcurrentModificationException. But Fail-safe iterator does not throw this exception. Fail-fast iterator does not clone the original collection. Fail-safe iterator creates a copy of the original collection of objects. A Fail-fast iterator tries to immediately throw Exception when it encounters failure. A Fail-safe Iterator works on a copy of collection instead of original collection.",
+    "question": "What is the difference between Fail-fast and Fail-safe iterator in Java?",
+    "answer": "Differences between Fail-fast and Fail-safe iterators are as follows: Fail-fast iterator throws ConcurrentModificationException. But Fail-safe iterator does not throw this exception. Fail-fast iterator does not clone the original collection. Fail-safe iterator creates a copy of the original collection of objects. A Fail-fast iterator tries to immediately throw Exception when it encounters failure. A Fail-safe Iterator works on a copy of collection instead of original collection.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2061,8 +2061,8 @@
   },
   {
     "id": 207,
-    "question": "What is the contract of hashCode() and equals() methods in",
-    "answer": "Java? Contract of hashCode() and equals() methods is as follows in Java: If object1.equals(object2), then object1.hashCode() == object2.hashCode() should always be true. It means if two objects are equal then their hashCode should be same. If object1.hashCode() == object2.hashCode() is true, it does not guarantee that object1.equals(object2). It means if two objects have same hashCode, then can still have different values so that may not be equal objects.",
+    "question": "What is the contract of hashCode() and equals() methods in Java?",
+    "answer": "Contract of hashCode() and equals() methods is as follows in Java: If object1.equals(object2), then object1.hashCode() == object2.hashCode() should always be true. It means if two objects are equal then their hashCode should be same. If object1.hashCode() == object2.hashCode() is true, it does not guarantee that object1.equals(object2). It means if two objects have same hashCode, then can still have different values so that may not be equal objects.",
     "topic": "Core Java",
     "tags": [
       "core java",
@@ -2161,8 +2161,8 @@
   },
   {
     "id": 217,
-    "question": "When is UnsupportedOperationException",
-    "answer": "thrown in Java? In a Java collection UnsupportedOperationException is thrown when the requested operation is not supported by the collection. It is an unchecked exception that is thrown on optional operations. If there is an optional add() or remove() methods in a read only collection, then this exception can be thrown.",
+    "question": "When is UnsupportedOperationException thrown in Java?",
+    "answer": "In a Java collection UnsupportedOperationException is thrown when the requested operation is not supported by the collection. It is an unchecked exception that is thrown on optional operations. If there is an optional add() or remove() methods in a read only collection, then this exception can be thrown.",
     "topic": "Exception Handling",
     "tags": [
       "exception handling",
@@ -2171,8 +2171,8 @@
   },
   {
     "id": 218,
-    "question": "Let say there is a Customer class. We add objects of Customer",
-    "answer": "class to an ArrayList. How can we sort the Customer objects in ArrayList by using customer firstName attribute of Customer class? There are two ways to handle this scenario. We can use these options: Comparable: Implement the Comparable interface for Customer class and compare customer objects by firstName attribute. Comparator: Implement Comparator for comparing two Customer objects on the basis of firstName attribute. Then use this comparator object in sort method of Collections class.",
+    "question": "Let say there is a Customer class. We add objects of Customer class to an ArrayList. How can we sort the Customer objects in ArrayList by using customer firstName attribute of Customer class?",
+    "answer": "There are two ways to handle this scenario. We can use these options: Comparable: Implement the Comparable interface for Customer class and compare customer objects by firstName attribute. Comparator: Implement Comparator for comparing two Customer objects on the basis of firstName attribute. Then use this comparator object in sort method of Collections class.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -2181,8 +2181,8 @@
   },
   {
     "id": 219,
-    "question": "What is the difference between Synchronized Collection and",
-    "answer": "Concurrent Collection? In Java 1.5 many Concurrent collection classes were added in SDK. These are ConcurrentHashMap, CopyOnWriteArrayList, BlockingQueue etc. Java also provides utility methods to get a synchronized copy of collection like ArrayList, HashMap etc. by using Collections.synchronizedList(), Collections.synchronizedMap() methods. The main difference is in performance. Concurrent collection classes have better performance than synchronized collection classes because they lock only a portion of the class to achieve concurrency and thread-safety.",
+    "question": "What is the difference between Synchronized Collection and Concurrent Collection?",
+    "answer": "In Java 1.5 many Concurrent collection classes were added in SDK. These are ConcurrentHashMap, CopyOnWriteArrayList, BlockingQueue etc. Java also provides utility methods to get a synchronized copy of collection like ArrayList, HashMap etc. by using Collections.synchronizedList(), Collections.synchronizedMap() methods. The main difference is in performance. Concurrent collection classes have better performance than synchronized collection classes because they lock only a portion of the class to achieve concurrency and thread-safety.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2211,8 +2211,8 @@
   },
   {
     "id": 222,
-    "question": "What is the difference between remove() method of Collection and",
-    "answer": "remove() method of Iterator? In Collection interface remove(Object o) method is used to remove objects from a Collection. List interface also provides remove(int index) method to remove an object at a specific index. These methods are used to remove an entry from Collection, while no thread is iterating over it. When we are iterating over a Collection, then we have to remove() method of Iterator. This method removes current element from Iterator\u2019s point of view. If we use remove(0 method of Collection or List, then we will get ConcurrentModificationException. Therefore, it is recommended to use remove() method of Iterator during the traversal of a Collection by an Iterator.",
+    "question": "What is the difference between remove() method of Collection and remove() method of Iterator?",
+    "answer": "In Collection interface remove(Object o) method is used to remove objects from a Collection. List interface also provides remove(int index) method to remove an object at a specific index. These methods are used to remove an entry from Collection, while no thread is iterating over it. When we are iterating over a Collection, then we have to remove() method of Iterator. This method removes current element from Iterator\u2019s point of view. If we use remove(0 method of Collection or List, then we will get ConcurrentModificationException. Therefore, it is recommended to use remove() method of Iterator during the traversal of a Collection by an Iterator.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2221,8 +2221,8 @@
   },
   {
     "id": 223,
-    "question": "Between an Array and ArrayList, which one is the preferred",
-    "answer": "collection for storing objects? An ArrayList is backed up by array internally. There are many usability advantages of using an ArrayList over an array in Java. Array has a fixed length at the time of creation. Once it is created we cannot change its length. ArrayList is dynamic in size. Once it reaches a threshold, it automatically allocates a new array and copies contents of old array to new array. Also ArrayList provides support of Generics. But Array does not support Generics. E.g. If we store an Integer object in a String array at Runtime it will throw ArrayStoreException. Whereas, if we use ArrayList then as compile time we will get the error. This helps in preventing errors from happening at runtime. If we know the size in advance and do not need re-sizing the collection then Array should be used in place of an ArrayList.",
+    "question": "Between an Array and ArrayList, which one is the preferred collection for storing objects?",
+    "answer": "An ArrayList is backed up by array internally. There are many usability advantages of using an ArrayList over an array in Java. Array has a fixed length at the time of creation. Once it is created we cannot change its length. ArrayList is dynamic in size. Once it reaches a threshold, it automatically allocates a new array and copies contents of old array to new array. Also ArrayList provides support of Generics. But Array does not support Generics. E.g. If we store an Integer object in a String array at Runtime it will throw ArrayStoreException. Whereas, if we use ArrayList then as compile time we will get the error. This helps in preventing errors from happening at runtime. If we know the size in advance and do not need re-sizing the collection then Array should be used in place of an ArrayList.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2231,8 +2231,8 @@
   },
   {
     "id": 224,
-    "question": "Is it possible to replace Hashtable with ConcurrentHashMap",
-    "answer": "in Java? Yes, a ConcurrentHashMap can be replaced with Hashtable in Java. But it requires careful observation, since locking behavior of Hashtable is different than that of ConcurrentHashmap. A Hashtable locks whole Map instead of a portion of Map. Compound operations like if(Hashtable.get(key) == null) put(key, value) work in Hashtable but not in ConcurrentHashMap. In a ConcurrentHashMap we use putIfAbsent() method for such a scenario.",
+    "question": "Is it possible to replace Hashtable with ConcurrentHashMap in Java?",
+    "answer": "Yes, a ConcurrentHashMap can be replaced with Hashtable in Java. But it requires careful observation, since locking behavior of Hashtable is different than that of ConcurrentHashmap. A Hashtable locks whole Map instead of a portion of Map. Compound operations like if(Hashtable.get(key) == null) put(key, value) work in Hashtable but not in ConcurrentHashMap. In a ConcurrentHashMap we use putIfAbsent() method for such a scenario.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2241,8 +2241,8 @@
   },
   {
     "id": 225,
-    "question": "How CopyOnWriteArrayList class is different from ArrayList and",
-    "answer": "Vector classes? CopyOnWriteArrayList was introduced in Java 1.5. It implements List interface. It provides better concurrent access methods than a Synchronized List. In CopyOnWriteList, concurrency is achieved by copying ArrayList over each write and replace with original instead of locking. CopyOnWriteArrayList also does not throw any ConcurrentModification Exception during Iteration. It is a thread-safe list. It is different from a Vector in terms of Concurrency. CopyOnWriteArrayList provides better Concurrency by reducing contention among readers and writers.",
+    "question": "How CopyOnWriteArrayList class is different from ArrayList and Vector classes?",
+    "answer": "CopyOnWriteArrayList was introduced in Java 1.5. It implements List interface. It provides better concurrent access methods than a Synchronized List. In CopyOnWriteList, concurrency is achieved by copying ArrayList over each write and replace with original instead of locking. CopyOnWriteArrayList also does not throw any ConcurrentModification Exception during Iteration. It is a thread-safe list. It is different from a Vector in terms of Concurrency. CopyOnWriteArrayList provides better Concurrency by reducing contention among readers and writers.",
     "topic": "OOP Concepts",
     "tags": [
       "oop concepts",
@@ -2261,8 +2261,8 @@
   },
   {
     "id": 227,
-    "question": "Why do we sometime get ConcurrentModificationException",
-    "answer": "during iteration? When we remove an object by using remove() method of a Collection or List while an Iterator thread is traversing it, we get ConcurrentModificationException. If an Iterator detects any structural change in Collection it can throw ConcurrentModificationException.",
+    "question": "Why do we sometime get ConcurrentModificationException during iteration?",
+    "answer": "When we remove an object by using remove() method of a Collection or List while an Iterator thread is traversing it, we get ConcurrentModificationException. If an Iterator detects any structural change in Collection it can throw ConcurrentModificationException.",
     "topic": "Exception Handling",
     "tags": [
       "exception handling",
@@ -2321,8 +2321,8 @@
   },
   {
     "id": 233,
-    "question": "What are the important points to remember while using Java",
-    "answer": "Collections Framework? Some of the important points to remember while using Java Collections Framework are: 1 . Interfaces : For Collections, we should write code with generic interfaces instead of concrete implementation. Due to this we maintain the flexibility of changing the implementation at a later point of time. 2 . Generics : We should use Generics for type-safety and to avoid ClassCastException at runtime. 3 . Collections : It is recommended to use Collections utility class for algorithms and various other common methods for Collections. 4 . Right Type : We have to choose the right type of Java collection based on our need. If size is fixed, we can use Array over ArrayList. If we do not want duplicate elements we use Set. If we need the ability to iterate the elements of a Map in the order of insertion then we use a TreeMap. 5 . Initial Size : In some collection classes we can specify the initial size/capacity. Therefore we should have an estimate of number of elements in a Collection before deciding the right collection type. We can use it to avoid rehashing or resizing. 6 . Map : We should use immutable classes provided by Java as key elements in a Map.",
+    "question": "What are the important points to remember while using Java Collections Framework?",
+    "answer": "Some of the important points to remember while using Java Collections Framework are: 1 . Interfaces : For Collections, we should write code with generic interfaces instead of concrete implementation. Due to this we maintain the flexibility of changing the implementation at a later point of time. 2 . Generics : We should use Generics for type-safety and to avoid ClassCastException at runtime. 3 . Collections : It is recommended to use Collections utility class for algorithms and various other common methods for Collections. 4 . Right Type : We have to choose the right type of Java collection based on our need. If size is fixed, we can use Array over ArrayList. If we do not want duplicate elements we use Set. If we need the ability to iterate the elements of a Map in the order of insertion then we use a TreeMap. 5 . Initial Size : In some collection classes we can specify the initial size/capacity. Therefore we should have an estimate of number of elements in a Collection before deciding the right collection type. We can use it to avoid rehashing or resizing. 6 . Map : We should use immutable classes provided by Java as key elements in a Map.",
     "topic": "Java Basics",
     "tags": [
       "java basics",
@@ -2331,8 +2331,8 @@
   },
   {
     "id": 234,
-    "question": "How can we pass a Collection as an argument to a method and",
-    "answer": "ensure that method will not be able to modify it? To ensure that a method is not able to modify a Collection passed as an argument, we have to make the Collection read only. We can make a read only collection by using Collections.unmodifiableCollection(Collection c) method. This will make sure that any operation to change the collection will throw UnsupportedOperationException.",
+    "question": "How can we pass a Collection as an argument to a method and ensure that method will not be able to modify it?",
+    "answer": "To ensure that a method is not able to modify a Collection passed as an argument, we have to make the Collection read only. We can make a read only collection by using Collections.unmodifiableCollection(Collection c) method. This will make sure that any operation to change the collection will throw UnsupportedOperationException.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2371,8 +2371,8 @@
   },
   {
     "id": 238,
-    "question": "What is the difference between descendingKeySet() and",
-    "answer": "descendingMap() methods of NavigableMap? The descendingKeySet() method of NavigableMap returns a NavigableSet in which the elements are stored in reversed order as compared to the original key set. The returned view is internally represented by the original KeySet of NavigableMap. Therefore any changes to the descending set also get reflected in the original set. But it is not recommended to remove elements directly from the key set. We should use the Map.remove() method. The descendingMap() method of NavigableMap returns a NavigableMap which is an inverse view of the original Map. The order of the elements in this view are in reverse order of the elements in original map. Any changes to this view are also reflected in the original map.",
+    "question": "What is the difference between descendingKeySet() and descendingMap() methods of NavigableMap?",
+    "answer": "The descendingKeySet() method of NavigableMap returns a NavigableSet in which the elements are stored in reversed order as compared to the original key set. The returned view is internally represented by the original KeySet of NavigableMap. Therefore any changes to the descending set also get reflected in the original set. But it is not recommended to remove elements directly from the key set. We should use the Map.remove() method. The descendingMap() method of NavigableMap returns a NavigableMap which is an inverse view of the original Map. The order of the elements in this view are in reverse order of the elements in original map. Any changes to this view are also reflected in the original map.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2391,8 +2391,8 @@
   },
   {
     "id": 240,
-    "question": "What is the difference between headMap(), tailMap() and subMap()",
-    "answer": "methods of NavigableMap? The headMap() method returns a view of the original NavigableMap that contains the elements that are less than a given element. NavigableMap original = new TreeMap(); original.put(\"1\", \"1\"); original.put(\"2\", \"2\"); original.put(\"3\", \"3\"); //this headmap1 will contain elements \"1\" and \"2\" SortedMap headmap1 = original.headMap(\"3\"); //this headmap2 will contain elements \"1\", \"2\", and \"3\" because \"inclusive\"=true NavigableMap headmap2 = original.headMap(\"3\", true); The tailMap() method works similar to headMap() method, but it returns all elements that are higher than the given input element. The subMap() method accepts two parameters demarcating the boundaries of the view map to return. All the three methods return a subset of the original map in a view form.",
+    "question": "What is the difference between headMap(), tailMap() and subMap() methods of NavigableMap?",
+    "answer": "The headMap() method returns a view of the original NavigableMap that contains the elements that are less than a given element. NavigableMap original = new TreeMap(); original.put(\"1\", \"1\"); original.put(\"2\", \"2\"); original.put(\"3\", \"3\"); //this headmap1 will contain elements \"1\" and \"2\" SortedMap headmap1 = original.headMap(\"3\"); //this headmap2 will contain elements \"1\", \"2\", and \"3\" because \"inclusive\"=true NavigableMap headmap2 = original.headMap(\"3\", true); The tailMap() method works similar to headMap() method, but it returns all elements that are higher than the given input element. The subMap() method accepts two parameters demarcating the boundaries of the view map to return. All the three methods return a subset of the original map in a view form.",
     "topic": "Collections",
     "tags": [
       "collections",
@@ -2451,8 +2451,8 @@
   },
   {
     "id": 246,
-    "question": "What is the priority of a Thread and how it is used in",
-    "answer": "scheduling? In Java, every Thread has a priority. This priority is specified as a number between 1 to 10. Scheduler in Java schedules different threads based on the priority of a thread. It is also known as pre-emptive scheduling. The thread with higher priority gets preference in execution over a thread with lower priority.",
+    "question": "What is the priority of a Thread and how it is used in scheduling?",
+    "answer": "In Java, every Thread has a priority. This priority is specified as a number between 1 to 10. Scheduler in Java schedules different threads based on the priority of a thread. It is also known as pre-emptive scheduling. The thread with higher priority gets preference in execution over a thread with lower priority.",
     "topic": "Multithreading",
     "tags": [
       "multithreading",
@@ -2471,8 +2471,8 @@
   },
   {
     "id": 248,
-    "question": "What are the three different priorities that can be set on a Thread",
-    "answer": "in Java? We can set following three priorities on a Thread object in Java: 1 . MIN_PRIORITY: This is the minimum priority that a thread can have. 2 . NORM_PRIORITY: This is the default priority that is assigned to a thread. 3 . MAX_PRIORITY: This is the maximum priority that a thread can have. Default priority of a thread is 5 NORM_PRIORITY. The value of MIN_PRIORITY is 1 and the value of MAX_PRIORITY is 10.",
+    "question": "What are the three different priorities that can be set on a Thread in Java?",
+    "answer": "We can set following three priorities on a Thread object in Java: 1 . MIN_PRIORITY: This is the minimum priority that a thread can have. 2 . NORM_PRIORITY: This is the default priority that is assigned to a thread. 3 . MAX_PRIORITY: This is the maximum priority that a thread can have. Default priority of a thread is 5 NORM_PRIORITY. The value of MIN_PRIORITY is 1 and the value of MAX_PRIORITY is 10.",
     "topic": "Collections",
     "tags": [
       "collections",

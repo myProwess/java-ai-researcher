@@ -34,6 +34,46 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
     return text;
   };
 
+  const formatAnswerWithCode = (text) => {
+    if (!text) return null;
+    
+    // Match common Java code blocks up to the last closing brace
+    const codeRegex = /(?:import\s+[\w.]+;|(?:(?:public|private|protected|static|final|abstract)\s+)*(?:class|interface|enum)\s+\w+|public\s+static\s+void\s+main|try\s*\{|for\s*\(|while\s*\()[\s\S]*\}/;
+    const match = text.match(codeRegex);
+    
+    if (match) {
+      const codePart = match[0];
+      const parts = text.split(codePart);
+      const beforeCode = parts[0].trim();
+      const afterCode = parts.slice(1).join(codePart).trim();
+      
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {beforeCode && <div>{formatAnswer(beforeCode)}</div>}
+          <div style={{ background: 'rgba(0,0,0,0.3)', padding: '0.5rem', borderRadius: '8px', overflowX: 'auto' }}>
+            <pre style={{ margin: 0, padding: '0.5rem', whiteSpace: 'pre-wrap' }}>
+              <code className="language-java" ref={codeRef}>
+                {codePart}
+              </code>
+            </pre>
+          </div>
+          {afterCode && <div>{formatAnswer(afterCode)}</div>}
+        </div>
+      );
+    }
+    
+    // Fallback if no matching closing brace was found
+    return (
+      <div style={{ background: 'rgba(0,0,0,0.3)', padding: '0.5rem', borderRadius: '8px', overflowX: 'auto' }}>
+        <pre style={{ margin: 0, padding: '0.5rem', whiteSpace: 'pre-wrap' }}>
+          <code className="language-java" ref={codeRef}>
+            {text}
+          </code>
+        </pre>
+      </div>
+    );
+  };
+
   return (
     <motion.div 
       layout
@@ -86,15 +126,7 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
             className="card-content"
           >
             <div className="answer-body" style={{ fontSize: '0.9rem' }}>
-              {hasCode ? (
-                <pre style={{ whiteSpace: 'pre-wrap', background: 'transparent', margin: 0, padding: 0 }}>
-                  <code className="language-java" ref={codeRef}>
-                    {question.answer}
-                  </code>
-                </pre>
-              ) : (
-                formatAnswer(question.answer)
-              )}
+              {hasCode ? formatAnswerWithCode(question.answer) : formatAnswer(question.answer)}
             </div>
           </motion.div>
         )}

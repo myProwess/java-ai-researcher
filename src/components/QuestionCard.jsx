@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bookmark, ChevronDown, ChevronUp, CheckCircle } from 'lucide-react';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/components/prism-java';
 
 const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, toggleMastered }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const codeRef = useRef(null);
+
+  useEffect(() => {
+    if (isExpanded && codeRef.current) {
+      Prism.highlightElement(codeRef.current);
+    }
+  }, [isExpanded, question.answer]);
+
+  const hasCode = /(?:public\s+class|public\s+static|public\s+interface|class\s+\w+\s*\{|void\s+\w+\(|int\s+\w+\(|return\s+|try\s*\{|catch\s*\(|for\s*\(|while\s*\(|System\.out\.println)/.test(question.answer);
 
   return (
     <motion.div 
@@ -57,7 +69,15 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
             className="card-content"
           >
             <div className="answer-body" style={{ fontSize: '0.9rem' }}>
-              {question.answer}
+              {hasCode ? (
+                <pre style={{ whiteSpace: 'pre-wrap', background: 'transparent', margin: 0, padding: 0 }}>
+                  <code className="language-java" ref={codeRef}>
+                    {question.answer}
+                  </code>
+                </pre>
+              ) : (
+                question.answer
+              )}
             </div>
           </motion.div>
         )}

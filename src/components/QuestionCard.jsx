@@ -19,19 +19,45 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
 
   const formatAnswer = (text) => {
     if (!text) return null;
+    
+    const numberMatches = text.match(/\b\d+\.\s/g);
+    const hasNumbering = numberMatches && numberMatches.length >= 2;
+
+    if (hasNumbering) {
+      const bits = text.split(/(?=\b\d+\.\s)/).filter(s => s.trim().length > 0);
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.6' }}>
+          {bits.map((bit, idx) => (
+            <div key={idx}>{bit.trim()}</div>
+          ))}
+        </div>
+      );
+    }
+    
+    if (/(?:^|\s)(?:-|\*)\s/.test(text)) {
+      const bits = text.split(/(?=(?:^|\s)(?:-|\*)\s)/).filter(s => s.trim().length > 0);
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.6' }}>
+          {bits.map((bit, idx) => (
+            <div key={idx}>{bit.trim()}</div>
+          ))}
+        </div>
+      );
+    }
+
     const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
     const cleanedSentences = sentences.map(s => s.trim()).filter(s => s.length > 0);
     
     if (cleanedSentences.length > 2) {
       return (
-        <ul style={{ paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <ul style={{ paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: '1.6' }}>
           {cleanedSentences.map((sentence, idx) => (
             <li key={idx}>{sentence}</li>
           ))}
         </ul>
       );
     }
-    return text;
+    return <div style={{ lineHeight: '1.6' }}>{text}</div>;
   };
 
   const formatAnswerWithCode = (text) => {

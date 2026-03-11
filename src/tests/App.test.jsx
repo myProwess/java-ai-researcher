@@ -4,8 +4,8 @@ import App from '../App';
 import React from 'react';
 
 const mockQuestions = [
-  { id: 1, question: 'What is Java?', answer: 'A language', topic: 'Basics', difficulty: 'Basic' },
-  { id: 2, question: 'How JVM works?', answer: 'Bytecode', topic: 'JVM', difficulty: 'Intermediate' },
+  { id: 1, question: 'What is Java?', answer: 'A language', topic: 'Basics' },
+  { id: 2, question: 'How JVM works?', answer: 'Bytecode', topic: 'JVM' },
 ];
 
 describe('Java Interview Hub Core Integration', () => {
@@ -38,11 +38,4 @@ describe('Java Interview Hub Core Integration', () => {
     expect(searchInput.value).toBe('JVM');
   });
 
-  it('changes difficulty filter when clicked', async () => {
-    render(<App />);
-    const intBtn = screen.getByText('Intermediate');
-    
-    fireEvent.click(intBtn);
-    expect(intBtn).toHaveClass('active');
-  });
 });

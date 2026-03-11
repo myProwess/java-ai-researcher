@@ -4,7 +4,6 @@
     "question": "What is the purpose of join() method in Thread class?",
     "answer": "In Java, Thread Scheduler controls thread scheduling. But we can use join() method on a thread to make current thread to wait for another thread to finish. When we use join(), the current thread stops executing. It wait for the thread on which join() is called to finish. This makes sure that current thread will continue only after the thread it joined finished running. Consider following example: Public class ThreadJoin { Thread importantThread = new Thread( new Runnable() { public void run () { //do something } } ); Thread currentThread = new Thread( new Runnable() { public void run () { //do something } } ); importantThread.start(); // Line 1 importantThread.join(); // Line 2 currentThread.start(); // Line 3 } In the above example, main thread is executing. On Line 1, a new thread called importantThread is ready to run. But at Line 2, main thread joins the importantThread. Now it lets importantTread to finish and then it moves to Line 3. So currentThread at Line 3 will not start till the importantThread has finished.",
     "topic": "OOP Concepts",
-    "difficulty": "Advanced",
     "tags": [
       "oop concepts",
       "java"
@@ -15,7 +14,6 @@
     "question": "What is the fundamental difference between wait() and sleep()",
     "answer": "methods? The main difference between wait() and sleep() is that wait is an Object level method, whereas sleep() is a static method in Thread class. A waiting thread can be woken up by another thread by calling notify() on the monitor which is being waited on. But a sleeping thread cannot be woken up. A wait() and notify() has to happen within the same block that is synchronized on the monitor object. When we call wait() the current thread releases the monitor and goes to waiting state. Then another thread calls notify() to wake it up. In case of sleep() current thread does not release the monitor or locks. It just sleeps for some pre-defined time period.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -26,7 +24,6 @@
     "question": "Is it possible to call run() method instead of start() on a thread in Java?",
     "answer": "Yes. We can call run() method of a thread. But it does not work as a separate thread. It will just work as a normal object in main thread and there will not be context switching between the threads.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -37,7 +34,6 @@
     "question": "How Multi-threading works in Java?",
     "answer": "Java provides support for Multithreading. In a Multithreading environment, one process can execute multiple threads in parallel at the same time. In Java, you can create process and then create multiple threads from that process. Each process can execute in parallel to perform independent tasks. Java provides methods like- start(), notify(), wait(), sleep() etc. to maintain a multi-threading environment.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -48,7 +44,6 @@
     "question": "What are the advantages of Multithreading?",
     "answer": "Main advantages of Multithreading are: 1 . Improved performance: We can improve performance of a job by Multi-threading. 2 . Simultaneous access to Multiple Applications: We can access multiple applications from a process by doing multithreading 3 . Reduced number of Servers required: With Multi- threading we need lesser number of servers, since one process can spawn multiple threads. 4 . Simplified Coding: In certain scenarios, it is easier to code multiple threads than managing it from same thread.",
     "topic": "Multithreading",
-    "difficulty": "Advanced",
     "tags": [
       "multithreading",
       "java"
@@ -59,7 +54,6 @@
     "question": "What are the disadvantages of Multithreading?",
     "answer": "There are certain downsides to Multithreading. These are: 1 . Difficult to Debug: Multithreading code is difficult to debug in case of an issue. 2 . Difficult to manage concurrency: Due to multiple threads, we may experience different kinds of issues. 3 . Difficulty of porting code: It is difficult to convert existing single threaded code into multi-threading code. 4 . Deadlocks: In case of multi-threading we can experience deadlocks in threads that are waiting for same resource.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -70,7 +64,6 @@
     "question": "What is a Thread in Java?",
     "answer": "In Java, a thread is a lightweight process that runs within another process or thread. It is an independent path of execution in an application. Each thread runs in a separate stack frame. By default Java starts one thread when the main method of a class is called.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -81,7 +74,6 @@
     "question": "What is a Thread\u2019s priority and how it is used in scheduling?",
     "answer": "In Java, every Thread has a priority. This priority is specified as an integer value. The priority value is used in scheduling to pick up the thread with higher priority for execution. The threads with higher priority get more preference in execution than the threads with lower priority. The task scheduler schedules the higher priority threads first, followed by the lower priority threads.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -92,7 +84,6 @@
     "question": "What are the differences between Pre-emptive Scheduling",
     "answer": "Scheduler and Time Slicing Scheduler? In Pre-emptive scheduling, the highest priority task will keep getting time to execute until it goes to waiting state or dead state or a task with higher priority comes into queue for scheduling. In Time slicing scheduling, every task gets a predefined slice of time for execution, and then it goes to the pool of tasks ready for execution. The scheduler picks up the next task for execution, based on priority and various other factors.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -103,7 +94,6 @@
     "question": "Is it possible to call run() method instead of start() on a thread",
     "answer": "in Java\u200b? Yes. We can call run() method of a thread. But it does not work as a separate thread. It will just work as a normal object in main thread and there will not be context-switching between the threads.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -114,7 +104,6 @@
     "question": "How will you make a user thread into daemon thread if it has",
     "answer": "already started? No. We cannot make a user thread to daemon thread once it has already started. If we do it by calling setDaemon(), it will throw IllegalThreadStateException",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -125,7 +114,6 @@
     "question": "Can we start a thread two times in Java?",
     "answer": "No. We can call start() method only once on a thread in Java. If we call it twice, it will give us exception.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -136,7 +124,6 @@
     "question": "In what scenarios can we interrupt a thread?",
     "answer": "We can interrupt a thread if we want to wake it up from the sleep or wait state.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -147,7 +134,6 @@
     "question": "In Java, is it possible to lock an object for exclusive use by a thread?",
     "answer": "Yes. We can use synchronized block to lock an object. The locked object is inaccessible to any other thread. Only the thread that has locked it can access it.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -158,7 +144,6 @@
     "question": "How notify() method is different from notifyAll() method?",
     "answer": "In Java, notify() method is used to unblock a specific thread that is in waiting stated. Whereas, notifyAll() method is used to unblock all the threads that are in waiting state.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -169,7 +154,6 @@
     "question": "What is a daemon thread in Java?",
     "answer": "A daemon thread in Java is a low priority thread that does not prevent the JVM from exiting when the program finishes. The thread keeps running. Garbage Collection is an example of daemon thread.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -180,7 +164,6 @@
     "question": "How can we make a regular thread Daemon thread in Java?",
     "answer": "We can call setDaemon(boolean) method to change a thread to daemon thread before the thread starts.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -191,7 +174,6 @@
     "question": "How will you make a user thread into daemon thread if it has",
     "answer": "already started? No. We cannot make a user thread to daemon thread once it has already started. If we do it by calling setDaemon(), it will throw IllegalThreadStateException",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -202,7 +184,6 @@
     "question": "Can we start a thread two times in Java?",
     "answer": "No. We can call start() method only once on a thread in Java. If we call it twice, it will give us exception.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -213,7 +194,6 @@
     "question": "What is a Shutdown hook in Java?",
     "answer": "The shutdown hook is a thread that is invoked implicitly by JVM just before the shut down. It can be used to clean up unused resources etc. We can use java.lang.Runtime.addShutdownHook(Thread hook) method to register a new virtual-machine shutdown hook.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -224,7 +204,6 @@
     "question": "What is synchronization in Java?",
     "answer": "The concept of Synchronization in Java is used in Multi-threading programming. It is a feature in Java that helps in controlling the access of multiple threads to a shared resource. It is used to prevent Deadlock between multiple threads.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -235,7 +214,6 @@
     "question": "What is the purpose of Synchronized block in Java?",
     "answer": "Synchronized block has many uses in Java multi-threading environment. Some of the uses are: It can prevent thread interference It is also used to avoid memory inconsistency issues In general, scope of synchronized block is smaller than the scope of a method.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -246,7 +224,6 @@
     "question": "What is static synchronization?",
     "answer": "We can make a static method as synchronized in Java. Adding synchronized keyword to a static method can do this. In static synchronization, the lock is on class not on object.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -257,7 +234,6 @@
     "question": "What is a Deadlock situation?",
     "answer": "A Deadlock is a situation in which two or more threads are waiting on each other to release a resource. Each thread is waiting for a resource that is held by the other waiting thread. At times there is a circular wait when more than two threads are waiting on each other\u2019s resources.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -268,7 +244,6 @@
     "question": "What is the meaning of concurrency?",
     "answer": "Concurrency is the ability of a program to execute several programs simultaneously. This is achieved by distributing computations over multiple CPU cores of a machine or even over different machines within the same network. It can increase the speed of execution of the overall program in multi-processor or multi-core system.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -279,7 +254,6 @@
     "question": "What is the main difference between process and thread?",
     "answer": "As such both process and thread are independent sequences of execution. The main difference is that a thread runs in a shared memory space, where as a process runs in its own memory space. A process runs the execution in an environment provided by the operating system. A process has its own set of private resources (e.g. memory, open files, etc.). A thread lives within a process and shares the resources like- memory, open files etc. with the other threads of the same process. This ability to share resources between different threads makes thread more suitable for tasks where performance is a significant factor.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -290,7 +264,6 @@
     "question": "What is a process and thread in the context of Java?",
     "answer": "In Java, a process refers to the running of Java Virtual Machine (JVM). But a thread lives within a JVM and it can be created or stopped by the Java application at runtime.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -301,7 +274,6 @@
     "question": "What is a Scheduler?",
     "answer": "A scheduler is a program that is the implementation of a scheduling algorithm to manage access of processes and threads to limited resource like CPU or an I/O channel. The goal of most scheduling algorithms is to provide load balancing for the available processes/threads and to guarantee that each process/thread will get a reasonable time frame to access the requested resource exclusively.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -312,7 +284,6 @@
     "question": "What is the minimum number of Threads in a Java program?",
     "answer": "In a JVM, each Java program is executed within the main process that starts with java.exe. Therefore each Java application has at least one thread.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -323,7 +294,6 @@
     "question": "What are the properties of a Java thread?",
     "answer": "Each Java thread has following properties: 1 . Identifier : An identifier of type long that is unique within the JVM 2 . Name : A name of type String 3 . Priority : Priority of type int 4 . State : A state of type java.lang.Thread.State 5 . Group : A thread group the thread belongs to",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -334,7 +304,6 @@
     "question": "What are the different states of a Thread in Java?",
     "answer": "Following are the different states of a Thread in Java: 1 . New : In the New state the thread has not yet. 2 . Runnable : A thread executing in the JVM is in Runnable state. 3 . Blocked : A thread waiting for a monitor lock is in Blocked state. 4 . Waiting : A thread waiting indefinitely for another thread to perform a particular action is in Waiting state. 5 . Timed_waiting : A thread waiting for another thread to perform an action for up to a specified waiting time is in Timed_waiting state. 6 . Terminated : A thread that has exited is in Terminated state.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -345,7 +314,6 @@
     "question": "How will you set the priority of a thread in Java?",
     "answer": "The priority of a thread in Java can be set by using setPriority(int priority) method. We can use constant Thread.MAX_PRIORITY to set the maximum priority of a thread. We can use constant Thread.MIN_PRIORITY to set the minimum priority of a thread. Or we can use constant Thread.NORM_PRIORITY to set the default priority of a thread.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -356,7 +324,6 @@
     "question": "What is the purpose of Thread Groups in Java?",
     "answer": "In Java, every thread belongs to a group of threads. The JDK class java.lang.ThreadGroup provides methods to handle a whole group of Threads. With the help of these methods we can interrupt all threads of a group or set the maximum priority of all threads of a group. So a thread group is used for taking collective actions on a group of threads.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -367,7 +334,6 @@
     "question": "Why we should not stop a thread by calling its stop() method?",
     "answer": "The stop() method in Thread class is a deprecated method. Its use is not recommended. When we call stop() method, the thread unlocks all monitors that it has acquired. If any locked object was in an inconsistent state, this state gets visible to all other threads. It can cause unexpected behavior when other threads work on this inconsistent object. So calling stop() method to stop a thread is not advisable.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -378,7 +344,6 @@
     "question": "How will you create a Thread in Java?",
     "answer": "There are two main ways to create a thread in Java. 1 . Extend Thread class : We can extend java.lang.Thread class and implement run() method. On calling start() method it will start a new thread. 2 . Implement Runnable interface : We can implement java.lang.Runnable interface and pass the implemented object to the constructor of java.lang.Thread class. On calling start() it will start a new thread.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -389,7 +354,6 @@
     "question": "How can we stop a thread in the middle of execution in Java?",
     "answer": "We can use a volatile variable as an indicator to stop the thread. We can create a volatile reference pointing to the current thread. This reference can be set to null by other threads to flag that the current thread should stop execution. In following example threadStopper is the volatile reference that can be set as null in stopThread() method by other threads. Sample code is as follows: public static class MyThread extends Thread { private volatile Thread threadStopper; public void start() { threadStopper = new Thread(this); threadStopper.start(); } public void stopThread() { threadStopper = null; } public void run() { Thread currThread = Thread.currentThread(); while(currThread == threadStopper) { try { Thread.sleep(100); } catch (InterruptedException e) { } } } }",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -400,7 +364,6 @@
     "question": "How do you access the current thread in a Java program?",
     "answer": "We can access the current thread in Java by calling the static method currentThread() of java.lang.Thread class. Sample code is as follows: public class MyThread { public static void main(String[] args) { // Get ID of Current Thread long id = Thread.currentThread().getId(); // Get Name of Current Thread String name = Thread.currentThread().getName(); } }",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -411,7 +374,6 @@
     "question": "What is Busy waiting in Multi- threading?",
     "answer": "Busy waiting is also known as busy-looping or spinning. It is a multi-threading technique in which a process repeatedly checks if a condition is true. For example, a process can keep checking if any keyboard input is available. In general, busy waiting is considered as Anti-pattern that wastes processor time, so it should be avoided. Sample code for busy waiting is as follows: Thread thread = new Thread(new Runnable() { @Override public void run() { long timeToStop = System.currentTimeMillis() + 1000; long currentTime = System.currentTimeMillis(); // Busy waiting while (timeToStop > currentTime) { currentTime = System.currentTimeMillis(); } } });",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -422,7 +384,6 @@
     "question": "How can we prevent busy waiting in Java?",
     "answer": "There is a simple way to prevent busy-waiting in Java. We can just put the current thread to sleep for given amount of time. It can be done by calling sleep() method of java.lang.Thread class. We can pass the number of milliseconds to sleep() method as an argument.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -433,7 +394,6 @@
     "question": "Can we use Thread.sleep() method for real-time processing in",
     "answer": "Java? Java does not guarantee that Thread.sleep() will cause the thread to sleep for exactly N number of milliseconds. Sometime the thread can sleep for than N number of milliseconds. In real-time processing we need precise time period for which a thread should run or sleep. Therefore the invocation of Thread.sleep() method is not recommended for use in real-time processing.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -444,7 +404,6 @@
     "question": "Can we wake up a thread that has been put to sleep by using",
     "answer": "Thread.sleep() method? We can use interrupt() method of java.lang.Thread class to interrupt a thread that is in sleep state. It will get InterruptedException to wake up from the sleep. Sample code is as follows: public class ThreadInterrupt implements Runnable { public void run() { try { Thread.sleep(Long.MAX_VALUE); } catch (InterruptedException e) { SOP(\u201cInterrupted by exception!\"); } } public static void main(String[] args) throws InterruptedException { Thread myThread = new Thread(new ThreadInterrupt(), \u201cmyThread\"); myThread.start(); SOP(\u201cSleeping in main thread for 10 seconds\u201d); Thread.sleep(10000); SOP(\u201cInterrupting myThread\"); myThread.interrupt(); } }",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -455,7 +414,6 @@
     "question": "What are the two ways to check if a Thread has been",
     "answer": "interrupted? These are the two ways to check for thread interruption: 1 . In Java, a Thread can call Thread.interrupted() method to check if it has been interrupted or not. 2 . The other option is to call isInterrupted() method of Thread class to check if it has been interrupted or not.",
     "topic": "Multithreading",
-    "difficulty": "Basic",
     "tags": [
       "multithreading",
       "java"
@@ -466,7 +424,6 @@
     "question": "How can we make sure that Parent thread waits for termination of",
     "answer": "Child thread? We can use join() method for this purpose. On calling join() method, current thread waits for the child thread to which it joins to finish. Sample code is as follows: Thread myThread = new Thread(new Runnable() { public void run() { } }); myThread.start(); // Join on myThread myThread.join();",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -477,7 +434,6 @@
     "question": "How will you handle InterruptedException in Java?",
     "answer": "In Java we can get InterruptedException from sleep() or join() methods. Throwing InterruptedException is way to inform that another thread has interrupted this thread. In general, the purpose of Interrupt is to ask current thread to stop its current execution and finish unexpectedly. Therefore ignoring this exception by catching it and only logging it to the console or some log file is not the recommended approach. The run() method of the Runnable interface does not allow that throwing any exceptions. So we cannot re-throw InterruptedException. Therefore the correct way to handle this exception is that run() method should check and handle this exception by itself and take appropriate action.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -488,7 +444,6 @@
     "question": "Which intrinsic lock is acquired by a synchronized method in",
     "answer": "Java? When we mark a method as synchronized and then call this method, then this method will first acquire the intrinsic lock of the object in which that method is mentioned. Once the synchronized method returns, it releases the lock. In case the synchronized method throws an exception, the intrinsic lock will be released. Sample code equivalent to a synchronized method is: public void myMethod() { synchronized(this) { } }",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -499,7 +454,6 @@
     "question": "Can we mark a constructor as synchronized in Java?",
     "answer": "No. We cannot mark a constructor as synchronized. This will lead to compiler error. The reasoning behind this is that, in this case, only the constructing thread would have access to the object being constructed.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -510,7 +464,6 @@
     "question": "Can we use primitive values for intrinsic locks?",
     "answer": "No. Java does not allow primitive values to be used for intrinsic locks.",
     "topic": "Concurrency",
-    "difficulty": "Basic",
     "tags": [
       "concurrency",
       "java"
@@ -521,7 +474,6 @@
     "question": "Do we have re-entrant property in intrinsic locks?",
     "answer": "Yes. An intrinsic lock can be accessed by the same thread multiple times. So an Intrinsic lock is re-entrant. If it is not allowed then the code that acquires a lock would have to avoid acquiring the lock that it has already acquired.",
     "topic": "Concurrency",
-    "difficulty": "Basic",
     "tags": [
       "concurrency",
       "java"
@@ -532,7 +484,6 @@
     "question": "What is an atomic operation?",
     "answer": "An atomic operation is an operation that completes in a single step relative to other threads. An Atomic operation is either executed completely or not at all. There is no halfway mark in Atomic operation.",
     "topic": "File Handling",
-    "difficulty": "Basic",
     "tags": [
       "file handling",
       "java"
@@ -543,7 +494,6 @@
     "question": "Can we consider the statement i++ as an atomic operation in Java?",
     "answer": "No. The statement i++ is not an Atomic operation. It has more than one operation. First JVM loads the current value of i in memory. Then it increments it. Finally it stores the new value back into variable i. The current thread that executes this operation may be interrupted between any of the above-mentioned three steps. Therefore it is not an atomic operation.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -554,7 +504,6 @@
     "question": "What are the Atomic operations in Java?",
     "answer": "Java language provides some basic Atomic operations. These operations can be used to make sure that concurrent threads always see the same value. Some of these Atomic operations are: 1 . Read operations on reference variables and primitive variables (except long and double) 2 . Write operations on reference variables and primitive variables (except long and double) 3 . Read operations on all variables declared as volatile 4 . Write operations on all variables declared as volatile",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -565,7 +514,6 @@
     "question": "Can you check if following code is thread-safe?",
     "answer": "public class SingletonDoubleCheck { private SingletonDoubleCheck instance = null; public SingletonDoubleCheck getInstance() { if (instance == null) { synchronized (SingletonDoubleCheck.class) { if (instance == null) { instance = new SingletonDoubleCheck(); } } } return instance; } } The above-mentioned code is for creating a Singleton class. But this code is not thread-safe. In this we check the value of instance second time in the synchronized block. But the JIT compiler can rearrange the Bytecode in such a way that the reference to SingletonDoubleCheck instance will be set before the execution of constructor. Due to this the method getInstance() will return an object that may not have been initialized properly. We can use the keyword volatile for instance to make this thread- safe code. Any variables that is marked as volatile will be visible to other threads only after the completion of the constructor of the object.",
     "topic": "Multithreading",
-    "difficulty": "Advanced",
     "tags": [
       "multithreading",
       "java"
@@ -576,7 +524,6 @@
     "question": "What are the minimum requirements for a Deadlock situation",
     "answer": "in a program? For a deadlock to occur following are the minimum requirements: 1 . Mutual exclusion : There has to be a resource that can be accessed by only one thread at any point of time. 2 . Resource holding : One thread locks one resource and holds it, and at the same time it tries to acquire lock on another mutually exclusive resource. 3 . No preemption : There is no pre-emption mechanism by which resource held by a thread can be freed after a specific period of time. 4 . Circular wait : There can be a scenario in which two or more threads lock one resource each and they wait for each other\u2019s resource to get free. This causes circular wait among threads for same set of resources.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -587,7 +534,6 @@
     "question": "How can we prevent a Deadlock?",
     "answer": "To prevent a Deadlock from occurring at least one requirement for a deadlock has to be removed: 1 . Mutual exclusion : We can use optimistic locking to prevent mutual exclusion among resources. 2 . Resource holding : A thread has to release all its exclusive locks if it does not succeed in acquiring all exclusive locks for resources required. 3 . No preemption : We can use timeout period for an exclusive lock to get free after a given amount of time. 4 . Circular wait : We can check and ensure that circular wait does not occur, when all exclusive locks have been acquired by all the threads in the same sequence.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -598,7 +544,6 @@
     "question": "How can we detect a Deadlock situation?",
     "answer": "We can use ThreadMXBean.findDeadlockedThreads() method to detect deadlocks in Java program. This bean comes with JDK: Sample code is as follows: ThreadMXBean bean = ManagementFactory.getThreadMXBean(); long[] threadIds = bean.findDeadlockedThreads(); // It will return null for no deadlock if (threadIds != null) { ThreadInfo[] infos = bean.getThreadInfo(threadIds); for (ThreadInfo info : infos) { StackTraceElement[] stack = info.getStackTrace(); // Log or store stack trace information. } }",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -609,7 +554,6 @@
     "question": "What is a Livelock?",
     "answer": "Livelock is a scenario in which two or more block each other by responding to an action caused by another thread. In a deadlock situation two or more threads wait in one specific state. In a Livelock scenario, two more threads change their state in such a way that it prevents progress on their regular work. E.g. Consider scenario in which two threads try to acquire two locks. They release a lock that they have acquired, when they cannot acquire the second lock. In a Livelock situation, both threads concurrently try to acquire the locks. Only one thread would succeed, the second thread may succeed in acquiring the second lock. Now both threads hold two different locks. And both threads want to have both locks. So they release their lock and try again from the beginning. This situation keeps repeating multiple times..",
     "topic": "Concurrency",
-    "difficulty": "Advanced",
     "tags": [
       "concurrency",
       "java"
@@ -620,7 +564,6 @@
     "question": "What is Thread starvation?",
     "answer": "In a priority based scheduling, Threads with lower priority get lesser time for execution than higher priority threads. If a lower priority thread performs a long running computation, it may happen that this thread does not get enough time to finish its computations just in time. In such a scenario, the tread with lower priority would starve. It will remain away from the threads with higher priority.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -631,7 +574,6 @@
     "question": "How can a synchronized block cause Thread starvation in Java?",
     "answer": "It is not defined for synchronization that which thread will enter a synchronized block. It may happen that if many threads are waiting for the entry to a synchronized block, some threads may have to wait longer than other threads. Hence these threads with lower priority will not get enough time to finish their work in time.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -642,7 +584,6 @@
     "question": "What is a Race condition?",
     "answer": "A race condition is an unwanted situation in which a program attempts to perform two or more operations at the same time, but because of the logic of the program, the operations have to be performed in proper sequence to run the program correctly. Since it is an undesirable behavior, it is considered as a bug in code. Most of the time race condition occurs in \u201ccheck then act\u201d scenario. Both threads check and act on same value. But one of the threads acts in between check and act. See this example to understand race condition. if (x == 3) // Check { y = x * 5; // Act // If another thread changes x // between \"if (x == 3)\u201d and \"y = x * 5\u201d, // then y will not be equal to 15. }",
     "topic": "File Handling",
-    "difficulty": "Advanced",
     "tags": [
       "file handling",
       "java"
@@ -653,7 +594,6 @@
     "question": "What is a Fair lock in multi- threading?",
     "answer": "In Java there is a class ReentrantLock that is used for implementing Fair lock. This class accepts an optional parameter fairness. When fairness is set to true, the RenentrantLock will give access to the longest waiting thread. The most popular use of Fair lock is in avoiding thread starvation. Since longest waiting threads are always given priority in case of contention, no thread can starve. Downside of Fair lock is the low throughput of the program. Since low priority or slow threads are getting locks multiple time, it leads to slower execution of a program. The only exception to a Fair lock is tryLock() method of ReentrantLock. This method does not honor the value of fairness parameter.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -664,7 +604,6 @@
     "question": "Which two methods of Object class can be used to implement a",
     "answer": "Producer Consumer scenario? In a Producer Consumer scenario, one thread is a Producer and another thread is a Consumer. For this scenario to start working, a Consumer has to know when the Producer has produced. In Object class, there is a wait() method. A Consumer calls wait method to wait on Producer. The Producer used notify() method of Object class to inform Consumer that it has produced. In this way the processor time between produce and consume operations is freed due to the use of wait() and notify() methods.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -675,7 +614,6 @@
     "question": "How JVM determines which thread should wake up on notify()?",
     "answer": "If multiple threads are waiting on an object\u2019s monitor, JVM awakens one of them. As per Java specification the choice of this thread is arbitrary and it is at the discretion of the implementation. So there is no guarantee of rule that a specific thread will be awakened by JVM on notify() method call.",
     "topic": "JVM",
-    "difficulty": "Intermediate",
     "tags": [
       "jvm",
       "java"
@@ -686,7 +624,6 @@
     "question": "Check if following code is thread- safe for retrieving an integer value",
     "answer": "from a Queue? public class QueueCheck { Queue queue; public Integer getNextInt() { Integer retVal = null; synchronized (queue) { try { while (queue.isEmpty()) { queue.wait(); } } catch (InterruptedException e) { e.printStackTrace(); } } synchronized (queue) { retVal = queue.poll(); if (retVal == null) { System.err.println(\"retVal is null\"); throw new IllegalStateException(); } } return retVal; } } In the above code Queue is used as object monitor to handle concurrency issues. But it may not behave correctly in a multi- threading scenario. There are two separate synchronized blocks in above code. In case two threads are woken up simultaneously by another thread, both threads will enter one after in the second synchronized block. Only one of the two threads will get new value from the queue and make it empty. The second thread will poll on an empty queue and it will not get any non-null return value.",
     "topic": "Multithreading",
-    "difficulty": "Advanced",
     "tags": [
       "multithreading",
       "java"
@@ -697,7 +634,6 @@
     "question": "How can we check if a thread has a monitor lock on a given object?",
     "answer": "In Java, Thread class has a static method holdsLock(Object objToCheck) to check whether thread has a lock on objToLock object. This method will return true if current thread holds the lock on the objToLock object that was passed as an argument to this method.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -708,7 +644,6 @@
     "question": "What is the use of yield() method in Thread class?",
     "answer": "The yield() method of Thread class is used to give a hint to scheduler that the current thread wants to free the processor. The scheduler can either use this hint or just ignore this hint. Since the scheduler behavior is not guaranteed, it may happen that the current thread again gets the processor time. It can be used for debugging or testing purposes. But there is rarely any concrete use of this method.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -719,7 +654,6 @@
     "question": "What is an important point to consider while passing an object from",
     "answer": "one thread to another thread? This is a multi-threading scenario. In a multi-threading scenario, the most important point is to check whether two threads can update same object at the same time. If it is possible for two threads to update the same object at the same time, it can cause issues like race condition. So it is recommended to make the object Immutable. This will help in avoiding any concurrency issues on this object.",
     "topic": "OOP Concepts",
-    "difficulty": "Advanced",
     "tags": [
       "oop concepts",
       "java"
@@ -730,7 +664,6 @@
     "question": "What are the rules for creating Immutable Objects?",
     "answer": "As per Java specification, following are the rules for creating an Immutable object: Do not provide \"setter\" methods that modify fields or objects referred to by fields. Make all fields final and private. Do not allow subclasses to override methods. The simplest way to do this is to declare the class as final. A more sophisticated approach is to make the constructor private and construct instances in factory methods. If the instance fields include references to mutable objects, do not allow those objects to be changed. Do not provide methods that modify the mutable objects. Do not share references to the mutable objects. Never store references to external, mutable objects passed to the constructor; if necessary, create copies, and store references to the copies. Similarly, create copies of your internal mutable objects when necessary to avoid returning the originals in your methods.",
     "topic": "OOP Concepts",
-    "difficulty": "Advanced",
     "tags": [
       "oop concepts",
       "java"
@@ -741,7 +674,6 @@
     "question": "What is the use of ThreadLocal class?",
     "answer": "ThreadLocal class provides thread-local variables. Each thread accesses only its own local variables. It has its own copy of the variable. By using ThreadLocal, if thread X stores a variable with value x and another thread Y stores same variable with the value y, then X gets x from its ThreadLocal instance and Y gets y from its ThreadLocal instance. Typically, ThreadLocal instances are private static fields that are associated with the state of a thread.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -752,7 +684,6 @@
     "question": "What are the scenarios suitable for using ThreadLocal class?",
     "answer": "We can use instance of ThreadLocal class to transport information within an application. One use case is to transport security or login information within an instance of ThreadLocal so that every method can access it. Another use case is to transport transaction information across an application, without using the method-to-method communication.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -763,7 +694,6 @@
     "question": "How will you improve the performance of an application by",
     "answer": "multi-threading? In an environment with more than one CPU, we can parallelize the computation tasks on multiple CPUs. This leads to parallel processing of a bigger task that takes lesser time due to multiple threads dividing the work among themselves. One example is that if we have to process 1000 data files and calculate the sum of numbers in each file. If each file takes 5 minutes, then 1000 files will take 5000 minutes for processing. But by using multi-threading we can process these files in 10 parallel threads. So each thread will take 100 files each. Since now work is happening in 10 parallel threads, the time taken will be around 500 minutes.",
     "topic": "File Handling",
-    "difficulty": "Advanced",
     "tags": [
       "file handling",
       "java"
@@ -774,7 +704,6 @@
     "question": "What is scalability in a Software program?",
     "answer": "Scalability is the capability of a program to handle growing amount of work or its potential to be enlarged in order to accommodate growth. A program is considered scalable, if it is suitable to handle a large amount of input data or a large number of users or a large number of nodes. When we say a program does not scale, it means that program fails on increasing the size of task.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -785,7 +714,6 @@
     "question": "How will you calculate the maximum speed up of an application",
     "answer": "by using multiple processors? Amdahl\u2019s law gives the theoretical speedup in latency of the execution of a task at fixed workload. It gives the formula to compute the theoretical maximum speed up that can be achieved by providing multiple processors to an application. If S is the theoretical speedup then the formula is: S(n) = 1 / (B + (1-B)/n) where n is the number of processors B is the fraction of the program that cannot be executed in parallel. When n converges against infinity, the term (1-B)/n converges against zero. Therefore, the formula can be reduced in this special case to 1/B. In general, the theoretical maximum speedup behaves in inverse proportion to the fraction that has to be executed serially. This means the lower this fraction is, the more theoretical speedup can be achieved.",
     "topic": "File Handling",
-    "difficulty": "Advanced",
     "tags": [
       "file handling",
       "java"
@@ -796,7 +724,6 @@
     "question": "What is Lock contention in multi- threading?",
     "answer": "Lock contention is the situation when one thread is waiting for a lock/object that being held by another thread. The waiting thread cannot use this object until the other thread releases the lock on that object. It is also known as Thread contention. Ideally locks reduce the thread contention. Without locks, multiple threads can operate on same object and cause undesirable behavior. If locking is implemented correctly it reduces the occurrence of contention between multiple threads.",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -807,7 +734,6 @@
     "question": "What are the techniques to reduce Lock contention?",
     "answer": "There are following main techniques to reduce Lock contention: 1 . Reduce the scope of lock. 2 . Reduce object pooling. 3 . Reduce the number of times a certain lock can be acquired. 4 . Avoid synchronization at unnecessary places. 5 . Implement hardware supported Optimistic locking in place of synchronization.",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -818,7 +744,6 @@
     "question": "What technique can be used in following code to reduce Lock",
     "answer": "contention? synchronized (map) { Random r = new Random(); Integer value = Integer.valueOf(42); String key = r.nextString(5); map.put(key, value); } The code uses Random() to get a random string and it also used Integer to convert 42 in an object. Since these lines of code are specific to this thread, these can be moved out of Synchronization block. Random r = new Random(); Integer value = Integer.valueOf(42); String key = r.nextString(5); synchronized (map) { map.put(key, value); }",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -829,7 +754,6 @@
     "question": "What is Lock splitting technique?",
     "answer": "Lock splitting is a technique to reduce Lock contention in multi- threading. It is applicable in scenario when one lock is used to synchronize access to different aspects of the same application. Sometimes we put one lock to protect the whole array. There can be multiple threads trying to get the lock for same array. This single lock on array can cause Lock contention among threads. To resolve this we can give one lock to each element of the array. Or we can use modulus function to assign different locks to a small group of array elements. In this way we can reduced the chance of Lock contention. This is Lock splitting technique.",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -840,7 +764,6 @@
     "question": "Which technique is used in ReadWriteLock class for reducing",
     "answer": "Lock contention? ReadWriteLock uses two locks. One lock for read-only operations, another lock for write operations. Its implementation is based on the premise that concurrent threads do not need a lock when they want to read a value while no other thread is trying to write. In this implementation, read-only lock can be obtained by multiple threads. And the implementation guarantees that all read operation will see only the latest updated value as soon as the write lock is released.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -851,7 +774,6 @@
     "question": "What is Lock striping?",
     "answer": "In Lock splitting we use different locks for different parts of the application. In Lock striping we use multiple locks to protect different parts of the same data structure. ConcurrentHashMap class of Java internally uses different buckets to store its values. Each bucket is chosen based on the value of key. ConcurrentHashMap uses different locks to guard different buckets. When one thread that tries to access a hash bucket, it can acquire the lock for that bucket. While another thread can simultaneously acquire lock for another bucket and access it. In a synchronized version of HashMap, the whole map is has one lock. Lock striping technique gives better performance than Synchronizing the whole data structure.",
     "topic": "Concurrency",
-    "difficulty": "Advanced",
     "tags": [
       "concurrency",
       "java"
@@ -862,7 +784,6 @@
     "question": "What is a CAS operation?",
     "answer": "CAS is also known a Compare-And-Swap operation. In a CAS operation, the processor provides a separate instruction that can update the value of a register only if the provided value is equal to the current value. CAS operation can be used as an alternate to synchronization. Let say thread T1 can update a value by passing its current value and the new value to be updated to the CAS operation. In case another thread T2 has updated the current value of previous thread, the previous thread T1\u2019s current value is not equal to the current value of T2. Hence the update operation fails. In this case, thread T1 will read the current value again and try to update it. This is an example of optimistic locking.",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -873,7 +794,6 @@
     "question": "Which Java classes use CAS operation?",
     "answer": "Java classes like AtomicInteger or AtomicBoolean internally use CAS operations to support multi-threading. These classes are in package java.util.concurrent.atomic.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -884,7 +804,6 @@
     "question": "Is it always possible to improve performance by object pooling in a",
     "answer": "multi-threading application? By using Object pools in an application we limit the number of new objects to be created for a class. In a single thread operation, it can improve the performance by reusing an already created object from a pool. In a multi-threading application an object pool has to provide synchronized access to multiple threads. Due to this only one thread can access the pool at a time. Also there is additional cost due to Lock contention on pool. These additional costs can outweigh the cost saved by reuse of an object from the pool. Therefore using an Object pool may not always improve the performance in a multi-threading application.",
     "topic": "OOP Concepts",
-    "difficulty": "Advanced",
     "tags": [
       "oop concepts",
       "java"
@@ -895,7 +814,6 @@
     "question": "How can techniques used for performance improvement in a single",
     "answer": "thread application may degrade the performance in a multi-threading application? In a single thread applications we can use Object pool for performance optimization. Where as in multi-threading environment, it may not be a good idea to use an Object pool. Increased overhead of synchronization and lock contention can degrade the performance gained by using Object pool in a multi-threading application. Another example is the implementation in which a List keeps a separate variable to hold the number of elements. This technique is useful in single thread application where size() method can return the value from this variable, without the need to count all the elements of list. But in a multi-threading application, this separate variable can rather degrade the performance. This variable has to be access controlled by a lock since multiple concurrent threads can insert an element in a list. The additional cost of lock on this variable can outweigh the benefit gained by it in a multi-threading application.",
     "topic": "Core Java",
-    "difficulty": "Advanced",
     "tags": [
       "core java",
       "java"
@@ -906,7 +824,6 @@
     "question": "What is the relation between Executor and ExecutorService",
     "answer": "interface? Executor interface has only execute(Runnable) method. The implementing class of this interface has to execute the given Runnable instance passed to execute() method at some time in the future. ExecutorService interface extends Executor interface. It provides additional methods like- invokeAny(), invokeAll(), shutdown(), awaitTermination(). These method provide the ability to shutdown the thread so that further requests can be rejected. Also it provides ability to invoke a collection of Callable tasks.",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -917,7 +834,6 @@
     "question": "What will happen on calling submit() method of an",
     "answer": "ExecutorService instance whose queue is already full? The implementation of ExecutorService will throw RejectedExecutionException, when its queue is already full and a new task is submitted by calling submit() method.",
     "topic": "Core Java",
-    "difficulty": "Basic",
     "tags": [
       "core java",
       "java"
@@ -928,7 +844,6 @@
     "question": "What is a ScheduledExecutorService?",
     "answer": "ScheduledExecutorService interface extends the interface ExecutorService. It provides various schedule() methods that can be used to submit new tasks to be executed at a given point of time. One of the schedule() method provides the ability to schedule a one- shot task that can be executed after given delay. Another version of schedule() method provides the ability to execute ScheduleFuture after a given amount of delay. In addition there are scheduleAtFixedRate() and scheduleWithFixedDelay() methods that can execute an action at a periodic interval of time.",
     "topic": "Concurrency",
-    "difficulty": "Intermediate",
     "tags": [
       "concurrency",
       "java"
@@ -939,7 +854,6 @@
     "question": "How will you create a Thread pool in Java?",
     "answer": "In Java, Executors framework provides a method newFixedThreadPool(int nThreads) that can be used to create a Thread pool with a fixed number of threads. Sample code is as follows: public static void main(String[] args) throws InterruptedException, ExecutionException { ExecutorService myService = Executors.newFixedThreadPool(5); Future<Integer>[] futureList = new Future[5]; for (int i = 0; i < futureList.length; i++) { futureList[i] = myService.submit(new MyCallable()); } for (int i = 0; i < futureList.length; i++) { Integer retVal = futureList[i].get(); println(retVal); } myService.shutdown(); }",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -950,7 +864,6 @@
     "question": "What is the main difference between Runnable and Callable",
     "answer": "interface? Runnable interface defines run() method that does not return any value. Callable interface allows call() method to return a value to its caller. A Callable interface can also throw an exception in case of an error. Also Callable is a newer addition to Java since version 1.5.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -961,7 +874,6 @@
     "question": "What are the uses of Future interface in Java?",
     "answer": "We can use Future interface to represent the result of an asynchronous computation. These are the operations whose result is not immediately available. Therefore Future interface provides isDone() method to check if the asynchronous computation has finished or not. We can also check if the task was cancelled by calling isCancelled() method. Future also provides cancel() method to attempt the cancellation of a task.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -972,7 +884,6 @@
     "question": "What is the difference in concurrency in HashMap and in",
     "answer": "Hashtable? In a Hashtable class all methods are synchronized. In a HashMap implementation all the methods are not synchronized. Therefore Hashtable is a thread-safe collection. HashMap is not a thread-safe collection. In a multi-threading it is not advisable to use regular HashMap. We can use ConcurrentHashMap class in multi-threading applications.",
     "topic": "Collections",
-    "difficulty": "Intermediate",
     "tags": [
       "collections",
       "java"
@@ -983,7 +894,6 @@
     "question": "How will you create synchronized instance of List or Map",
     "answer": "Collection? In Java, Collections class provides methods to synchronize any collection. It also provides synchronizedList(List) and synchronizedMap(Map) methods that can be used to convert a List or Map to a synchronized instance.",
     "topic": "Collections",
-    "difficulty": "Basic",
     "tags": [
       "collections",
       "java"
@@ -994,7 +904,6 @@
     "question": "What is a Semaphore in Java?",
     "answer": "Semaphore class in Java is used to implement a counting semaphore. It is used to restrict the number of threads that can access a physical or logical resource. A Semaphore maintains a set of permits that should be acquired by competing threads. We can also use it to control how many threads can access the critical section of a program or a resource concurrently. The first argument in Semaphore constructor is the total number of permits available. Each invocation of acquire() method tries to obtain one of the available permits. The acquire() method is used to acquire a permit from the semaphore. If we pass number of permits required to acquire() method, then it blocks the thread until that number of permits are available. Once a thread has finished its work, we can use release() method to release the permits.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1005,7 +914,6 @@
     "question": "What is a CountDownLatch in Java?",
     "answer": "CountDownLatch class helps in implementing synchronization in Java. It is used to implement the scenarios in which one or more threads have to wait until other threads have reached the same state such that all thread can start. There is a synchronized counter that is decremented until it reaches the value zero. Once it reaches zero, it means that all waiting threads can proceed now. It is a versatile tool that can be used for other Synchronization scenarios as well. It can also work as on/off latch or gate. All threads invoking await() method wait at the gate until it is opened by a thread invoking countdown() method.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1016,7 +924,6 @@
     "question": "What is the difference between CountDownLatch and CyclicBarrier?",
     "answer": "CyclicBarrier takes an optional Runnable task that is run once the common barrier condition is achieved. CountDownLatch is used in simple use cases where a simple start stop is required. A CyclicBarrier is useful in complex scenarios where more coordination is required. E.g. MapReduce algorithm implementation. CyclicBarrier resets the internal value to the initial value once the value reaches zero. CyclicBarrier can be used to implement the scenarios in which threads have to wait for each other multiple times.",
     "topic": "Core Java",
-    "difficulty": "Advanced",
     "tags": [
       "core java",
       "java"
@@ -1027,7 +934,6 @@
     "question": "What are the scenarios suitable for using Fork/Join framework?",
     "answer": "ForkJoinPool class is in the center of Fork/Join framework. It is a thread pool that can execute instances of ForkJoinTask. ForkJoinTask class provides the fork() and join() methods. The fork() method is used to start the asynchronous execution of a task. The join() method is used to await the result of the computation. Therefore, divide-and-conquer algorithms can be easily implemented with Fork/Join framework.",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -1038,7 +944,6 @@
     "question": "What is the difference between RecursiveTask and RecursiveAction",
     "answer": "class? RecursiveAction class has compute() method that does not have to return a value. RecursiveAction can be used when the action has to directly operate on a Data structure. It does not need to return any computed value. In RecursiveTask class has compute() method that always returns a value. Both RecursiveTask and RecursiveAction classes are used in ForkJoinTask implementations.",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -1049,7 +954,6 @@
     "question": "In Java 8, can we process stream operations with a Thread",
     "answer": "pool? In Java 8, Collections provide parallelStream() method to create a stream that can be processed by a Thread pool. We can also call the intermediate method parallel() on a given stream to convert it into a sequential stream of parallel tasks.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1060,7 +964,6 @@
     "question": "What are the scenarios to use parallel stream in Java 8?",
     "answer": "A parallel stream in Java 8 has a much higher overhead compared to a sequential one. It takes a significant amount of time to coordinate the threads. We can use parallel stream in following scenarios: When there are a large number of items to process and the processing of each item takes time and is parallelizable. When there is a performance problem in the sequential processing. When current implementation is not already running in a multi- thread environment. If there is already a multi-threading environment, adding parallel stream can degrade the performance.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1071,7 +974,6 @@
     "question": "How Stack and Heap work in Java multi-threading environment?",
     "answer": "In Java, Stack and heap are memory areas available to an application. Every thread has its own stack. It is used to store local variables, method parameters and call stack. Local variables stored in Stack of one Thread are not visible to another Thread. Where as, Heap is a common memory area in JVM. Heap is shared by all threads. All objects are created inside heap. To improve performance thread can cache the values from heap into their stack. This can create problem if the same variable is modified by more than one thread. In such a scenario we should used volatile keyword to mark a variable volatile. For a volatile variable the thread always reads the value from main memory.",
     "topic": "JVM",
-    "difficulty": "Advanced",
     "tags": [
       "jvm",
       "java"
@@ -1082,7 +984,6 @@
     "question": "How can we take Thread dump in Java?",
     "answer": "The steps to take Thread dump of Java process depends on the operating system. On taking Thread dump, Java writes the state of all threads in log files or standard error console. We can press Ctrl + Break key together to take thread dump in Windows. We can execute kill -3 command for taking Thread dump on Linux. Another option to take Thread dump is jstack tool. We can pass process id of java process to this tool for taking Thread dump. This is the simple one, -Xss parameter is used to control stack size of Thread in Java. You can see this list of JVM options to learn more about this parameter.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1093,7 +994,6 @@
     "question": "Which parameter can be used to control stack size of a thread in",
     "answer": "Java? We use \u2013Xss parameter to control the stack size of a thread in Java. If we set it as 1 MB, then every thread will get 1MB of stack size.",
     "topic": "JVM",
-    "difficulty": "Basic",
     "tags": [
       "jvm",
       "java"
@@ -1104,7 +1004,6 @@
     "question": "There are two threads T1 and T2? How will you ensure that these",
     "answer": "threads run in sequence T1, T2 in Java? In Java there are multiple ways to execute threads in a sequence. One of the simplest way for sequencing is join() method of Thread class. We can call join() method to start a thread when another thread has finished. We start with the last thread to execute first. And make this thread join on the next thread. In this case we start thread T2 first. And then call T1.join() so that thread T2 waits for thread T1 to finish execution. Once T1 completes execution, T2 thread starts executing. Java 8",
     "topic": "Multithreading",
-    "difficulty": "Intermediate",
     "tags": [
       "multithreading",
       "java"
@@ -1115,7 +1014,6 @@
     "question": "What are the new features released in Java 8?",
     "answer": "The new features released in Java 8 are: 1 . Lambda Expression 2 . Stream API 3 . Date and Time API 4 . Functional Interface 5 . Interface Default and Static Methods 6 . Optional 7 . Base64 Encoding and Decoding 8 . Nashorn JavaScript Engine 9 . Collections API Enhancements 10 . Concurrency Enhancements 11 . Fork/Join Framework Enhancements 12 . Spliterator 13 . Internal Iteration 14 . Type Annotations and Repeatable Annotations 15 . Method Parameter Reflection 16 . JVM Parameter Changes",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1126,7 +1024,6 @@
     "question": "What are the main benefits of new features introduced in Java 8?",
     "answer": "The main benefits of Java 8 features are: 1 . Support for functional programming by Lambda and Streams 2 . Ease of high volume data processing by Streams 3 . Ease of use by getting Parameter names through Reflection 4 . Reusable code with enhanced Collection APIs 5 . Smart exception handling with Optional 6 . Control on JVM with new Parameters 7 . Enhanced encryption support with Base 64 8 . Faster execution with Nashorn JavaScript engine support",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1137,7 +1034,6 @@
     "question": "What is a Lambda expression in Java 8?",
     "answer": "Lambda expression is an anonymous function. It is like a method that does not need any access modifiers, name or return value declaration. It accepts a set of input parameters and returns result. Lambda expression can be passed as a parameter in a method. So we can treat code in Lambda expression as data. This piece of code can be passed to other objects and methods.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1148,7 +1044,6 @@
     "question": "What are the three main parts of a Lambda expression in Java?",
     "answer": "Three main parts of a Lambda expression are: 1 . Parameter list: A Lambda expression can have zero or more parameters. Parameter list is optional to Lambda. 2 . Lambda arrow operator: \u201c->\u201d is known as Lambda arrow operator. It separates the list of parameters and the body of Lambda. 3 . Lambda expression body: The piece of code that we want to execute is written in Lambda expression body. E.g. In following example: Arrays.asList( \"a\", \"b\", \"d\" ).forEach( e -> System.out.println( e ) ); Parameter list = e Arrow = -> Body = System.out.println( e )",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1159,7 +1054,6 @@
     "question": "What is the data type of a Lambda expression?",
     "answer": "A Lambda expression fulfills the purpose of passing code as data. The data type of a Lambda expression is a Functional interface. In most of the cases this is java.lang.Runnable interface.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1170,7 +1064,6 @@
     "question": "What is the meaning of following lambda expression?",
     "answer": "( e -> System.out.println( e ) ); This Lambda expression takes a parameter e and prints it via System.out.",
     "topic": "Streams & Lambda",
-    "difficulty": "Basic",
     "tags": [
       "streams & lambda",
       "java"
@@ -1181,7 +1074,6 @@
     "question": "Why did Oracle release a new version of Java like Java 8?",
     "answer": "The main theme of Java 8 is support for functional programming. With increase in Database size and growth of multi-code CPU servers, there is need for Java to support such large-scale systems. With new features of Java 8, it is possible to create functional programs to interact efficiently with Big Data systems. Support for Streams is very helpful in this regard. Lambda expressions are very useful for cloud computing where we can pass code as data and run the same code on multiple servers. Optional is a best practice that is borrowed from Google Guava library for handling the exceptional cases. This has made programs more robust with support for edge cases.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1192,7 +1084,6 @@
     "question": "What are the advantages of a lambda expression?",
     "answer": "We can pass a lambda expression as an object to a method. This reduces the overhead involved in passing an anonymous class. We can also pass a method as a parameter to another method using lambda expressions.",
     "topic": "Streams & Lambda",
-    "difficulty": "Intermediate",
     "tags": [
       "streams & lambda",
       "java"
@@ -1203,7 +1094,6 @@
     "question": "What is a Functional interface in Java 8?",
     "answer": "A Functional interface in Java is an interface that has exactly one abstract method. It can have default methods with implementation. A default method is not abstract. In Java 8, java.lang.Runnable and java.util.concurrent.Callable are two very popular Functional interfaces.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1214,7 +1104,6 @@
     "question": "What is a Single Abstract Method (SAM) interface in Java 8?",
     "answer": "A Functional interface is also known as Single Abstract Method Interface, since it has exactly one abstract method.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1225,7 +1114,6 @@
     "question": "How can we define a Functional interface in Java 8?",
     "answer": "To define a Functional interface in Java 8, we can create an Interface with exactly one abstract method. Another way is to mark an Interface with annotation @FunctionalInterface. Even with the annotation we have to follow the rule of exactly one abstract method. The only exception to this rule is that if we override java.lang.Object class\u2019s method as an abstract method, then it does not count as an abstract method.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1236,7 +1124,6 @@
     "question": "Why do we need Functional interface in Java?",
     "answer": "Functional Interfaces are mainly used in Lambda expressions, Method reference and constructor references. In functional programming, code can be treated as data. For this purpose Lambda expressions are introduced. They can be used to pass a block of code to another method or object. Functional Interface serves as a data type for Lambda expressions. Since a Functional interface contains only one abstract method, the implementation of that method becomes the code that gets passed as an argument to another method.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1247,7 +1134,6 @@
     "question": "Is it mandatory to use @FunctionalInterface annotation to",
     "answer": "define a Functional interface in Java 8? No, it is not mandatory to mark a Functional interface with @FunctionalInterface annotation. Java does not impose this rule. But, if we mark an interface with @FunctionalInterface annotation then Java Compiler will give us error in case we define more than one abstract method inside that interface.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -1258,7 +1144,6 @@
     "question": "What are the differences between Collection and Stream API in",
     "answer": "Java 8? Main differences between Collection and Stream API in Java 8 are: 1 . Version: Collection API is in use since Java 1.2. Stream API is recent addition to Java in version 8. 2 . Usage: Collection API is used for storing data in different kinds of data structures. Stream API is used for computation of data on a large set of Objects. 3 . Finite: With Collection API we can store a finite number of elements in a data structure. With Stream API, we can handle streams of data that can contain infinite number of elements. 4 . Eager vs. Lazy: Collection API constructs objects in an eager manner. Stream API creates objects in a lazy manner. 5 . Multiple consumption: Most of the Collection APIs support iteration and consumption of elements multiple times. With Stream API we can consume or iterate elements only once.",
     "topic": "Collections",
-    "difficulty": "Advanced",
     "tags": [
       "collections",
       "java"
@@ -1269,7 +1154,6 @@
     "question": "What are the main uses of Stream API in Java 8?",
     "answer": "Main uses of Stream API in Java 8 are: 1 . It helps in using data in a declarative way. We can make use of Database functions like Max, Min etc., without running a full iteration. 2 . It makes good use of multi-core architectures without worrying about multi-threading code. 3 . We can create a pipeline of data operations with Java Stream that can run in a sequence or in parallel. 4 . It provides support for group by, order by etc. operations. 5 . It supports writing for code in Functional programming style. 6 . It provides parallel processing of data.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1280,7 +1164,6 @@
     "question": "What are the differences between Intermediate and Terminal",
     "answer": "Operations in Java 8 Streams? Main differences between Intermediate and Terminal Stream operations are as follows: 1 . Evaluation: Intermediate operations are not evaluated until we chain it with a Terminal Operation of Stream. Terminal Operations can be independently evaluated. 2 . Output: The output of Intermediate Operations is another Stream. The output of Terminal Operations is not a Stream. 3 . Lazy: Intermediate Operations are evaluated in lazy manner. Terminal Operations are evaluated in eager manner. 4 . Chaining: We can chain multiple Intermediate Operations in a Stream. Terminal Operations cannot be chained multiple times. 5 . Multiple: There can be multiple Intermediate operations in a Stream operation. There can be only one Terminal operation in Stream processing statement.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -1291,7 +1174,6 @@
     "question": "What is a Spliterator in Java 8?",
     "answer": "A Spliterator is a special type of Iterator to traverse and partition the elements of a source in Java. A source can be a collection, an IO channel or a generator function. A Spliterator may traverse elements individually or sequentially in bulk.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1302,7 +1184,6 @@
     "question": "What are the differences between Iterator and Spliterator in",
     "answer": "Java 8? Main differences between Iterator and Spliterator are as follows: 1 . Spliterator can be used with Streams in Java 8. Where as, Iterator is just used with Collection. 2 . Spliterator uses Internal Iteration to iterate Streams. Iterator uses External Iteration to iterate Collections. 3 . Spliterator can iterate Streams in Parallel as well as Sequential manner. Iterator only iterates in Sequential manner. 4 . Spliterator can traverse elements individually as well as in bulk. Iterator only iterates elements individually.",
     "topic": "Collections",
-    "difficulty": "Advanced",
     "tags": [
       "collections",
       "java"
@@ -1313,7 +1194,6 @@
     "question": "What is Type Inference in Java 8?",
     "answer": "A Java compiler can see each method\u2019s invocation and it declaration to determine what are type arguments required for invocation. By Type Inference, Java can determine the types of the arguments as well as the type of the result being returned. Type inference algorithm also tries to find the most specific type that can work with all types of arguments.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1324,7 +1204,6 @@
     "question": "Does Java 7 support Type Inference?",
     "answer": "Yes, Java 7 supports Type Inference. In Java 8, Oracle has enhanced the Type Inference concept. Now it can be used to define Lambda expressions, functions and Method references.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1335,7 +1214,6 @@
     "question": "How does Internal Iteration work in Java 8?",
     "answer": "In an Iterator, the fundamental question is that which party controls the iteration. Is it Iterator or the Collection on which iterator runs. When a Collection controls the iterator, then it is called External Iteration. When the Iterator controls the iteration then it is called Internal Iteration. In case of Internal Iteration, the client hands over an operation to Iterator and the Iterator applies the operation to all the elements in aggregate. Internal Iteration is easier to implement, since the Iterator does not have to store the state of the collection.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1346,7 +1224,6 @@
     "question": "What are the main differences between Internal and External",
     "answer": "Iterator? Main differences between Internal and External Iterator are as follows: 1 . An Internal Iterator controls the iteration itself. In an External Iterator collection controls the iteration. 2 . Internal Iterator can iterate elements in individually as well as in 3 . Bulk (like forEach). External iterator iterates element one by one. 4 . Internal Iterator does not have to iterate elements only sequentially. External Iterator always iterates sequentially. 5 . Internal Iterator supports declarative programming style that goes well with functional programming. External Iterator follows imperative style OOPS programming. 6 . Some people consider Internal Iterator code more readable than that of External Iterator.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1357,7 +1234,6 @@
     "question": "What are the main advantages of Internal Iterator over External",
     "answer": "Iterator in Java 8? Some of the main advantages of Internal Iterator are: 1 . Internal Iterator is based on Functional programming, therefore it can work on declarative style code. 2 . There is no need to sequentially iterate elements in Internal Iterator. 3 . Code is more readable and concise in Internal Iterator. 4 . Internal Iterator supports concurrency and parallel processing.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1368,7 +1244,6 @@
     "question": "What are the applications in which we should use Internal",
     "answer": "Iteration? We need Internal Iterator in applications that require high performance, parallel processing, fast iteration and bulk operations support. Also in Internal Iteration applications, we do not have much control over iteration. The other features like parallel processing etc. become more important.",
     "topic": "File Handling",
-    "difficulty": "Advanced",
     "tags": [
       "file handling",
       "java"
@@ -1379,7 +1254,6 @@
     "question": "What is the main disadvantage of Internal Iteration over External",
     "answer": "Iteration? Internal Iteration has many advantages over External Iteration. But it has one big disadvantage. Since Java API is responsible for iterating in Internal iterator, developer does not get any control over iteration.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1390,7 +1264,6 @@
     "question": "Can we provide implementation of a method in a Java",
     "answer": "Interface? Before Java 8, it was not allowed to provide implementation of a method in an Interface. Java 8 has introduced the flexibility of providing implementation of a method in an interface. There are two options for that: 1 . Default Method: We can give default implementation of a method. 2 . Static Method: We can create a static method in an interface and provide implementation.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1401,7 +1274,6 @@
     "question": "What is a Default Method in an Interface?",
     "answer": "In Java 8, we can provide implementation of a method in an Interface and mark this method with Default keyword. In this way, this implementation of the method becomes default behavior for any class implementing the interface.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1412,7 +1284,6 @@
     "question": "Why do we need Default method in a Java 8 Interface?",
     "answer": "Default methods in an Interface provide backward compatibility feature in Java 8. Let say there is an interface Car that is implemented by BMW, Chevrolet and Toyota classes. Now a Car needs to add capability for flying. It will require change in Car interface. Some of the car classes that do not have flying capability may fail. Therefore a Default Implementation of flying methods is added in Car interface so that cars with no flying capability can continue to implement the original Car interface.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1423,7 +1294,6 @@
     "question": "What is the purpose of a Static method in an Interface in Java 8?",
     "answer": "A Static method in an Interface is utility or helper method. This is not an object level instance method. Some of the uses of Static method in an Interface are: 1 . Single Class: There is no need to create a separate Utils class for storing utility or helper methods. We can keep these methods in same interface. 2 . Encapsulation: With Static methods, complete behavior of a Class is encapsulated in same class. There is no need to maintain multiple classes. 3 . Extension: It is easier to extend a Class/API. If we extend a collection ArrayList, we get all the methods. We need not extend Collections class also.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1434,7 +1304,6 @@
     "question": "What are the core ideas behind the Date/Time API of Java 8?",
     "answer": "There are three core ideas behind the Date/Time API of Java 8: 1 . Immutable-value classes: The new API avoids thread- safety and concurrency issues by ensuring that all the core classes are immutable and represent well-defined values. 2 . Domain-driven design: The new API is modeled on precise domain with classes that represent different use cases for Date and Time. 3 . The emphasis on domain-driven design offers benefits like clarity and understandability. 4 . Separation of chronologies: The new API allows people to work with different calendar systems. It supports the needs of users in different areas of the world likes Japan or Thailand that don\u2019t follow ISO-8601.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1445,7 +1314,6 @@
     "question": "What are the advantages of new Date and Time API in Java 8 over",
     "answer": "old Date API? Some of the advantages of Java 8 Date Time API over existing Date API are: Concurrency: Existing Date Time classes (such as java.util.Date and SimpleDateFormatter) are not thread-safe. This does not work well in concurrent applications. In new Date Time API, developer does not have to deal with concurrency issues while writing date- handling code. Better Design: Date/Time classes prior to Java 8 have poor API design. For example, years in java.util.Date start at 1900, months start at 1, and days start at 0. It is not very intuitive. Java 8 Date Time API handles it very well. No need for 3rd Party Libraries: With the popularity of third-party Date/Time libraries like Joda Time, Java has to make its native Date/Time API comparable. Now we can use the Java API instead of using 3rd party libraries.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1456,7 +1324,6 @@
     "question": "What are the main differences between legacy Date/Time API in Java",
     "answer": "and Date/Time API of Java 8? Main difference between legacy Date/Time API and Java 8 Date/Time API are: 1 . Old API is not Thread safe. Java 8 API is Thread safe. 2 . Old API has many mutable objects. New Java 8 API is based on Immutable objects. 3 . Performance of old API is not good. New Java 8 Date/Time API gives better performance. 4 . Old API is less readable and maintainable. New Java 8 API is very well designed and is more readable. 5 . Old API has month values from 0 to 11. New API has months from 1 to 12.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1467,7 +1334,6 @@
     "question": "How can we get duration between two dates or time in Java 8?",
     "answer": "In Java8, we have a new class Duration that provides the utility of computing duration between two dates. We can call the static method Duration.between(date1, date2) to get the time period in hours, mins, days etc. between date1 and date2.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1478,7 +1344,6 @@
     "question": "What is the new method family introduced in Java 8 for processing of",
     "answer": "Arrays on multi core machines? Java 8 has enhanced the Arrays class with methods that can run efficiently on multi core machines. These methods start with keyword parallel. Egg. Arrays.parallelSetAll(), Arrays.parallelSort() etc. This parallel set of methods provides parallel processing of Arrays that can run Java code very fast on a multi core machine.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1489,7 +1354,6 @@
     "question": "How does Java 8 solve Diamond problem of Multiple",
     "answer": "Inheritance? In Multiple Inheritance if a class extends more than one classes with two different implementation of same method then it causes Diamond problem. Consider following example to see problem and solution for Diamond problem in Java 8: public interface BaseInterface{ default void display() { //code goes here } } public interface BaseOne extends BaseInterface { } public interface BaseTwo extends BaseInterface { } public class ChildClass implements BaseOne, BaseTwo { } In the above code, class ChildClass gives compile time error. Java Compiler cannot decide which display method should it invoke in ChildClass. To solve this problem, Java SE 8 has given the following remedy: public interface A{ default void display() { //code goes here } } public interface B extends A{ } public interface C extends A{ } public class D implements B,C{ default void display() { B.super.display(); } } public interface BaseInterface{ default void display() { //code goes here } } public interface BaseOne extends BaseInterface { } public interface BaseTwo extends BaseInterface { } public class ChildClass implements BaseOne, BaseTwo { default void display(){ BaseOne.super.display(); } } The method invocation at BaseOne.super.display(); solves the Diamond problem as it resolves the confusion for compiler.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1500,7 +1364,6 @@
     "question": "What are the differences between Predicate, Supplier and",
     "answer": "Consumer in Java 8? The subtle difference between Predicate, Supplier and Consumer in Java 8 is as follows: Predicate is an anonymous function that accepts one argument and returns a result. Supplier is an anonymous function that accepts no argument and returns a result. Consumer is an anonymous function that accepts one argument and returns no result.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -1511,7 +1374,6 @@
     "question": "Is it possible to have default method definition in an interface",
     "answer": "without marking it with default keyword? No, we have to always mark a default method in interface with default keyword. If we create a method with implementation in an interface, but do not mark it as default, then we will get compile time error.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1522,7 +1384,6 @@
     "question": "Can we create a class that implements two Interfaces with",
     "answer": "default methods of same name and signature? No, it is not allowed to create a class that implements interfaces with same name default methods. It will give us compile time error for duplicate default methods.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1533,7 +1394,6 @@
     "question": "How Java 8 supports Multiple Inheritance?",
     "answer": "In Multiple Inheritance a class can inherit behavior from more than one parent classes. Prior to Java 8, a class can implement multiple interfaces but extend only one class. In Java 8, we can have method implementation within an interface. So an interface behaves like an Abstract class. Now if we implement more than one interface with method implementation in a class, it means we are inheriting behavior from multiple abstract classes. That is how we get Multiple Inheritance in Java 8.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1544,7 +1404,6 @@
     "question": "In case we create a class that extends a base class and implements",
     "answer": "an interface. If both base class and interface have a default method with same name and arguments, then which definition will be picked by JVM? In such a scenario, JVM will pick the definition in base class.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1555,7 +1414,6 @@
     "question": "If we create same method and define it in a class , in its parent class",
     "answer": "and in an interface implemented by the class, then definition will be invoked if we access it using the reference of Interface and the object of class? In all the cases, method defined in the class will be invoked.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1566,7 +1424,6 @@
     "question": "Can we access a static method of an interface by using reference of the",
     "answer": "interface? No, a static method of interface has to be invoked by using the name of the interface.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1577,7 +1434,6 @@
     "question": "How can you get the name of Parameter in Java by using",
     "answer": "reflection? Java 8 has introduced a method Parameter.getName() to get the name of a parameter by using reflection. Before using this feature, we need to turn on this feature in Java compiler. To turn on this feature, just run javac with \u2013parameters argument. To verify the availability of this feature, we can use Parameter. isNamePresent() method.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1588,7 +1444,6 @@
     "question": "What is Optional in Java 8?",
     "answer": "Optional is a container object that may have a null or non-null value. If it has a value then isPresent() method returns true. It a value is present, we can call get() method to get the value. Else we will get nothing. It is very useful in handling data that has null values.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1599,7 +1454,6 @@
     "question": "What are the uses of Optional?",
     "answer": "Some of the uses of Optional in Java are: We can use Optional to avoid NullPointerException in an application. Optional performs Null check at compile time, so we do not get run time exception for a null value. Optional reduces the codebase pollution by removing unnecessary null checks. Optional can also be used to handle default case for data when a value is null.",
     "topic": "Streams & Lambda",
-    "difficulty": "Intermediate",
     "tags": [
       "streams & lambda",
       "java"
@@ -1610,7 +1464,6 @@
     "question": "Which method in Optional provides the fallback mechanism in",
     "answer": "case of null value? In case, an Optional has null value, we can use orElseGet() method as fallback mechanism. If we implement orElseGet() method, it will be invoked when the value of Optional is null.",
     "topic": "Streams & Lambda",
-    "difficulty": "Basic",
     "tags": [
       "streams & lambda",
       "java"
@@ -1621,7 +1474,6 @@
     "question": "How can we get current time by using Date/Time API of Java 8?",
     "answer": "In Java 8 we can use Clock class to get the current time. Instead of using old method System.currentTimeMillis(), we can create a Clock object and call millis() method to get the current time in milliseconds. We can also call instant() method on Clock object to get the current time in a readable format.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1632,7 +1484,6 @@
     "question": "Is it possible to define a static method in an Interface?",
     "answer": "Yes, from Java 8, an Interface can also has a static method.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1643,7 +1494,6 @@
     "question": "How can we analyze the dependencies in Java classes and",
     "answer": "packages? Java 8 comes with a new command line tool jdeps that can help in analyzing the package-level and class-level dependencies. We can pass a jar file name or a class name as an argument to this tool. It will list all the dependencies of that jar or class.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1654,7 +1504,6 @@
     "question": "What are the new JVM arguments introduced by Java 8?",
     "answer": "In Java 8, PermGen space of ClassLoader is removed. It has been replaced with MetaSpace. Now we can set the initial and maximum size of MetaSpace. The JVM options -XX:PermSize and \u2013XX:MaxPermSize are replaced by -XX:MetaSpaceSize and -XX:MaxMetaspaceSize respectively in Java 8.",
     "topic": "JVM",
-    "difficulty": "Basic",
     "tags": [
       "jvm",
       "java"
@@ -1665,7 +1514,6 @@
     "question": "What are the popular annotations introduced in Java 8?",
     "answer": "Some of the popular annotations introduced in Java 8 are: @FunctionalInterface: This annotation is used to mark an interface as Functional Interface. As mentioned earlier, A FunctionalInterface can be used for lambda expressions. @Repeatable: This annotation is used for marking another annotation. It indicates that the marked annotation can be applied multiple times on a type.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1676,7 +1524,6 @@
     "question": "What is a StringJoiner in Java 8?",
     "answer": "StringJoiner is a new class in Java 8 that can be used to create a String. It can construct a sequence of characters separated by a delimiter. It can also optionally add a prefix and suffix to this sequence. We can use this sequence to get a String. E.g. The String \"[One:Two:Three]\" may be constructed as follows: StringJoiner sj = new StringJoiner(\":\", \"[\", \"]\"); sj.add(\"One\").add(\"Two\").add(\"Three\"); String desiredString = sj.toString();",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1687,7 +1534,6 @@
     "question": "What is the type of a Lambda expression in Java 8?",
     "answer": "The type of a lambda expression depends on the context it is being used. A lambda is like a method reference. It does not have a type of its own. Generally, a Lambda is an instance of a Functional Interface.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1698,7 +1544,6 @@
     "question": "What is the target type of a lambda expression ?",
     "answer": "The target type of a lambda expression represents a type to which the expression can be converted. The target type for a lambda expression is a functional interface. The lambda expression must have same parameter type as the parameter in the function of the interface. It must also return a type compatible with the return type of function.",
     "topic": "Streams & Lambda",
-    "difficulty": "Intermediate",
     "tags": [
       "streams & lambda",
       "java"
@@ -1709,7 +1554,6 @@
     "question": "What are the main differences between an interface with default",
     "answer": "method and an abstract class in Java 8? An interface with a default method appears same as an Abstract class in Java. But there are subtle differences between two. 1 . Instance variable: An interface cannot have instance variables. An abstract class can have instance variables. 2 . Constructor: An interface cannot have a constructor. An abstract class can have constructor. 3 . Concrete Method: An interface cannot have concrete methods other than default method. An abstract class is allowed to define concrete methods with implementation. 4 . Lambda: An interface with exactly one default method can be used for lambda expression. An abstract class cannot be used for lambda expression. Java Tricky Questions",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1720,7 +1564,6 @@
     "question": "Is there any difference between a = a + b and a += b expressions?",
     "answer": "When we add two integral variables e.g. variables of type byte, short, or int in Java, then they are first promoted to int type, and then addition happens. The += operator implicitly casts the result of addition into the type of variable used to hold the result. What happens when you put return statement or System.exit () on try or catch block? Will finally block execute? It is a popular tricky Java interview question. Most of the programmers think that no matter what the finally block will always execute. This question challenges that concept by putting a return statement in the try or catch block or calling System.exit() from try or catch block. You can answer by saying that finally block executes even if we put a return statement in the try block or catch block. But finally block does not execute if you call System.exit() from try or catch block.",
     "topic": "File Handling",
-    "difficulty": "Advanced",
     "tags": [
       "file handling",
       "java"
@@ -1731,7 +1574,6 @@
     "question": "What does the expression 1.0 / 0.0 return? Will there be any",
     "answer": "compilation error? Double class is the source of many tricky interview questions. You may know about the double primitive type and Double class. But while doing floating point arithmetic some people don't pay enough attention to Double.INFINITY, NaN, and -0.0. There are rules that govern the floating point arithmetic calculations involving Double. The answer to this question is that 1.0 / 0.0 will compile successfully. And it will not throw ArithmeticException. It will just return Double.INFINITY. .",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -1742,7 +1584,6 @@
     "question": "Can we use multiple main methods in multiple classes?",
     "answer": "Yes. When we start an application in Java, we just mention the class name to be run to java command. The JVM looks for the main method only in the class whose name is passed to java command. Therefore, there is no conflict amongst the multiple classes having main method.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1753,7 +1594,6 @@
     "question": "Does Java allow you to override a private or static method?",
     "answer": "The question is tricky but the answer is very simple. You cannot override a private or static method in Java. If we create a similar method with same return type and same method arguments in child class, then it will hide the superclass method. This is known as method hiding. Also, you cannot override a private method in sub class because Private method is not visible even in a subclass. Therefore, what you can do is to create another private method with the same name in the child class. So in both the cases, it is not method overriding. It is either method hiding or a new method.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1764,7 +1604,6 @@
     "question": "What happens when you put a key object in a HashMap that is",
     "answer": "already present? In a HashMap there are buckets in which objects are stored. Key objects with same HashCode go to same bucket. If you put the same key again in a HashMap, then it will replace the old mapping because HashMap doesn't allow duplicate keys. The same key will have same HashCode as previous key object. Due to same HashCode, it will be stored at the same position in the bucket.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -1775,7 +1614,6 @@
     "question": "How can you make sure that N threads can access N resources",
     "answer": "without deadlock? This question checks your knowledge of writing multi-threading code. If you have experience with deadlock and race conditions, you can easily answer this. The answer is that by resource ordering you can prevent deadlock. If in our program we always acquire resources in a particular order and release resources in the reverse order, then we can prevent the deadlock. So a thread waiting for same resource can not get into deadlock while the other thread is trying to get it and holding the resource required by first thread. If both of them release the resources in right order, one of them can acquire it to finish the work.",
     "topic": "Multithreading",
-    "difficulty": "Advanced",
     "tags": [
       "multithreading",
       "java"
@@ -1786,7 +1624,6 @@
     "question": "How can you determine if JVM is 32-bit or 64-bit from Java Program?",
     "answer": "We can find JVM bit size 32 bit or 64 bit by running java command from the command prompt. Or we can get it from Java program. Sun has a Java System property to determine the bit size of the JVM: 32 or 64: sun.arch.data.model=32 // 32 bit JVM sun.arch.data.model=64 // 64 bit JVM We can use System.getProperty(\"sun.arch.data.model\") to determine if it is 32/64 bit from Java program.",
     "topic": "JVM",
-    "difficulty": "Intermediate",
     "tags": [
       "jvm",
       "java"
@@ -1797,7 +1634,6 @@
     "question": "What is the right data type to represent Money (like Dollar/Pound)",
     "answer": "in Java? To represent money you need decimal points in the numbers like $1.99. BigDecimal class provides good methods to represent Money. Using BigDecimal, we can do the calculation with decimal points and correct rounding. But using BigDecimal is a little bit high on memory usage. We can also use double with predefined precision. But calculation on double can give erroneous results.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1808,7 +1644,6 @@
     "question": "How can you do multiple inheritances in Java?",
     "answer": "This is a question to trick people coming from C++ and Scala background to Java. There are many Object Oriented languages that support multiple inheritances. But Java is not one of them. Answer of this question can be that, Java does support multiple inheritances of by allowing an interface to extend other interfaces. You can implement more than one interface. But you cannot extend multiple classes. So Java doesn't support multiple inheritances of implementation. But in Java 8, the default method breaks the rule of multiple inheritances behavior.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1819,7 +1654,6 @@
     "question": "Is ++ operation thread-safe in Java?",
     "answer": "No, ++ operator is not a thread safe operation. It involves multiple instructions like- reading a value, incrementing it and storing it back into memory. These instructions can overlap between multiple threads. So it can cause issues in multi-threading.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1830,7 +1664,6 @@
     "question": "How can you access a non- static variable from the static context?",
     "answer": "We cannot access a non-static variable from the static context in Java. If you write a code like that, then you will get compile time error. It is one of the most common problems for beginner Java programmers, when they try to access instance variable inside the main method in a class. Since main method is static in Java, and instance variables are non- static, we cannot access instance variable inside main. The solution is to create an instance of the object and then access the instance variables.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1841,7 +1674,6 @@
     "question": "Let say there is a method that throws NullPointerException in the",
     "answer": "superclass. Can we override it with a method that throws RuntimeException? This question is checking your understanding of the concepts of method overloading and overriding in Java. We can throw superclass of RuntimeException in an overridden method, but we cannot do the same if it is a checked Exception.",
     "topic": "Exception Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "exception handling",
       "java"
@@ -1852,7 +1684,6 @@
     "question": "How can you mark an array volatile in Java?",
     "answer": "If you know multi-threading well then you can easily answer it. We can mark an array volatile in Java. But it makes only the reference to array volatile, not the whole array. If one thread changes the reference variable to point to another array, then it will provide a volatile guarantee. But if multiple threads are changing individual array elements, they won't be having same reference due to the reference itself being volatile.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1863,7 +1694,6 @@
     "question": "What is a thread local variable in Java?",
     "answer": "Thread-local variable is a variable restricted to a specific thread. It is like thread's own copy of variable that is not shared among multiple threads. Java provides ThreadLocal class to support thread-local variables. To achieve thread-safety, you can use it. To avoid any memory leak, it is always good to remove a thread-local variable, once its work is done.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -1874,7 +1704,6 @@
     "question": "What is the difference between sleep() and wait() methods in Java?",
     "answer": "In Java, we use these methods to pause currently running thread. There is a simple difference between these. sleep() is actually meant for short pause because it doesn't release lock. wait() is meant for conditional wait and it can release a lock that can be acquired by another thread to change the condition on which it is waiting.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1885,7 +1714,6 @@
     "question": "Can you create an Immutable object that contains a mutable object?",
     "answer": "In Java, it is possible to create an Immutable object that contains a mutable object. We should not share the reference of the mutable object, since it is inside an immutable object. Instead, we can return a copy of it to other methods.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1896,7 +1724,6 @@
     "question": "How can you convert an Array of bytes to String?",
     "answer": "You can convert an Array of bytes to String object by using the String constructor that accepts byte[]. We need to make sure that right character encoding is used. Else we may get different results after conversion.",
     "topic": "Strings",
-    "difficulty": "Basic",
     "tags": [
       "strings",
       "java"
@@ -1907,7 +1734,6 @@
     "question": "What is difference between CyclicBarrier and CountDownLatch",
     "answer": "class? CyclicBarrier and CountDownLatch classes were introduced from Java 5. We can reuse CyclicBarrier even if it is broken, but we cannot reuse CountDownLatch in Java.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -1918,7 +1744,6 @@
     "question": "What is the difference between StringBuffer and StringBuilder?",
     "answer": "StringBuilder was introduced in Java 5. The main difference between both of them is that StringBuffer methods e.g. length(), capacity(), append() are synchronized. But corresponding methods in StringBuilder are not synchronized. Due to this difference, concatenation of String using StringBuilder is faster than StringBuffer. Now it is considered bad practice to use StringBuffer, because, in most of the scenarios, we perform string concatenation in the same thread.",
     "topic": "Design Patterns",
-    "difficulty": "Intermediate",
     "tags": [
       "design patterns",
       "java"
@@ -1929,7 +1754,6 @@
     "question": "Which class contains clone method? Cloneable or Object class?",
     "answer": "It is a very basic trick question. clone() method is defined in Object class. Cloneable is a marker interface that doesn't contain any method.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -1940,7 +1764,6 @@
     "question": "How will you take thread dump in Java?",
     "answer": "There are platform specific commands to take thread dump in Java. In Linux/Unix, just use kill -3 PID, where PID is the process id of Java process. It will give the thread dump of Java process. In Windows, press Ctrl + Break. This will instruct JVM to print thread dump in standard out or err. It can also go to console or log file depending upon your application configuration.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -1951,7 +1774,6 @@
     "question": "Can you cast an int variable into a byte variable? What happens if",
     "answer": "the value of int is larger than byte? An int is 32 bit in Java. But a byte is just 8 bit in Java. We can cast an int to byte. But we will lose higher 24 bits of int while casting. Because a byte can hold only first 8 bits of int. Remaining 24 bits (32-8 = 24) will be lost.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1962,7 +1784,6 @@
     "question": "In Java, can we store a double value in a long variable without",
     "answer": "explicit casting? No, we cannot store a double value into a long variable without casting it to long. The range of double is more than that of long. So we need to type cast. To answer this question, just remember which one is bigger between double and long in Java.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -1973,7 +1794,6 @@
     "question": "What will this return 5*0.1 == 0.5? true or false?",
     "answer": "The answer is false because floating point numbers can not be represented exactly in Java, so 5*0.1 is not same as 0.5.",
     "topic": "Core Java",
-    "difficulty": "Basic",
     "tags": [
       "core java",
       "java"
@@ -1984,7 +1804,6 @@
     "question": "Out of an int and Integer, which one takes more memory?",
     "answer": "An Integer object takes more memory than an int in Java. An Integer is an object and it stores meta-data overhead about the object. An int is a primitive type so its takes less memory and there is no meta- data overhead.",
     "topic": "JVM",
-    "difficulty": "Advanced",
     "tags": [
       "jvm",
       "java"
@@ -1995,7 +1814,6 @@
     "question": "Can we use String in the switch case statement in Java?",
     "answer": "Yes. From Java 7 onwards, String can be used in switch case statement. This gives convenience to programmer. But internally hash code of String is used for the switch statement.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2006,7 +1824,6 @@
     "question": "Can we use multiple main methods in same class?",
     "answer": "Yes. You can have multiple methods with name main in the same class. But there should be only one main method with the signature public static void main(String[] args). JVM looks for main with this signature only. Other methods with name main in same class are just ignored.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2017,7 +1834,6 @@
     "question": "When creating an abstract class, is it a good idea to call abstract",
     "answer": "methods inside its constructor? No, we should avoid calling abstract methods in the constructor of an abstract class. Because, it can restrict how these abstract methods can be implemented by child classes. Many IDE give \u201cOverridable method call in constructor\u201d warning for such implementation. This is a problem of object initialization order. The superclass constructor will run before the child class constructor. It means child class is not yet initialized. But due to presence of overridden method in superclass, the overridden method of subclass is called when the subclass is not fully initialized.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2028,7 +1844,6 @@
     "question": "How can you do constructor chaining in Java?",
     "answer": "When we call one constructor from another constructor of the same class, then it is known as constructor chaining in Java. When you have multiple overloaded constructors in a class, you can do constructor chaining.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2039,7 +1854,6 @@
     "question": "How can we find the memory usage of JVM from Java code?",
     "answer": "We can use memory management related methods provided in java.lang.Runtime class to get the free memory, total memory and maximum heap memory in Java. By using these methods, you can find out how much of the heap is used and how much heap space still remains. Runtime.freeMemory() returns amount of free memory in bytes. Runtime.totalMemory() returns total memory in bytes. Runtime.maxMemory() returns maximum memory in bytes.",
     "topic": "JVM",
-    "difficulty": "Advanced",
     "tags": [
       "jvm",
       "java"
@@ -2050,7 +1864,6 @@
     "question": "What is the difference between x == y and x.equals(y) expressions in",
     "answer": "Java? The x == y expression does object reference matching if both a and b are an object and only returns true if both are pointing to the same object in the heap space. The x.equals(y) expression is used for logical mapping and it is expected from an object to override this method to provide logical equality. Eg. A Book object may be logically equal to another copy of same Book, but it is a different object which will be false while doing x == y.",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -2061,7 +1874,6 @@
     "question": "How can you guarantee that the garbage collection takes place?",
     "answer": "No. We cannot guarantee the garbage collection in Java. Java documentation explicitly says that GarbageCollection is not guaranteed. You can call System.gc() to request garbage collection, however, that's what it is - a request. It is upto GC's discretion to run.",
     "topic": "JVM",
-    "difficulty": "Basic",
     "tags": [
       "jvm",
       "java"
@@ -2072,7 +1884,6 @@
     "question": "What is the relation between x.hashCode() method and x.equals(y)",
     "answer": "method of Object class? x.hashCode() method returns an int hash value corresponding to an object instance. It is used in hashCode based collection classes like Hashtable, HashMap, LinkedHashMap etc. hashCode() method is also related to equals() method. As per Java specification, two objects which are equal to each other using equals() method must have same hash code. Therefore, two objects with same hashCode may or may not be equal to each other. But two equal objects should have same hash code.",
     "topic": "File Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "file handling",
       "java"
@@ -2083,7 +1894,6 @@
     "question": "What is a compile time constant in Java?",
     "answer": "A compile time constant is public static final variable. The public modifier is optional here. At compile time, they are replaced with actual values because compiler knows their value up-front and it also knows that it cannot be changed during run-time. So they are constants.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2094,7 +1904,6 @@
     "question": "Explain the difference between fail-fast and fail-safe iterators?",
     "answer": "The main difference between fail-fast and fail-safe iterators is whether or not the collection can be modified while it is being iterated. Fail-safe iterators allow modification of collection in an iteration task. But fail-fast iterators do not allow any modification to collection during iteration. During iteration, fail-fast iterators fail as soon as they realize that the collection has been modified. Modification can be addition, removal or update of a member. And it will throw a ConcurrentModificationException. Eg. ArrayList, HashSet, and HashMap are fail-fast. Fail-safe iterators operate on a copy of the collection. Therefore they do not throw an exception if the collection is modified during iteration. Eg. ConcurrentHashMap, CopyOnWriteArrayList are fail-safe.",
     "topic": "Collections",
-    "difficulty": "Intermediate",
     "tags": [
       "collections",
       "java"
@@ -2105,7 +1914,6 @@
     "question": "You have a character array and a String. Which one is more",
     "answer": "secure to store sensitive data (like password, date of birth, etc.)? Short answer is, it is safe to store sensitive information in character array. In Java, String is immutable and it is stored in the String pool. Once a String is created, it stays in the pool in memory until it is garbage collected. You have no control on garbage collection. Therefore, anyone having access to a memory dump can potentially extract the sensitive data and use it. Whereas, if you use a mutable object like a character array, to store the value, you can set it to blank once you are done with it. Once it is made blank it cannot be used by anyone else.",
     "topic": "Strings",
-    "difficulty": "Advanced",
     "tags": [
       "strings",
       "java"
@@ -2116,7 +1924,6 @@
     "question": "Why do you use volatile keyword in Java?",
     "answer": "The volatile keyword guarantees global ordering on reads and writes to a variable. This implies that every thread accessing a volatile field will read the variable\u2019s current value instead of using a cached value. By marking the variable volatile, the value of a variable is never cached thread-locally. All reads and writes will go straight to main memory of Java.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2127,7 +1934,6 @@
     "question": "What is the difference between poll() and remove() methods of Queue",
     "answer": "in Java? It is a basic question to know the understanding of Queue data structure. Both poll() and remove() methods remove and return the head of the Queue. When Queue is empty, poll() method fails and it returns null, but remove() method fails and throws Exception.",
     "topic": "Collections",
-    "difficulty": "Intermediate",
     "tags": [
       "collections",
       "java"
@@ -2138,7 +1944,6 @@
     "question": "Can you catch an exception thrown by another thread in Java?",
     "answer": "Yes, it can be done by using Thread.UncaughtExceptionHandler. Java Documentation says \u201cWhen a thread is about to terminate due to an uncaught exception the Java Virtual Machine will query the thread for its UncaughtExceptionHandler using Thread.getUncaughtExceptionHandler() will invoke the handler's uncaughtException method, passing the thread and the exception as arguments.\u201d",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2149,7 +1954,6 @@
     "question": "How do you decide which type of Inner Class \u2013 Static or Non-Static",
     "answer": "to use in Java? An inner class has full access to the fields and methods of the enclosing class. This is convenient for event handlers, but comes at a cost. Every instance of an inner class retains and requires a reference to its enclosing class. Due to this cost, there are many situations where static nested classes are preferred over inner classes. When instances of the nested class outlive instances of the enclosing class, the nested class should be static to prevent memory leaks. At times, due to their \u201chidden\u201d reference to enclosing class, Inner classes are harder to construct via reflection.",
     "topic": "OOP Concepts",
-    "difficulty": "Advanced",
     "tags": [
       "oop concepts",
       "java"
@@ -2160,7 +1964,6 @@
     "question": "What are the different types of Classloaders in Java?",
     "answer": "Java Classloader is the part of the Java Runtime Environment (JRE) that loads classes on demand into Java Virtual Machine (JVM). When the JVM is started, three types of class loaders are used:",
     "topic": "JVM",
-    "difficulty": "Basic",
     "tags": [
       "jvm",
       "java"
@@ -2171,7 +1974,6 @@
     "question": "What are the situations in which you choose HashSet or",
     "answer": "TreeSet? HashSet is better than TressSet in almost every way. It gives O(1) for add(), remove() and contains() operations. Whereas, TressSet gives O(log(N)) for these operations. Still, TreeSet is useful when you wish to maintain order over the inserted elements or query for a range of elements within the set. We should use TreeSet when we want to maintain order. Or when there are enough read operations to offset the increased cost of write operations.",
     "topic": "Collections",
-    "difficulty": "Intermediate",
     "tags": [
       "collections",
       "java"
@@ -2182,7 +1984,6 @@
     "question": "What is the use of method references in Java?",
     "answer": "Java 8 has introduced Method references. It allows constructors and methods to be used as lambdas. The main uses of Method reference are to improve code organization, clarity and terseness.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2193,7 +1994,6 @@
     "question": "Do you think Java Enums are more powerful than integer",
     "answer": "constants? Yes. Java Enums provide many features that integer constants cannot. Enums can be considered as final classes with a fixed number of instances. Enums can implement interfaces but cannot extend another class. While implementing the strategy pattern, we can use this feature of Enums. Especially, when the number of strategies is fixed. You can also attach meta-data to enum values in Java. Also enum values are typesafe, where as integer constants are not. You can also define custom behavior in enum values.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2204,7 +2004,6 @@
     "question": "Why do we use static initializers in Java?",
     "answer": "In Java, a static initializer can run code during the initial loading of a class and it guarantees that this code will only run once. Also the static code will finish running before a class can be accessed in any way. Initializing static members from constructors is more work. You have to make sure that every constructor does this. You need to maintain a flag to mark the static work when it is done. You may have to think about synchronization or races conditions for work in static block not initialized from static context.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2215,7 +2014,6 @@
     "question": "Your client is complaining that your code is throwing",
     "answer": "NoClassDefFoundError or NoSuchMethodError, even though you are able to compile your code without error and method exists in your code. What could be the reason behind this? Sometimes we upgrade our libraries even with same method name. But we forget to let the client know about the new version. Due this different in version, we get NoClassDefFoundError or NoSuchMethodError at runtime when one library was not compatible with such an upgrade. Java build tools and IDEs can also produce dependency reports that tell you which libraries depend on that JAR. Mostly, identifying and upgrading the library that depends on the older JAR resolve the issue.",
     "topic": "Exception Handling",
-    "difficulty": "Intermediate",
     "tags": [
       "exception handling",
       "java"
@@ -2226,7 +2024,6 @@
     "question": "How can you check if a String is a number by using regular",
     "answer": "expression? Regex is a powerful tool for matching patterns and searching patterns. A numeric String can only contain digits i.e. 0 to 9. It can also contain + and - sign at start of the String. We can create a regular expression for these two rules. One simple example is as follows: Pattern pattern = Pattern.compile(\".*\\\\D.*\");",
     "topic": "Strings",
-    "difficulty": "Intermediate",
     "tags": [
       "strings",
       "java"
@@ -2237,7 +2034,6 @@
     "question": "What is the difference between the expressions String s =",
     "answer": "\"Temporary\" and String s = new String(\"Temporary \")? Which one is better and more efficient? In general, String s = \" Temporary \" is more efficient to use than String s = new String(\"Temporary \"). In case of String s = \" Temporary \", a String with the value \u201cTemporary\u201d is created in String pool. If another String with the same value is created (e.g., String s2 = \" Temporary \"), it will reference the same object in the String pool. But, when you use String s = new String(\"Temporary \"), Java creates a String with the value \u201cTemporary\u201d in the String pool. Also, that String object is then passed to the constructor of the String Object i.e. new String(\"Temporary \"). And this call creates another String object (not in the String pool) with that value. Therefore, each such call creates an additional String object. E.g. String s2 = new String(\"Temporary \") creates an extra String object, rather than just reusing the same String object from the String pool. So String s = \u201cTemporary\u201d is always an efficient way.",
     "topic": "Strings",
-    "difficulty": "Advanced",
     "tags": [
       "strings",
       "java"
@@ -2248,7 +2044,6 @@
     "question": "In Java, can two equal objects have the different hash code?",
     "answer": "No. It is not possible for two equal objects to have different hashcode. But two objects with same hashcode may or may not be equal.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2259,7 +2054,6 @@
     "question": "How can we print an Array in Java?",
     "answer": "We can print an array by using methods of Arrays class. We can either use Arrays.toString() method or we can use Arrays.deepToString() method. Since array doesn't implement toString() method by itself, just passing an array to System.out.println() will not print its contents. But we can use Arrays.toString() to print each element of an array.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2270,7 +2064,6 @@
     "question": "Is it ok to use random numbers in the implementation of hashcode()",
     "answer": "method in Java? No. The hashcode of an object should be always same. If you use random number in hashcode() method, then you may get a different value of hashcode for same object. This will break the hashcode contract.",
     "topic": "File Handling",
-    "difficulty": "Basic",
     "tags": [
       "file handling",
       "java"
@@ -2281,7 +2074,6 @@
     "question": "Between two types of dependency injections, constructor",
     "answer": "injection and setter dependency injection, which one is better? Constructor injection guarantees that a class will be initialized with all its dependencies during creation. But setter injection provides flexibility to set an optional dependency. If we are using an XML file to describe dependencies, the setter injection is more readable. In general, it is a good practice to use constructor injection for mandatory dependencies and use setter injection for optional dependencies.",
     "topic": "Spring & Frameworks",
-    "difficulty": "Intermediate",
     "tags": [
       "spring & frameworks",
       "java"
@@ -2292,7 +2084,6 @@
     "question": "What is the difference between DOM and SAX parser in Java?",
     "answer": "In Java, Document Object Model (DOM) parser loads the whole XML into memory and creates a tree based on DOM model. This helps it in quickly locating the nodes, and making a change in the structure of XML. On the other hand, Simple API for XML (SAX) parser is an event based parser. It doesn't load the whole XML into memory. Due to this reason DOM is faster than SAX but require more memory and is not suitable to parse large XML files.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2303,7 +2094,6 @@
     "question": "Between Enumeration and Iterator, which one has better",
     "answer": "performance in Java? Enumeration interface is a read-only interface. It has better performance than Iterator. It is almost twice as fast as compared to an Iterator. It also uses very less memory. Also Enumeration does not have remove() method. On the other hand, Iterator interface is safer than Enumeration, since it can check whether a collection is modified or not during iteration. If a collection is altered while an Iterator is iterating, then it throws ConcurrentModificationException.",
     "topic": "Collections",
-    "difficulty": "Advanced",
     "tags": [
       "collections",
       "java"
@@ -2314,7 +2104,6 @@
     "question": "What is the difference between pass by reference and pass by value?",
     "answer": "Whenever an object is passed by value, it means that a copy of the object is passed. Even if changes are made to that object, it doesn\u2019t affect the original value. Whenever an object is passed by reference, it means that the actual object is not passed, rather a reference of the object is passed. Therefore, any changes made by an external method, are also reflected in the actual object and its reference.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -2325,7 +2114,6 @@
     "question": "What are the different ways to sort a collection in Java?",
     "answer": "The most popular way to sort a collection in Java is by calling Collections.sort() method. You can provide your custom Comparator to sort() method for sorting the data in your custom way. The other way is to use a Sorted collection like TreeSet or TreeMap that stores the information in a sorted order and then you can convert it to a List.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2336,7 +2124,6 @@
     "question": "Why Collection interface doesn\u2019t extend Cloneable and",
     "answer": "Serializable interfaces? Collection interface just specifies groups of objects known as elements. Each concrete implementation of a Collection can choose its own way of how to maintain and order its elements. Some collections may allow duplicate keys, while other collections may not. A lot of collection implementations have clone method. But many do not. It is not worthwhile to include it in all, since Collection is an abstract representation. What matters is the concrete implementation. Cloning and serialization come into picture while doing concrete implementation. Therefore, the concrete implementations of collections should decide how they can be cloned or serialized.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2347,7 +2134,6 @@
     "question": "What is the difference between a process and a thread in Java?",
     "answer": "A process is simply an execution of a program. A Thread is a single execution sequence within a process. A process may contain multiple threads. A Thread is also called as a lightweight process.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2358,7 +2144,6 @@
     "question": "What are the benefits of using an unordered array over an ordered",
     "answer": "array? In an ordered array the search time has time complexity of O(log n). Whereas, in an unordered array, search time complexity is O (n). In an ordered array, the insert operation has a time complexity of O(n). Whereas, the insertion operation for an unordered array takes constant time of O(1). Therefore, when we have more writes than reads, it is preferable to use an unordered array.",
     "topic": "Arrays",
-    "difficulty": "Intermediate",
     "tags": [
       "arrays",
       "java"
@@ -2369,7 +2154,6 @@
     "question": "Between HashSet and TreeSet collections in Java, which one is",
     "answer": "better? A HashSet is Implemented using a HashTable. Therefore, its elements are stored in a random order. The add(), remove(), and contains() methods of a HashSet have constant time complexity O(1). A TreeSet is implemented using a tree data structure. The elements in a TreeSet are sorted in a natural order. Therefore, add(), remove(), and contains() methods have time complexity of O(logn). So from performance perspective, HashSet has better performance than TreeSet. But if you want to store elements in a natural sorting order, then TreeSet is a better collection.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2380,7 +2164,6 @@
     "question": "When does JVM call the finalize() method?",
     "answer": "JVM instructs the Garbage Collector to call the finalize method, just before releasing an object from the memory. A programmer can implement finalize() method to explicitly release the resources held by the object. This will help in better memory management and avoid any memory leaks.",
     "topic": "JVM",
-    "difficulty": "Advanced",
     "tags": [
       "jvm",
       "java"
@@ -2391,7 +2174,6 @@
     "question": "When would you use Serial Garabage collector or Throughput",
     "answer": "Garbage collector in Java? The Serial Garbage collector is used for small applications that require heap memory upto 100 MB. The Throughput Garbage collector is used in medium to large size Java applications.",
     "topic": "Core Java",
-    "difficulty": "Advanced",
     "tags": [
       "core java",
       "java"
@@ -2402,7 +2184,6 @@
     "question": "In Java, if you set an object reference to null, will the Garbage",
     "answer": "Collector immediately free the memory held by that object? No. JVM decides to run the Garbage Collector whenever it is low on memory. When Garbage Collector runs, it looks for objects that are available for garbage collection and then frees the memory associated with this object. So just setting an Object reference null makes it eligible for Garbage Collection, but it does not immediately free the memory.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2413,7 +2194,6 @@
     "question": "How can you make an Object eligible for Garbage collection in",
     "answer": "Java? To make an Object eligible for Garbage collection, just make sure that it is unreachable to the program in which it is currently defined / created / used. You can set the object reference to null and make sure no other object refers it. Once the object cannot be reached, Garbage Collection can clean it during the next run.",
     "topic": "JVM",
-    "difficulty": "Intermediate",
     "tags": [
       "jvm",
       "java"
@@ -2424,7 +2204,6 @@
     "question": "When do you use Exception or Error in Java? What is the difference",
     "answer": "between these two? Throwable class is the superclass of Exception and Error classes in Java. When you want to catch the exceptional conditions that your program can create or encounter, then use the Exception class or subclass of Exception. When you come across situations that are unexpected then use Error class in Java. Also recovering from Error is not possible in most of cases. So it is better to terminate the program.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2435,7 +2214,6 @@
     "question": "What is the advantage of PreparedStatement over Statement",
     "answer": "class in Java? PreparedStatements are precompiled statements for database queries. Due to this their performance is much better. Also, we can reuse PreparedStatement objects with different input values to the same query. Where as, Statement class does not provide these features.",
     "topic": "Core Java",
-    "difficulty": "Advanced",
     "tags": [
       "core java",
       "java"
@@ -2446,7 +2224,6 @@
     "question": "In Java, what is the difference between throw and throws keywords?",
     "answer": "When we want to raise an exception in our code, we use the throw keyword with the name of the exception to be raised. Where as, throws keyword is used in method declaration. Throws keyword tells us the Exception that can be thrown by this method. Any caller of this method should be prepared to expect this Exception. Another minor difference is that throw is used only with one exception, but throws can be used with comma-separated list of multiple exceptions.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2457,7 +2234,6 @@
     "question": "What happens to the Exception object after the exception handling is",
     "answer": "done? Once the exception handling is complete, the Exception object is not reachable. Then it is garbage collected in the next run of Garbage Collector.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -2468,7 +2244,6 @@
     "question": "How do you find which client machine is sending request to your",
     "answer": "servlet in Java? We can use the ServletRequest class to find the IP address or host name of the client machine. There are methods getRemoteAddr() to get the IP address of the client machine and getRemoteHost() to get the host name of the client machine.",
     "topic": "Core Java",
-    "difficulty": "Basic",
     "tags": [
       "core java",
       "java"
@@ -2479,7 +2254,6 @@
     "question": "What is the difference between a Cookie and a Session object in",
     "answer": "Java? Both Cookie and Session are used during communication between Client and Server. The Client can disable a Cookie. Due to which the Web server cannot send a cookie. But a client cannot disable a session. So a Session always works irrespective of any setting at the client side. Also a Session can store any Java object. But the Cookie can only store small information in a String object.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2490,7 +2264,6 @@
     "question": "Which protocol does Browser and Servlet use to communicate with",
     "answer": "each other? HTTP protocol. The Browser and Servlet communicate with each other by using the HTTP protocol.",
     "topic": "Core Java",
-    "difficulty": "Basic",
     "tags": [
       "core java",
       "java"
@@ -2501,7 +2274,6 @@
     "question": "What is HTTP Tunneling?",
     "answer": "There are many network communication protocols on the Internet. But HTTP is the most popular among them. HTTP Tunneling is a technique in which HTTP or HTTPS protocol encapsulated the communication done by any other type of protocol. The masking of other protocol requests as HTTP requests is known as HTTP Tunneling.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -2512,7 +2284,6 @@
     "question": "Why do we use JSP instead of Servlet in Java?",
     "answer": "Since JSP pages are dynamically compiled into servlets, the programmers can easily make updates to the presentation layer code. For better performance, JSP pages can be pre-compiled. Also JSP pages provide flexibility to combine static templates like HTML or XML snippets. In addition, programmers can make logic changes at the class level, without editing the JSP pages that use the class logic.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2523,7 +2294,6 @@
     "question": "Is empty \u2018.java\u2019 file name a valid source file name in Java?",
     "answer": "Yes. You can create a class and store it in a file with name .java. You can try it yourself, by creating, compiling and running such a file. It will run correctly.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2534,7 +2304,6 @@
     "question": "How do you implement Servlet Chaining in Java?",
     "answer": "To implement, Servlet Chaining, there has to be more than one servlet. The output of one servlet has to be sent to a second servlet. The output of the second servlet can be sent to a third servlet, and so on. In this way, a chain of servlets is formed to complete a task. The last servlet in the chain will be responsible for sending final response to client.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2545,7 +2314,6 @@
     "question": "Can you instantiate this class?",
     "answer": "public class A { A a = new A(); } No, this class cannot be instantiated, since it will result in recursively calling its constructor.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -2556,7 +2324,6 @@
     "question": "Why Java does not support operator overloading?",
     "answer": "Java supports Method overloading but does not support operator overloading. It would make the design more complex by adding operator loading. Also it will make more complex compiler. One more reason is that, it will reduce the performance of JVM by operator overloading, since JCM has to do extra work to find the real meaning of overloaded operators at run time.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2567,7 +2334,6 @@
     "question": "Why String class is Immutable or Final in Java?",
     "answer": "Since String objects are cached in a String pool, it makes sense to make the String immutable. The cached String literals are shared between multiple clients. And there is a possibility that one client's action may affect another client\u2019s access to String pool. String is also used as a parameter in many Java classes. Eg. You can pass hostname, port number as String while opening a network connection. If any one can modify your copy of the String, it can change the hostname. Due to this reason, it makes sense to make String final as soon as it is created.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2578,7 +2344,6 @@
     "question": "What is the difference between sendRedirect and forward methods?",
     "answer": "When you use sendRedirect method, it creates a new request. When you use the forward method, it just forwards a request to a new target. In case of sendRedirect, the previous request scope objects are not available, because it creates a new request. In case of forward method, the previous request scope objects are available after forwarding. Also the sendRedirect method is considered slower than the forward method.",
     "topic": "Core Java",
-    "difficulty": "Intermediate",
     "tags": [
       "core java",
       "java"
@@ -2589,7 +2354,6 @@
     "question": "How do you fix your Serializable class, if it contains a",
     "answer": "member that is not serializable? If you want to make a class Serializable, but find that this class contains members that are not Serializable, then you have to mark those members as transient. This will ensure that this member is not persisted to a stream of bytes during Serialization. Therefore, Transient keyword of Java comes to help in this scenario.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2600,7 +2364,6 @@
     "question": "What is the use of run time polymorphism in Java?",
     "answer": "During the run time the behavior of an Object can change based on its run time state. Due to this run time polymorphism is introduced in Java. If you override a method in a child class, then you are providing run time polymorphism. Nothing will happen at the compile time. But at the run time, JVM decides which method will be called based on the class of the Object.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2611,7 +2374,6 @@
     "question": "What are the rules of method overloading and method overriding in",
     "answer": "Java? When we want to overload a method, we need to make sure that the method name remains same. But method signature can vary in the number or datatype of arguments or in the order of arguments. When we want to override a method, we ensure that the method is not throwing checked exceptions that are new or higher than those declared by the overridden method. Also we make sure that the method name, arguments and return type remain the same. Also we cannot override Static and Final methods in Java.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2622,7 +2384,6 @@
     "question": "What is the difference between a class and an object in Java?",
     "answer": "A Class is a template or a blue print of an Object to be created. An Object is an instance of a Class. A Class defines the methods and member variables. But an Object populates the values of the member variables. Therefore a class is a blueprint that you use to create objects. An object is an instance of a class \u2013 it is a concrete 'thing' that you made using a specific class. Most of the OOPS concepts are valid only when an Object is created.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2633,7 +2394,6 @@
     "question": "Can we create an abstract class that extends another abstract class?",
     "answer": "Yes. An abstract class can extend another abstract class. It does not need to define the methods of parent abstract class. Only the last non-abstract class has to define the abstract methods of a parent abstract class.",
     "topic": "OOP Concepts",
-    "difficulty": "Basic",
     "tags": [
       "oop concepts",
       "java"
@@ -2644,7 +2404,6 @@
     "question": "Why do you use Upcasting or Downcasting in Java ?",
     "answer": "When we want to cast a Sub class to Super class, we use Upcasting. It is also known as widening. Upcasting is always allowed in Java. When we want to cast a Super class to Sub class, we use Downcasting. It is also known as narrowing. At times, Downcasting can throw the ClassCastException if it fails the type check.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2655,7 +2414,6 @@
     "question": "What is the reason to organize classes and interfaces in a package in",
     "answer": "Java? As the name suggests, a package contains a collection of classes. It helps in setting the category of a file. Like- whether it is a Data Access Object (DAO) or an API. It helps in preventing the collision of Name space. Also we can introduce access restriction by using package and the right modifiers on a class and its methods.",
     "topic": "OOP Concepts",
-    "difficulty": "Intermediate",
     "tags": [
       "oop concepts",
       "java"
@@ -2666,7 +2424,6 @@
     "question": "What is information hiding in Java?",
     "answer": "Information hiding is OOPS concept. In Java you can use encapsulation to do Information hiding. An object can use the access modifiers like-public, private, protected to hide its internal details from another object. This helps in decoupling the internal logic of an object from outside world. By using Information hiding, an object can change its internal implementation without impacting the outside calling client\u2019s code.",
     "topic": "Java Basics",
-    "difficulty": "Advanced",
     "tags": [
       "java basics",
       "java"
@@ -2677,7 +2434,6 @@
     "question": "Why does Java provide default constructor?",
     "answer": "In Java all the interaction takes place between Object instances. To create an Object instance, JVM needs a constructor. Java does not enforce the rule on a programmer to define a default constructor for every class. Whenever an object has to be created and programmer has not provided a constructor, Java uses default constructor to create the object. Default constructor also initializes member variables with their default values.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2688,7 +2444,6 @@
     "question": "What is the difference between super and this keywords in Java?",
     "answer": "We use super keyword to access the methods of the super class from child class. We use this keyword to access methods of the same class.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2699,7 +2454,6 @@
     "question": "What is the advantage of using Unicode characters in Java?",
     "answer": "Unicode characters have much larger number of characters in the specification. They also contain Asian and non-western European characters. Most of the modern technologies, websites and browsers support these Unicode characters.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"
@@ -2710,7 +2464,6 @@
     "question": "Can you override an overloaded method in Java?",
     "answer": "Yes. Java allows to override an overloaded method, if that method is not a static or final method.",
     "topic": "Java Basics",
-    "difficulty": "Basic",
     "tags": [
       "java basics",
       "java"
@@ -2721,7 +2474,6 @@
     "question": "How can we change the heap size of a JVM?",
     "answer": "Java provides the command line parameters to set the heap size for JVM. You can specify the values in \u2013Xms and \u2013Xmx parameters. These parameters stand for initial and maximum heap size of JVM.",
     "topic": "JVM",
-    "difficulty": "Basic",
     "tags": [
       "jvm",
       "java"
@@ -2732,7 +2484,6 @@
     "question": "Why should you define a default constructor in Java?",
     "answer": "In general, Java provides a default constructor with each class. But there are certain cases when we want to define our own version of default constructor. When we want to construct an object with default values, we create our default constructor. At times, we can mark the default constructor private. So that any other class cannot create an instance of our class. This technique is generally used in Singleton design pattern.",
     "topic": "Java Basics",
-    "difficulty": "Intermediate",
     "tags": [
       "java basics",
       "java"

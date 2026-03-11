@@ -13,7 +13,7 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('All');
+
   const [searchResultIds, setSearchResultIds] = useState(null);
   const [isWorkerReady, setWorkerReady] = useState(false);
   
@@ -69,11 +69,10 @@ function App() {
       
       const q = params.get('q') || '';
       const topic = params.get('topic') || 'All';
-      const diff = params.get('diff') || 'All';
+
 
       setSearchQuery(q);
       setSelectedTopic(topic);
-      setSelectedDifficulty(diff);
       
       // We don't call worker here immediately to avoid race conditions with INIT
       // The search effect below will handle it once ready
@@ -96,13 +95,12 @@ function App() {
     const params = new URLSearchParams();
     if (searchQuery) params.set('q', searchQuery);
     if (selectedTopic !== 'All') params.set('topic', selectedTopic);
-    if (selectedDifficulty !== 'All') params.set('diff', selectedDifficulty);
     
     const newHash = params.toString();
     if (window.location.hash !== `#${newHash}`) {
       window.history.replaceState(null, '', `#${newHash}`);
     }
-  }, [searchQuery, selectedTopic, selectedDifficulty]);
+  }, [searchQuery, selectedTopic]);
 
   // 4. Persistence
   useEffect(() => {
@@ -145,11 +143,9 @@ function App() {
     }
 
     return results.filter(q => {
-      const matchTopic = selectedTopic === 'All' || q.topic === selectedTopic;
-      const matchDifficulty = selectedDifficulty === 'All' || q.difficulty === selectedDifficulty;
-      return matchTopic && matchDifficulty;
+      return selectedTopic === 'All' || q.topic === selectedTopic;
     });
-  }, [questions, searchResultIds, selectedTopic, selectedDifficulty]);
+  }, [questions, searchResultIds, selectedTopic]);
 
   const topics = useMemo(() => {
     const allTopics = questions.map(q => q.topic);
@@ -183,8 +179,6 @@ function App() {
               lastSearched={lastSearched}
             />
             <Filters 
-              selectedDifficulty={selectedDifficulty}
-              setSelectedDifficulty={setSelectedDifficulty}
               totalCount={filteredQuestions.length}
             />
           </div>

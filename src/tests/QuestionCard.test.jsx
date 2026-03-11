@@ -7,8 +7,7 @@ const mockQuestion = {
   id: 1,
   question: 'What is the JVM?',
   answer: 'Java Virtual Machine',
-  topic: 'JVM',
-  difficulty: 'Basic'
+  topic: 'JVM'
 };
 
 describe('QuestionCard Component', () => {
@@ -26,7 +25,6 @@ describe('QuestionCard Component', () => {
       />
     );
     expect(screen.getByText(/What is the JVM\?/i)).toBeInTheDocument();
-    expect(screen.getByText('Basic')).toBeInTheDocument();
   });
 
   it('reveals answer on click', () => {

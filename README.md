@@ -63,7 +63,7 @@ The system is designed for extreme performance, scalability, and zero-cost maint
 ### Transforming Your PDF Resources
 Easily convert standard Java interview books into the platform's native high-speed format:
 ```bash
-python scripts/pdf_processor.py "path/to/interview_book.pdf" "public/data/java_questions.json"
+python scripts/pdf_processor.py
 ```
 
 ### Deep Linking & Sharing
@@ -101,7 +101,7 @@ java-interview-hub/
 
 ### How to Contribute
 We welcome technical contributions that improve the platform's speed or data accuracy:
-1.  **Database Expansion**: Submit a Pull Request with new questions in `java_questions.json`.
+1.  **Database Expansion**: Submit a Pull Request with new questions.
 2.  **Heuristic Improvements**: Enhance the Python categorization logic in `pdf_processor.py`.
 3.  **UI Performance**: Optimize virtual list parameters for varying screen sizes.
 

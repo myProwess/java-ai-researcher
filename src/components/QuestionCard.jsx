@@ -16,9 +16,7 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
       <div className="card-header" onClick={() => setIsExpanded(!isExpanded)}>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-            <span className={`badge badge-${question.difficulty.toLowerCase()}`}>
-              {question.difficulty}
-            </span>
+
             <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', padding: '0.15rem 0.4rem', borderRadius: '4px' }}>
               {question.topic}
             </span>

@@ -43,20 +43,9 @@ def categorize_topic(question_text):
             return topic
     return "Core Java"
 
-def assign_difficulty(question_text, answer_text):
-    """Heuristic to assign difficulty levels."""
-    complex_keywords = ["internal", "performance", "memory", "race condition", "optimizing", "architect", "low-level", "bytecode"]
-    medium_keywords = ["difference", "explain", "how to", "compare", "advantage", "disadvantage"]
-    
-    text = (question_text + " " + answer_text).lower()
-    
-    if any(k in text for k in complex_keywords) or len(answer_text) > 800:
-        return "Advanced"
-    elif any(k in text for k in medium_keywords) or len(answer_text) > 300:
-        return "Intermediate"
-    return "Basic"
 
-def process_pdf(pdf_path, output_json, start_page=0, end_page=1110):
+
+def process_pdf(pdf_path, output_json1, output_json2, start_page=0, end_page=1110):
     text = ""
     try:
         with open(pdf_path, 'rb') as file:
@@ -113,14 +102,12 @@ def process_pdf(pdf_path, output_json, start_page=0, end_page=1110):
             continue
             
         topic = categorize_topic(q_text)
-        difficulty = assign_difficulty(q_text, a_text)
         
         questions_list.append({
             "id": num,
             "question": q_text,
             "answer": a_text,
             "topic": topic,
-            "difficulty": difficulty,
             "tags": [topic.lower(), "java"]
         })
     
@@ -167,10 +154,18 @@ def process_pdf(pdf_path, output_json, start_page=0, end_page=1110):
     # Sort by ID to ensure order
     dedup_questions.sort(key=lambda x: x['id'])
 
-    with open(output_json, 'w', encoding='utf-8') as f:
-        json.dump(dedup_questions, f, indent=2)
+    # Split data into two
+    mid = len(dedup_questions) // 2
+    part1 = dedup_questions[:mid]
+    part2 = dedup_questions[mid:]
+
+    with open(output_json1, 'w', encoding='utf-8') as f:
+        json.dump(part1, f, indent=2)
+        
+    with open(output_json2, 'w', encoding='utf-8') as f:
+        json.dump(part2, f, indent=2)
     
-    print(f"Successfully processed {len(dedup_questions)} questions into {output_json}")
+    print(f"Successfully processed {len(dedup_questions)} questions into {output_json1} and {output_json2}")
 
 if __name__ == "__main__":
-    process_pdf("Top 1000 Java interview.pdf", "public/data/java_questions.json", 58, 1112)
+    process_pdf("Top 1000 Java interview.pdf", "public/data/java_questions_1.json", "public/data/java_questions_2.json", 58, 1112)

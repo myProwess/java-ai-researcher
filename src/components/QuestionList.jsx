@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { FixedSizeList as List } from 'react-window';
+import { List } from 'react-window';
 import QuestionCard from './QuestionCard';
 
 const QuestionList = ({ questions, bookmarks, masteredIds, toggleBookmark, toggleMastered }) => {
@@ -13,11 +13,11 @@ const QuestionList = ({ questions, bookmarks, masteredIds, toggleBookmark, toggl
     );
   }
 
-  // Row renderer for react-window
-  const Row = ({ index, style }) => {
+  // Row renderer for the new react-window v2 API
+  const Row = ({ index, style, ariaAttributes }) => {
     const q = questions[index];
     return (
-      <div style={{ ...style, paddingBottom: '1.5rem' }}>
+      <div style={{ ...style, paddingBottom: '1.5rem' }} {...ariaAttributes}>
         <QuestionCard 
           question={q} 
           isBookmarked={bookmarks.includes(q.id)}
@@ -32,13 +32,11 @@ const QuestionList = ({ questions, bookmarks, masteredIds, toggleBookmark, toggl
   return (
     <div style={{ height: '70vh', width: '100%' }}>
       <List
-        height={700}
-        itemCount={questions.length}
-        itemSize={160} // approximate height of card
-        width={'100%'}
-      >
-        {Row}
-      </List>
+        rowCount={questions.length}
+        rowHeight={160} // Fixed height for this implementation
+        rowComponent={Row}
+        style={{ height: '100%', width: '100%' }}
+      />
     </div>
   );
 };

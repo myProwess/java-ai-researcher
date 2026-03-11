@@ -5,6 +5,17 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [
     react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'Java Interview Hub',
+        short_name: 'JavaHub',
+        theme_color: '#0f172a',
+      }
+    })
   ],
-  base: './', // Using relative base for maximum compatibility on GH Pages sub-paths
+  base: './',
+  build: {
+    chunkSizeWarningLimit: 1000
+  }
 })

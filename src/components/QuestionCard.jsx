@@ -17,6 +17,23 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
 
   const hasCode = /(?:public\s+class|public\s+static|public\s+interface|class\s+\w+\s*\{|void\s+\w+\(|int\s+\w+\(|return\s+|try\s*\{|catch\s*\(|for\s*\(|while\s*\(|System\.out\.println)/.test(question.answer);
 
+  const formatAnswer = (text) => {
+    if (!text) return null;
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    const cleanedSentences = sentences.map(s => s.trim()).filter(s => s.length > 0);
+    
+    if (cleanedSentences.length > 2) {
+      return (
+        <ul style={{ paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {cleanedSentences.map((sentence, idx) => (
+            <li key={idx}>{sentence}</li>
+          ))}
+        </ul>
+      );
+    }
+    return text;
+  };
+
   return (
     <motion.div 
       layout
@@ -76,7 +93,7 @@ const QuestionCard = ({ question, isBookmarked, isMastered, toggleBookmark, togg
                   </code>
                 </pre>
               ) : (
-                question.answer
+                formatAnswer(question.answer)
               )}
             </div>
           </motion.div>

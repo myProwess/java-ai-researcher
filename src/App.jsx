@@ -32,15 +32,27 @@ function App() {
 
   // 1. Data Loading & Worker INIT
   useEffect(() => {
-    const dataUrl = `${import.meta.env.BASE_URL}data/java_questions.json`.replace(/\/+/g, '/');
+    const dataFiles = ['data/java_questions_1.json', 'data/java_questions_2.json'];
     
-    fetch(dataUrl)
-      .then(res => res.json())
-      .then(data => {
-        setQuestions(data);
-        searchWorker.postMessage({ type: 'INIT', payload: data });
-      })
-      .catch(err => console.error('Failed to load questions:', err));
+    const fetchQuestions = async () => {
+      try {
+        const fetchPromises = dataFiles.map(file => {
+          const url = `${import.meta.env.BASE_URL}${file}`.replace(/\/+/g, '/');
+          return fetch(url).then(res => res.json());
+        });
+        
+        const results = await Promise.all(fetchPromises);
+        const allQuestions = results.flat();
+        
+        // Ensure IDs are unique if they weren't before (though they should be)
+        setQuestions(allQuestions);
+        searchWorker.postMessage({ type: 'INIT', payload: allQuestions });
+      } catch (err) {
+        console.error('Failed to load questions:', err);
+      }
+    };
+
+    fetchQuestions();
 
     searchWorker.onmessage = (e) => {
       const { type, payload } = e.data;

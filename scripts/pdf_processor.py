@@ -21,34 +21,32 @@ def extract_text_from_pdf(pdf_path):
 def categorize_topic(question_text):
     """Categorizes a question into predefined topics based on keywords."""
     topics_map = {
-        "Java Basics": ["java", "jvm", "jre", "jdk", "platform"],
-        "OOP Concepts": ["inheritance", "polymorphism", "encapsulation", "abstraction", "class", "interface"],
-        "Collections": ["list", "set", "map", "arraylist", "hashmap", "vector", "iterator"],
-        "Exception Handling": ["try", "catch", "finally", "throw", "exception", "error"],
-        "Multithreading": ["thread", "runnable", "synchronization", "deadlock", "monitor"],
-        "JVM": ["heap", "stack", "garbage collection", "classloader", "jit"],
-        "Streams & Lambda": ["stream", "lambda", "functional interface", "filter", "map-reduce"],
-        "Spring & Frameworks": ["spring", "bean", "autowired", "dependency injection", "mvc"],
-        "Design Patterns": ["singleton", "factory", "observer", "builder", "design pattern"],
-        "Strings": ["string", "stringbuilder", "stringbuffer", "immutable"],
+        "JVM": ["jvm", "heap", "stack", "garbage collection", "classloader", "jit", "memory"],
+        "Java Basics": ["java", "jre", "jdk", "platform", "main", "variable", "keyword", "data type"],
+        "OOP Concepts": ["inheritance", "polymorphism", "encapsulation", "abstraction", "class", "interface", "object", "override", "overload"],
+        "Collections": ["list", "set", "map", "arraylist", "hashmap", "vector", "iterator", "collection", "queue", "deque"],
+        "Exception Handling": ["try", "catch", "finally", "throw", "exception", "error", "checked", "unchecked"],
+        "Multithreading": ["thread", "runnable", "synchronization", "deadlock", "monitor", "wait", "notify", "volatile"],
+        "Streams & Lambda": ["stream", "lambda", "functional interface", "filter", "map-reduce", "optional"],
+        "Spring & Frameworks": ["spring", "bean", "autowired", "dependency injection", "mvc", "boot", "jpa", "hibernate"],
+        "Design Patterns": ["singleton", "factory", "observer", "builder", "design pattern", "strategy", "decorator"],
+        "Strings": ["string", "stringbuilder", "stringbuffer", "immutable", "pooling"],
         "Arrays": ["array", "dimension", "index"],
-        "Operators": ["operator", "bitwise", "logical"],
-        "Concurrency": ["executor", "future", "callable", "lock", "semaphore"],
-        "File Handling": ["io", "file", "path", "reader", "writer", "stream"],
-        "Garbage Collection": ["gc", "finalize", "reference"],
-        "Advanced Java": ["reflection", "annotation", "generic", "native"]
+        "Concurrency": ["executor", "future", "callable", "lock", "semaphore", "concurrent"],
+        "File Handling": ["io", "file", "path", "reader", "writer", "serialization"],
+        "Others": []
     }
     
     question_lower = question_text.lower()
     for topic, keywords in topics_map.items():
         if any(keyword in question_lower for keyword in keywords):
             return topic
-    return "Others"
+    return "Core Java"
 
 def assign_difficulty(question_text, answer_text):
     """Heuristic to assign difficulty levels."""
-    complex_keywords = ["internal", "performance", "memory", "race condition", "optimizing", "architect"]
-    medium_keywords = ["difference", "explain", "how to", "compare"]
+    complex_keywords = ["internal", "performance", "memory", "race condition", "optimizing", "architect", "low-level", "bytecode"]
+    medium_keywords = ["difference", "explain", "how to", "compare", "advantage", "disadvantage"]
     
     text = (question_text + " " + answer_text).lower()
     
@@ -58,25 +56,67 @@ def assign_difficulty(question_text, answer_text):
         return "Intermediate"
     return "Basic"
 
-def process_pdf(pdf_path, output_json):
-    raw_text = extract_text_from_pdf(pdf_path)
+def process_pdf(pdf_path, output_json, start_page=0, end_page=1110):
+    text = ""
+    try:
+        with open(pdf_path, 'rb') as file:
+            reader = PyPDF2.PdfReader(file)
+            total_pages = len(reader.pages)
+            end_page = min(end_page, total_pages)
+            print(f"Extracting text from page {start_page+1} to {end_page}...")
+            # Leading newline ensures first question is caught by \n pattern
+            text = "\n" 
+            for i in range(start_page, end_page):
+                text += reader.pages[i].extract_text() + "\n"
+    except Exception as e:
+        print(f"Error reading PDF: {e}")
+        return
+
+    # Use strict regex: number followed by dot, then newline or capital letter
+    # This helps avoid catching numbered lists like '1. item' in the middle of a sentence
+    segments = re.split(r'\n\s*(\d+)\.\s*(?=\n|[A-Z])', text)
     
-    # regex to find questions starting with "Q:" or "Question:" or "1. ", etc.
-    # This is highly dependent on the PDF format.
-    # Here we use a generic pattern: "Q: <Question text> A: <Answer text>"
-    pattern = r"Q:\s*(.*?)\s*A:\s*(.*?)(?=Q:|$)"
-    matches = re.finditer(pattern, raw_text, re.DOTALL | re.IGNORECASE)
+    questions_list = []
+    print(f"Found {len(segments)//2} potential segments with strict matching")
     
-    questions = []
-    for i, match in enumerate(matches, 1):
-        q_text = match.group(1).strip()
-        a_text = match.group(2).strip()
+    for i in range(1, len(segments), 2):
+        num = int(segments[i])
+        content = segments[i+1].strip()
         
+        if not content:
+            continue
+            
+        lines = [l.strip() for l in content.split('\n') if l.strip()]
+        if not lines:
+            continue
+            
+        q_lines = []
+        a_lines = []
+        found_end_of_q = False
+        
+        # Heuristic for question end
+        for j, line in enumerate(lines):
+            if not found_end_of_q:
+                q_lines.append(line)
+                if line.endswith('?') or len(q_lines) >= 2:
+                    found_end_of_q = True
+            else:
+                a_lines.append(line)
+        
+        q_text = " ".join(q_lines)
+        a_text = " ".join(a_lines)
+        
+        q_text = re.sub(r'\s+', ' ', q_text)
+        a_text = re.sub(r'\s+', ' ', a_text)
+        
+        if len(q_text) < 5: # Some questions might be short
+            continue
+            
         topic = categorize_topic(q_text)
         difficulty = assign_difficulty(q_text, a_text)
         
-        questions.append({
-            "id": i,
+        questions_list.append({
+            "id": num,
             "question": q_text,
             "answer": a_text,
             "topic": topic,
@@ -84,16 +124,53 @@ def process_pdf(pdf_path, output_json):
             "tags": [topic.lower(), "java"]
         })
     
-    with open(output_json, 'w', encoding='utf-8') as f:
-        json.dump(questions, f, indent=2)
+    # 1. Start from identifying "JDK and JRE" (Question 1)
+    start_idx = -1
+    for idx, q in enumerate(questions_list):
+        if (q['id'] == 1 and "JDK and JRE" in q['question']) or ("difference between JDK and JRE" in q['question']):
+            start_idx = idx
+            break
     
-    print(f"Successfully processed {len(questions)} questions into {output_json}")
+    if start_idx == -1:
+        print("Warning: Could not find Question 1. Starting from first found.")
+        start_idx = 0
+            
+    # 2. Slice from there
+    questions_slice = questions_list[start_idx:]
+    
+    # 3. Stop at "Microservices as State Machines" or ID 497
+    end_idx = len(questions_slice)
+    for idx, q in enumerate(questions_slice):
+        if "Microservices as State Machines" in q['question'] or q['id'] == 498:
+            # If we find 498 target, we stop before it. 
+            # If we find 497 and it's our target, inclusive.
+            if q['id'] == 497:
+                end_idx = idx + 1
+            else:
+                end_idx = idx
+            break
+            
+    final_questions = questions_slice[:end_idx]
+    
+    # Strictly filter based on user range 1 to 497
+    # (In case some sub-numbered items 1-497 were caught incorrectly)
+    # We want ONLY the main questions. 
+    # Usually, sub-numbered items in answers don't follow the question format.
+    
+    seen_ids = set()
+    dedup_questions = []
+    for q in final_questions:
+        if 1 <= q['id'] <= 497 and q['id'] not in seen_ids:
+            dedup_questions.append(q)
+            seen_ids.add(q['id'])
+    
+    # Sort by ID to ensure order
+    dedup_questions.sort(key=lambda x: x['id'])
+
+    with open(output_json, 'w', encoding='utf-8') as f:
+        json.dump(dedup_questions, f, indent=2)
+    
+    print(f"Successfully processed {len(dedup_questions)} questions into {output_json}")
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        pdf = sys.argv[1]
-        out = sys.argv[2] if len(sys.argv) > 2 else "java_questions.json"
-        process_pdf(pdf, out)
-    else:
-        print("Usage: python pdf_processor.py <pdf_path> [output_json]")
+    process_pdf("Top 1000 Java interview.pdf", "public/data/java_questions.json", 58, 1112)

@@ -19,11 +19,24 @@ self.onmessage = async (e) => {
 
     questions.forEach(q => index.add(q));
     self.postMessage({ type: 'READY' });
+    
+    // Immediately send results for any pending search or just to populate initial state
+    self.postMessage({ type: 'RESULTS', payload: questions.map(q => q.id) });
   }
 
   if (type === 'SEARCH') {
     const { query } = payload;
-    if (!query || !index) {
+    
+    // If we haven't even finished INIT yet, and we got a search request, 
+    // we can't do anything, but once INIT finishes, it will broadcast all results.
+    if (!index) {
+      if (questions.length > 0) {
+        self.postMessage({ type: 'RESULTS', payload: questions.map(q => q.id) });
+      }
+      return;
+    }
+
+    if (!query) {
       self.postMessage({ type: 'RESULTS', payload: questions.map(q => q.id) });
       return;
     }

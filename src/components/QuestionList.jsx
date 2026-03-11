@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { List } from 'react-window';
 import QuestionCard from './QuestionCard';
 
 const QuestionList = ({ questions, bookmarks, masteredIds, toggleBookmark, toggleMastered }) => {
@@ -13,30 +12,23 @@ const QuestionList = ({ questions, bookmarks, masteredIds, toggleBookmark, toggl
     );
   }
 
-  // Row renderer for the new react-window v2 API
-  const Row = ({ index, style, ariaAttributes }) => {
-    const q = questions[index];
-    return (
-      <div style={{ ...style, paddingBottom: '1.5rem' }} {...ariaAttributes}>
+  return (
+    <div className="question-grid">
+      {questions.slice(0, 50).map((q) => (
         <QuestionCard 
+          key={q.id}
           question={q} 
           isBookmarked={bookmarks.includes(q.id)}
           isMastered={masteredIds.includes(q.id)}
           toggleBookmark={toggleBookmark}
           toggleMastered={toggleMastered}
         />
-      </div>
-    );
-  };
-
-  return (
-    <div style={{ height: '70vh', width: '100%' }}>
-      <List
-        rowCount={questions.length}
-        rowHeight={160} // Fixed height for this implementation
-        rowComponent={Row}
-        style={{ height: '100%', width: '100%' }}
-      />
+      ))}
+      {questions.length > 50 && (
+        <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginTop: '2rem' }}>
+          Showing first 50 results. Use search to find specific questions.
+        </p>
+      )}
     </div>
   );
 };

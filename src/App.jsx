@@ -17,7 +17,6 @@ function App() {
   const [searchResultIds, setSearchResultIds] = useState(null);
   const [isWorkerReady, setWorkerReady] = useState(false);
   
-  // Spaced Repetition / Mastery State
   const [masteredIds, setMasteredIds] = useState(() => {
     const saved = localStorage.getItem('mastered');
     return saved ? JSON.parse(saved) : [];
@@ -33,8 +32,8 @@ function App() {
 
   // 1. Data Loading & Worker INIT
   useEffect(() => {
-    // Dynamically resolve the data path based on the hosting base URL
     const dataUrl = `${import.meta.env.BASE_URL}data/java_questions.json`.replace(/\/+/g, '/');
+    
     fetch(dataUrl)
       .then(res => res.json())
       .then(data => {
@@ -50,7 +49,7 @@ function App() {
     };
   }, []);
 
-  // 2. Smart Deep Linking (Initial Load & Sync)
+  // 2. Sync Hash to State
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
@@ -63,17 +62,24 @@ function App() {
       setSearchQuery(q);
       setSelectedTopic(topic);
       setSelectedDifficulty(diff);
-
-      // Important: Trigger search worker when loading from URL
-      searchWorker.postMessage({ type: 'SEARCH', payload: { query: q } });
+      
+      // We don't call worker here immediately to avoid race conditions with INIT
+      // The search effect below will handle it once ready
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Sync on initial render
+    handleHashChange(); 
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // 3. Sync State to Hash
+  // 3. Search Effect (Reactive to state changes)
+  useEffect(() => {
+    if (isWorkerReady) {
+      searchWorker.postMessage({ type: 'SEARCH', payload: { query: searchQuery } });
+    }
+  }, [isWorkerReady, searchQuery]);
+
+  // 4. Sync State to Hash for sharing
   useEffect(() => {
     const params = new URLSearchParams();
     if (searchQuery) params.set('q', searchQuery);
@@ -98,7 +104,6 @@ function App() {
       setLastSearched(query);
       localStorage.setItem('lastSearched', query);
     }
-    searchWorker.postMessage({ type: 'SEARCH', payload: { query } });
   }, []);
 
   const toggleBookmark = (id) => {
@@ -111,7 +116,6 @@ function App() {
 
   const selectRandom = () => {
     if (questions.length === 0) return;
-    // Weighted random: Favor non-mastered questions
     const pool = questions.filter(q => !masteredIds.includes(q.id));
     const randomPool = pool.length > 0 ? pool : questions;
     const q = randomPool[Math.floor(Math.random() * randomPool.length)];
@@ -120,9 +124,14 @@ function App() {
 
   const filteredQuestions = useMemo(() => {
     let results = questions;
-    if (searchResultIds) {
-      results = questions.filter(q => searchResultIds.includes(q.id));
+    
+    // Only apply worker results if we have received some
+    if (searchResultIds !== null) {
+      // Map based on ID matching
+      const idSet = new Set(searchResultIds);
+      results = questions.filter(q => idSet.has(q.id));
     }
+
     return results.filter(q => {
       const matchTopic = selectedTopic === 'All' || q.topic === selectedTopic;
       const matchDifficulty = selectedDifficulty === 'All' || q.difficulty === selectedDifficulty;
